@@ -1,5 +1,5 @@
-/// A quadratic Bézier type.
-public struct QuadBezier<Output: BezierPointType>: DeCasteljauSolvableBezierType {
+/// A cubic Bézier type.
+public struct CubicBezier<Output: BezierPointType>: DeCasteljauSolvableBezierType {
     public typealias Input = Output.Scalar
 
     /// Pre-computed internal polynomial coefficients.
@@ -18,7 +18,7 @@ public struct QuadBezier<Output: BezierPointType>: DeCasteljauSolvableBezierType
     /// The fourth point of this Bézier, or its end point.
     public let p3: Output
 
-    /// The number of points in this quadratic Bézier curve; always `4`.
+    /// The number of points in this cubic Bézier curve; always `4`.
     @_transparent
     public var pointCount: Int { 4 }
 
@@ -40,7 +40,7 @@ public struct QuadBezier<Output: BezierPointType>: DeCasteljauSolvableBezierType
         }
     }
 
-    /// Initializes a quadratic Bézier curve with a set of four control points.
+    /// Initializes a cubic Bézier curve with a set of four control points.
     @inlinable
     public init(p0: Output, p1: Output, p2: Output, p3: Output) {
         self.p0 = p0
@@ -74,9 +74,9 @@ public struct QuadBezier<Output: BezierPointType>: DeCasteljauSolvableBezierType
 
         let result: Output =
             p0 +
-            (coefficients.a * t) +
+            (coefficients.c * t) +
             (coefficients.b * t2) +
-            (coefficients.c * t3)
+            (coefficients.a * t3)
 
         return result
     }
@@ -98,7 +98,7 @@ public struct QuadBezier<Output: BezierPointType>: DeCasteljauSolvableBezierType
 
         @inlinable
         init(fromP0 p0: Output, p1: Output, p2: Output, p3: Output) {
-            a = (-p0) as Output + (3 * p1) as Output - (3 * p2) as Output + (p3) as Output
+            a = (-p0) as Output + (3 * p1) as Output - (3 * p2) as Output + p3
             b = (3 * p0) as Output - (6 * p1) as Output + (3 * p2) as Output
             c = (-3 * p0) as Output + (3 * p1) as Output
         }

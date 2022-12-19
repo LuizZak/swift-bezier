@@ -105,6 +105,8 @@
             "swiftpm",
             "xctest"
         ],
+
+        "swift.buildArguments": []
     },
     "extensions": {
         "recommendations": [

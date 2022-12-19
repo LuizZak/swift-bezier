@@ -1,5 +1,5 @@
-/// A 2D Bézier point type.
-public protocol Bezier2DPointType: BezierPointType {
+/// A 2-dimensional Bézier point type.
+public protocol Bezier2PointType: BezierPointType {
     /// The X component of this point.
     var x: Scalar { get }
 

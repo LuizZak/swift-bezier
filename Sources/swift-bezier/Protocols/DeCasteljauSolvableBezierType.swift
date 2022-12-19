@@ -17,6 +17,7 @@ public protocol DeCasteljauSolvableBezierType: BezierType {
 /// [De Casteljau's algorithm]: https://en.wikipedia.org/wiki/De_Casteljau%27s_algorithm
 ///
 /// - precondition: `points.count > 1`.
+@inlinable
 public func solveDeCasteljau<Point: BezierPointType>(
     _ points: [Point],
     factor: Double
