@@ -32,24 +32,30 @@ extension CubicBezier2: Bounded2BezierType {
         }
 
         if a.x != 0 {
+            // Quadratic
             let (t0x, t1x) = QuadraticSolver.solve(a: a.x, b: b.x, c: c.x) ?? (-1, -1)
             update(at: t0x)
             update(at: t1x)
         } else if b.x != 0 {
+            // Linear
             let tx = -c.x / b.x
             update(at: tx)
         } else {
+            // Constant?
             update(at: -c.x)
         }
 
         if a.y != 0 {
+            // Quadratic
             let (t0y, t1y) = QuadraticSolver.solve(a: a.y, b: b.y, c: c.y) ?? (-1, -1)
             update(at: t0y)
             update(at: t1y)
         } else if b.y != 0 {
+            // Linear
             let ty = -c.y / b.y
             update(at: ty)
         } else {
+            // Constant?
             update(at: -c.y)
         }
 
