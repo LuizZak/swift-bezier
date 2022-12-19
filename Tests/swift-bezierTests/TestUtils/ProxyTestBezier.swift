@@ -48,6 +48,29 @@ class ProxyTestBezier<Bezier: BezierType>: BezierType {
 
         return bezier.createLookupTable(steps: steps)
     }
+
+    var projectApproximate_calls: [(point: Bezier.Output, steps: Int, maxIterations: Int, tolerance: Output.Scalar)] = []
+    func projectApproximate(
+        to point: Bezier.Output,
+        steps: Int,
+        maxIterations: Int,
+        tolerance: Output.Scalar
+    ) -> (t: Bezier.Input, output: Bezier.Output) {
+
+        projectApproximate_calls.append((
+            point: point,
+            steps: steps,
+            maxIterations: maxIterations,
+            tolerance: tolerance
+        ))
+        
+        return bezier.projectApproximate(
+            to: point,
+            steps: steps,
+            maxIterations: maxIterations,
+            tolerance: tolerance
+        )
+    }
 }
 
 // For testing calls to a `Bounded2BezierType` type.

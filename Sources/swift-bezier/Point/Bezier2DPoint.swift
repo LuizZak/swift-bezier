@@ -30,6 +30,10 @@ extension Bezier2DPoint {
         self * (1 - factor) + end * factor
     }
 
+    public func dot(_ other: Bezier2DPoint) -> Double {
+        x * other.x + y * other.y
+    }
+
     @inlinable
     public static prefix func - (value: Bezier2DPoint) -> Bezier2DPoint {
         .init(x: -value.x, y: -value.y)

@@ -43,6 +43,20 @@ public protocol BezierType {
     ///
     /// - precondition: `steps >= 0`.
     func createLookupTable(steps: Int) -> BezierLookUpTable<Self>
+
+    /// Performs an approximation of the closest point on this Bézier to a given
+    /// point outside of it.
+    ///
+    /// The approximation is controlled by a number of steps to split the Bézier
+    /// into before the closest interval is found and iterating over it until
+    /// it either exceeds a number of maximum iterations or the point approaches
+    /// a limit where changes to input are smaller than `tolerance`.
+    func projectApproximate(
+        to point: Output,
+        steps: Int,
+        maxIterations: Int,
+        tolerance: Output.Scalar
+    ) -> (t: Input, output: Output)
 }
 
 extension BezierType {
@@ -80,5 +94,49 @@ extension BezierType where Input: FloatingPoint {
         values.append((endInput, self[pointCount - 1]))
 
         return .init(table: values)
+    }
+
+    @inlinable
+    public func projectApproximate(
+        to point: Output,
+        steps: Int,
+        maxIterations: Int,
+        tolerance: Output.Scalar
+    ) -> (t: Input, output: Output) {
+
+        typealias State = (closest: (Input, Output), iterations: Int)
+
+        let lookup = createLookupTable(steps: steps)
+
+        guard let closestIndex = lookup.closestEntryIndex(toOutput: point) else {
+            return (startInput, self[0])
+        }
+
+        let searchRangeIndex = (start: max(0, closestIndex - 1), end: min(lookup.count - 1, closestIndex + 1))
+
+        if searchRangeIndex.start == searchRangeIndex.end {
+            return lookup[searchRangeIndex.start] as (Input, Output)
+        }
+
+        let searchRange = (start: lookup[searchRangeIndex.start], end: lookup[searchRangeIndex.end])
+        let currentDistance = lookup[closestIndex].output.distanceSquared(to: point)
+
+        let t = binarySearchInput(
+            min: searchRange.start.input,
+            max: searchRange.end.input,
+            current: (lookup[closestIndex].input, currentDistance),
+            maxIterations: maxIterations
+        ) { (input, currentDistance) in
+
+            let error = currentDistance - compute(at: input).distanceSquared(to: point)
+
+            if error < tolerance {
+                return currentDistance
+            } else {
+                return error
+            }
+        }
+
+        return (t, compute(at: t))
     }
 }
