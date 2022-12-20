@@ -98,6 +98,7 @@
         "ShortcutMenuBar.userButton02Command": "workbench.action.tasks.runTask|Test",
         "cSpell.words": [
             "Bézier",
+            "Béziers",
             "Casteljau",
             "exodiusstudios",
             "lerp",

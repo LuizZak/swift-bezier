@@ -9,6 +9,10 @@ public protocol DeCasteljauSolvableBezierType: BezierType {
     ///
     /// [De Casteljau's algorithm]: https://en.wikipedia.org/wiki/De_Casteljau%27s_algorithm
     func solveDeCasteljau(at input: Double) -> Output
+
+    /// Splits this Bézier curve into two curves that overlap this curve,
+    /// splitting it along a specified input interval that ranges from (0-1).
+    func split(at input: Double) -> (left: Self, right: Self)
 }
 
 /// Solves a Bézier curve of arbitrary order using an implementation of

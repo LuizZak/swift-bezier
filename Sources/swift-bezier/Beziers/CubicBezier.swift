@@ -1,5 +1,5 @@
 /// A cubic Bézier type.
-public struct CubicBezier<Output: BezierPointType>: DeCasteljauSolvableBezierType {
+public struct CubicBezier<Output: BezierPointType>: DeCasteljauSolvableBezierType, CustomStringConvertible {
     public typealias Input = Output.Scalar
 
     /// Pre-computed internal polynomial coefficients.
@@ -40,6 +40,10 @@ public struct CubicBezier<Output: BezierPointType>: DeCasteljauSolvableBezierTyp
         }
     }
 
+    public var description: String {
+        "\(type(of: self))(p0: \(p0), p1: \(p1), p2: \(p2), p3: \(p3))"
+    }
+
     /// Initializes a cubic Bézier curve with a set of four control points.
     @inlinable
     public init(p0: Output, p1: Output, p2: Output, p3: Output) {
@@ -62,6 +66,35 @@ public struct CubicBezier<Output: BezierPointType>: DeCasteljauSolvableBezierTyp
         let ppp1 = pp1.lerp(to: pp2, factor: input)
 
         return ppp0.lerp(to: ppp1, factor: input)
+    }
+
+    /// Splits this cubic Bézier curve into two curves that overlap this curve,
+    /// splitting it along a specified input point.
+    @inlinable
+    public func split(at input: Double) -> (left: Self, right: Self) {
+        let pp0 = p0.lerp(to: p1, factor: input)
+        let pp1 = p1.lerp(to: p2, factor: input)
+        let pp2 = p2.lerp(to: p3, factor: input)
+
+        let ppp0 = pp0.lerp(to: pp1, factor: input)
+        let ppp1 = pp1.lerp(to: pp2, factor: input)
+
+        let p = ppp0.lerp(to: ppp1, factor: input)
+
+        return (
+            left: CubicBezier(
+                p0: p0,
+                p1: pp0,
+                p2: ppp0,
+                p3: p
+            ),
+            right: CubicBezier(
+                p0: p,
+                p1: ppp1,
+                p2: pp2,
+                p3: p3
+            )
+        )
     }
 
     /// Requests that a new output value be computed at a specified input using

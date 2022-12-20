@@ -1,5 +1,5 @@
 /// A quadratic Bézier curve of degree 2.
-public struct QuadBezier<Output: BezierPointType>: DeCasteljauSolvableBezierType {
+public struct QuadBezier<Output: BezierPointType>: DeCasteljauSolvableBezierType, CustomStringConvertible {
     public typealias Input = Output.Scalar
 
     /// The first point of this Bézier, or its starting point.
@@ -31,6 +31,10 @@ public struct QuadBezier<Output: BezierPointType>: DeCasteljauSolvableBezierType
         }
     }
 
+    public var description: String {
+        "\(type(of: self))(p0: \(p0), p1: \(p1), p2: \(p2))"
+    }
+
     /// Initializes a quadratic Bézier curve with a set of four control points.
     @inlinable
     public init(p0: Output, p1: Output, p2: Output) {
@@ -46,6 +50,29 @@ public struct QuadBezier<Output: BezierPointType>: DeCasteljauSolvableBezierType
         let pp1 = p1.lerp(to: p2, factor: input)
 
         return pp0.lerp(to: pp1, factor: input)
+    }
+
+    /// Splits this quadratic Bézier curve into two curves that overlap this curve,
+    /// splitting it along a specified input point.
+    @inlinable
+    public func split(at input: Double) -> (left: Self, right: Self) {
+        let pp0 = p0.lerp(to: p1, factor: input)
+        let pp1 = p1.lerp(to: p2, factor: input)
+
+        let p = pp0.lerp(to: pp1, factor: input)
+
+        return (
+            left: QuadBezier(
+                p0: p0,
+                p1: pp0,
+                p2: p
+            ),
+            right: QuadBezier(
+                p0: p,
+                p1: pp1,
+                p2: p2
+            )
+        )
     }
 
     /// Requests that a new output value be computed at a specified input using
