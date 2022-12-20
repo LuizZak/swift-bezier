@@ -81,10 +81,10 @@ class CachedBezierTests: XCTestCase {
         
         XCTAssertEqual(testProxy.boundingRegion_calls.count, 2)
         XCTAssertEqual(testProxy.computeSeriesSteps_calls, [
-            10, 10
+            10, 10,
         ])
         XCTAssertEqual(testProxy.createLookupTable_calls, [
-            11, 11
+            11, 11,
         ])
     }
 }

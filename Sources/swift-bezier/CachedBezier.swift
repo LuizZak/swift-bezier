@@ -2,6 +2,8 @@
 /// curve and queries made to it.
 public class CachedBezier<Bezier: BezierType> {
     var cache: Cache = Cache()
+
+    @usableFromInline
     var bezier: Bezier
 
     public init(bezier: Bezier) {
@@ -146,12 +148,13 @@ extension CachedBezier: BezierType {
         }
     }
 
+    @inlinable
     public func projectApproximate(
-        to point: Bezier.Output,
+        to point: Output,
         steps: Int,
         maxIterations: Int,
         tolerance: Output.Scalar
-    ) -> (t: Bezier.Input, output: Bezier.Output) {
+    ) -> (t: Input, output: Output) {
         
         return bezier.projectApproximate(
             to: point,
