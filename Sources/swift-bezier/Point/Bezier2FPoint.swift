@@ -1,0 +1,86 @@
+/// An implementation of `Bezier2PointType` with `Float` scalars.
+public struct Bezier2FPoint: Bezier2PointType, Hashable, CustomStringConvertible {
+    public typealias Scalar = Float
+
+    public static let zero = Bezier2FPoint(x: 0.0, y: 0.0)
+
+    public var x: Scalar
+    public var y: Scalar
+
+    public var description: String {
+        "\(type(of: self))(x: \(x), y: \(y))"
+    }
+
+    @inlinable
+    public init(x: Scalar, y: Scalar) {
+        self.x = x
+        self.y = y
+    }
+
+    @inlinable
+    public init(repeating scalar: Scalar) {
+        self.x = scalar
+        self.y = scalar
+    }
+}
+
+extension Bezier2FPoint {
+    @inlinable
+    public func lerp(to end: Bezier2FPoint, factor: Double) -> Bezier2FPoint {
+        self * Scalar(1 - factor) + end * Scalar(factor)
+    }
+
+    public func dot(_ other: Bezier2FPoint) -> Scalar {
+        x * other.x + y * other.y
+    }
+
+    @inlinable
+    public static prefix func - (value: Bezier2FPoint) -> Bezier2FPoint {
+        .init(x: -value.x, y: -value.y)
+    }
+
+    @inlinable
+    public static func * (lhs: Bezier2FPoint, rhs: Bezier2FPoint) -> Bezier2FPoint {
+        .init(x: lhs.x * rhs.x, y: lhs.y * rhs.y)
+    }
+
+    @inlinable
+    public static func / (lhs: Bezier2FPoint, rhs: Bezier2FPoint) -> Bezier2FPoint {
+        .init(x: lhs.x / rhs.x, y: lhs.y / rhs.y)
+    }
+
+    @inlinable
+    public static func * (lhs: Bezier2FPoint, rhs: Scalar) -> Bezier2FPoint {
+        lhs * .init(repeating: rhs)
+    }
+
+    @inlinable
+    public static func * (lhs: Scalar, rhs: Bezier2FPoint) -> Bezier2FPoint {
+        .init(repeating: lhs) * rhs
+    }
+
+    @inlinable
+    public static func / (lhs: Bezier2FPoint, rhs: Scalar) -> Bezier2FPoint {
+        lhs / .init(repeating: rhs)
+    }
+
+    @inlinable
+    public static func + (lhs: Bezier2FPoint, rhs: Bezier2FPoint) -> Bezier2FPoint {
+        .init(x: lhs.x + rhs.x, y: lhs.y + rhs.y)
+    }
+
+    @inlinable
+    public static func - (lhs: Bezier2FPoint, rhs: Bezier2FPoint) -> Bezier2FPoint {
+        .init(x: lhs.x - rhs.x, y: lhs.y - rhs.y)
+    }
+
+    @inlinable
+    public static func pointwiseMin(_ v1: Bezier2FPoint, _ v2: Bezier2FPoint) -> Bezier2FPoint {
+        .init(x: min(v1.x, v2.x), y: min(v1.y, v2.y))
+    }
+
+    @inlinable
+    public static func pointwiseMax(_ v1: Bezier2FPoint, _ v2: Bezier2FPoint) -> Bezier2FPoint {
+        .init(x: max(v1.x, v2.x), y: max(v1.y, v2.y))
+    }
+}

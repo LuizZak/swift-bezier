@@ -30,7 +30,7 @@ extension Bezier2DPoint {
         self * (1 - factor) + end * factor
     }
 
-    public func dot(_ other: Bezier2DPoint) -> Double {
+    public func dot(_ other: Bezier2DPoint) -> Scalar {
         x * other.x + y * other.y
     }
 
