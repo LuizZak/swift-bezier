@@ -62,7 +62,7 @@ class BinarySearchTests: XCTestCase {
             max: end,
             current: (0, -500),
             maxIterations: maxIterations
-        ) { (input, _) in
+        ) { (input, _) -> Double in
             calls += 1
             return input + 1 // Always increasing
         }
