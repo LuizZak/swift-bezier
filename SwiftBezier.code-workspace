@@ -104,6 +104,7 @@
             "lerp",
             "msvc",
             "swiftpm",
+            "whitespaces",
             "xctest"
         ],
 

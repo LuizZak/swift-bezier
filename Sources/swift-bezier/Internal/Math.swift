@@ -1,7 +1,14 @@
 /// Returns the derivative for a given list of Bézier curve control points.
 /// The resulting list is a Bézier curve of one degree less than the input points.
 @inlinable
-func derive<Point: BezierPointType>(_ points: [Point]) -> [Point] {
+func deriveBezier<Bezier: BezierType>(_ bezier: Bezier) -> [Bezier.Output] {
+    deriveBezierPoints(bezier.points)
+}
+
+/// Returns the derivative for a given list of Bézier curve control points.
+/// The resulting list is a Bézier curve of one degree less than the input points.
+@inlinable
+func deriveBezierPoints<Point: BezierPointType>(_ points: [Point]) -> [Point] {
     guard !points.isEmpty else {
         return points
     }
@@ -15,13 +22,13 @@ func derive<Point: BezierPointType>(_ points: [Point]) -> [Point] {
 /// Returns a list of derivatives for a given list of Bézier curve control points,
 /// with all derivatives down to degree 1.
 @inlinable
-func deriveAll<Point: BezierPointType>(_ points: [Point]) -> [[Point]] {
+func deriveAllBezierPoints<Point: BezierPointType>(_ points: [Point]) -> [[Point]] {
     var result: [[Point]] = []
 
     var points = points
 
     while points.count > 1 {
-        let derivative = derive(points)
+        let derivative = deriveBezierPoints(points)
         points = derivative
 
         result.append(derivative)

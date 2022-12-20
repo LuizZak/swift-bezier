@@ -2,12 +2,12 @@ import XCTest
 
 @testable import SwiftBezier
 
-class CubicBezierTests: XCTestCase {
+class QuadBezierTests: XCTestCase {
     // 'System-under-test' typealias for the object we are going to test.
-    typealias Sut = CubicBezier<Bezier2DPoint>
+    typealias Sut = QuadBezier<Bezier2DPoint>
 
     func testCompute_atZero() {
-        let sut = Sut.makeZigZagBezier()
+        let sut = Sut.makeWaveCusp()
 
         let result = sut.compute(at: 0.0)
 
@@ -15,17 +15,19 @@ class CubicBezierTests: XCTestCase {
     }
 
     func testCompute_atOne() {
-        let sut = Sut.makeZigZagBezier()
+        let sut = Sut.makeWaveCusp()
 
         let result = sut.compute(at: 1.0)
 
-        XCTAssertEqual(result, sut.p3)
+        XCTAssertEqual(result, sut.p2)
     }
 
     func testCompute_atHalf() {
-        let sut = Sut.makeZigZagBezier()
-        // for this test Bézier, this produces the correct expected result
-        let expected = sut.p0.lerp(to: sut.p3, factor: 0.5)
+        let sut = Sut.makeWaveCusp()
+        let expected = Sut.Output(
+            x: 85.0,
+            y: 132.5
+        )
 
         let result = sut.compute(at: 0.5)
 
@@ -33,9 +35,11 @@ class CubicBezierTests: XCTestCase {
     }
 
     func testSolveDeCasteljau_atHalf() {
-        let sut = Sut.makeZigZagBezier()
-        // for this test Bézier, this produces the correct expected result
-        let expected = sut.p0.lerp(to: sut.p3, factor: 0.5)
+        let sut = Sut.makeWaveCusp()
+        let expected = Sut.Output(
+            x: 85.0,
+            y: 132.5
+        )
 
         let result = sut.solveDeCasteljau(at: 0.5)
 
@@ -43,29 +47,29 @@ class CubicBezierTests: XCTestCase {
     }
 
     func testComputeSeries_zeroSteps() {
-        let sut = Sut.makeWavyBezier()
+        let sut = Sut.makeWaveCusp()
 
         let result = sut.computeSeries(steps: 0)
 
         XCTAssertEqual(result, [
-            sut.p0, sut.p3
+            sut.p0, sut.p2
         ])
     }
 
     func testComputeSeries_oneStep() {
-        let sut = Sut.makeWavyBezier()
+        let sut = Sut.makeWaveCusp()
 
         let result = sut.computeSeries(steps: 1)
 
         XCTAssertEqual(result, [
             sut.p0,
-            sut.p0.lerp(to: sut.p3, factor: 0.5), // Known half-point of this test Bézier
-            sut.p3
+            Sut.Output(x: 85.0,y: 132.5),
+            sut.p2
         ])
     }
 
     func testComputeSeries() {
-        let sut = Sut.makeWavyBezier()
+        let sut = Sut.makeWaveCusp()
 
         let result = sut.computeSeries(steps: 20)
 
@@ -73,18 +77,16 @@ class CubicBezierTests: XCTestCase {
     }
 
     func testSplit() {
-        let sut = Sut.makeWavyBezier()
+        let sut = Sut.makeWaveCusp()
         let expectedLeft = Sut(
-            p0: .init(x: 5.0, y: 13.0),
-            p1: .init(x: 5.45, y: 10.899999999999999),
-            p2: .init(x: 6.395, y: 10.689999999999998),
-            p3: .init(x: 7.5379999999999985, y: 11.235999999999997)
+            p0: .init(x: 80.0, y: 250.0),
+            p1: .init(x: 62.0, y: 208.0),
+            p2: .init(x: 67.4, y: 174.1)
         )
         let expectedRight = Sut(
-            p0: .init(x: 7.5379999999999985, y: 11.235999999999997),
-            p1: .init(x: 10.204999999999998, y: 12.509999999999998),
-            p2: .init(x: 13.95, y: 17.9),
-            p3: .init(x: 15.0, y: 13.0)
+            p0: .init(x: 67.4, y: 174.1),
+            p1: .init(x: 80.0, y: 95.0),
+            p2: .init(x: 220.0, y: 60.0)
         )
 
         let (left, right) = sut.split(at: 0.3)
@@ -94,29 +96,28 @@ class CubicBezierTests: XCTestCase {
     }
 
     func testSplit_t0() {
-        let sut = Sut.makeWavyBezier()
+        let sut = Sut.makeWaveCusp()
 
         let (left, right) = sut.split(at: 0.0)
 
-        assertEquals(left, .init(p0: sut.p0, p1: sut.p0, p2: sut.p0, p3: sut.p0))
+        assertEquals(left, .init(p0: sut.p0, p1: sut.p0, p2: sut.p0))
         assertEquals(right, sut)
     }
 
     func testSplit_t1() {
-        let sut = Sut.makeWavyBezier()
+        let sut = Sut.makeWaveCusp()
 
         let (left, right) = sut.split(at: 1.0)
 
         assertEquals(left, sut)
-        assertEquals(right, .init(p0: sut.p3, p1: sut.p3, p2: sut.p3, p3: sut.p3))
+        assertEquals(right, .init(p0: sut.p2, p1: sut.p2, p2: sut.p2))
     }
 
     func testDerivate() {
-        let sut = Sut.makeTrapezoidalBezier()
+        let sut = Sut.makeWaveCusp()
         let expected = Sut.DerivativeBezier(
-            p0: .init(x: 4.5, y: -21.0),
-            p1: .init(x: 21.0, y: 0.0),
-            p2: .init(x: 4.5, y: 21.0)
+            p0: .init(x: -120.0, y: -280.0),
+            p1: .init(x: 400.0, y: -100.0)
         )
 
         let result = sut.derivate()

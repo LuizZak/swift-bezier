@@ -2,6 +2,7 @@
 public typealias CubicBezier2<Point: Bezier2PointType> = CubicBezier<Point>
 
 extension CubicBezier2: Bounded2BezierType {
+    /// Returns the minimal bounding region for this cubic Bézier curve.
     @inlinable
     public func boundingRegion() -> (minimum: Output, maximum: Output) {
         typealias Scalar = Output.Scalar

@@ -2,6 +2,7 @@
 public typealias QuadBezier2<Point: Bezier2PointType> = QuadBezier<Point>
 
 extension QuadBezier2: Bounded2BezierType {
+    /// Returns the minimal bounding region for this quadratic Bézier curve.
     @inlinable
     public func boundingRegion() -> (minimum: Output, maximum: Output) {
         typealias Scalar = Output.Scalar
@@ -24,7 +25,7 @@ extension QuadBezier2: Bounded2BezierType {
             update(compute(at: t))
         }
 
-        let derived = derive([p0, p1, p2])
+        let derived = self.derivate()
 
         let a = derived[0]
         let b = derived[1]

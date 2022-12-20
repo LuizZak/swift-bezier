@@ -31,11 +31,15 @@ public struct QuadBezier<Output: BezierPointType>: DeCasteljauSolvableBezierType
         }
     }
 
+    public var points: [Output] {
+        [p0, p1, p2]
+    }
+
     public var description: String {
         "\(type(of: self))(p0: \(p0), p1: \(p1), p2: \(p2))"
     }
 
-    /// Initializes a quadratic Bézier curve with a set of four control points.
+    /// Initializes a quadratic Bézier curve with a set of three control points.
     @inlinable
     public init(p0: Output, p1: Output, p2: Output) {
         self.p0 = p0
@@ -89,5 +93,18 @@ public struct QuadBezier<Output: BezierPointType>: DeCasteljauSolvableBezierType
         let c = t2 * p2
 
         return a + b + c
+    }
+}
+
+extension QuadBezier: DerivableBezierType {
+    public typealias DerivativeBezier = LinearBezier<Output>
+
+    /// Returns a linear Bézier curve that is the derivative for this quadratic
+    /// Bézier curve.
+    public func derivate() -> DerivativeBezier {
+        let points = deriveBezier(self)
+        assert(points.count == 2, "Expected deriveBezier(_:) to return 2 points for the derivative of a \(type(of: self))")
+
+        return .init(p0: points[0], p1: points[1])
     }
 }

@@ -19,6 +19,9 @@ public protocol BezierType {
     /// - precondition: `pointIndex >= 0 && pointIndex < pointCount`.
     subscript(pointIndex: Int) -> Output { get }
 
+    /// Gets a list of all control points for this Bézier curve.
+    var points: [Output] { get }
+
     /// Requests that a new output value be computed at a specified input using
     /// the fastest implementation mode available for this type.
     func compute(at input: Input) -> Output
@@ -61,15 +64,20 @@ public protocol BezierType {
 
 extension BezierType {
     @inlinable
-    public func computeSeries(steps: Int) -> [Output] {
-        createLookupTable(steps: steps).table.map { $0.output }
-    }
-
-    @inlinable
     public var startInput: Input { 0 }
     
     @inlinable
     public var endInput: Input { 1 }
+
+    @inlinable
+    public var points: [Output] {
+        return (0..<pointCount).map { self[$0] }
+    }
+
+    @inlinable
+    public func computeSeries(steps: Int) -> [Output] {
+        createLookupTable(steps: steps).table.map { $0.output }
+    }
 
     @inlinable
     public func createLookupTable(steps: Int) -> BezierLookUpTable<Self> {

@@ -2,6 +2,7 @@
 public struct Bezier2FPoint: Bezier2PointType, Hashable, CustomStringConvertible {
     public typealias Scalar = Float
 
+    /// Returns the zero point, or `(0.0, 0.0)`.
     public static let zero = Bezier2FPoint(x: 0.0, y: 0.0)
 
     public var x: Scalar
@@ -11,12 +12,15 @@ public struct Bezier2FPoint: Bezier2PointType, Hashable, CustomStringConvertible
         "\(type(of: self))(x: \(x), y: \(y))"
     }
 
+    /// Creates a new 2-dimensional Bézier point with the specified coordinates.
     @inlinable
     public init(x: Scalar, y: Scalar) {
         self.x = x
         self.y = y
     }
 
+    /// Creates a new 2-dimensional Bézier point with the specified value for
+    /// both coordinates.
     @inlinable
     public init(repeating scalar: Scalar) {
         self.x = scalar
