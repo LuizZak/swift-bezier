@@ -1,7 +1,7 @@
 /// Protocol for Bézier curve types, with outputs that are geometric in nature.
 public protocol BezierType {
     /// The type for the input of this Bézier curve type.
-    associatedtype Input: Comparable, SignedNumeric
+    associatedtype Input: FloatingPoint
 
     /// The type for the output of this Bézier curve type.
     associatedtype Output: BezierPointType
@@ -64,9 +64,7 @@ extension BezierType {
     public func computeSeries(steps: Int) -> [Output] {
         createLookupTable(steps: steps).table.map { $0.output }
     }
-}
 
-extension BezierType where Input: FloatingPoint {
     @inlinable
     public var startInput: Input { 0 }
     

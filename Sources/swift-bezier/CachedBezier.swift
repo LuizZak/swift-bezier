@@ -147,22 +147,6 @@ extension CachedBezier: BezierType {
             bezier.createLookupTable(steps: steps)
         }
     }
-
-    @inlinable
-    public func projectApproximate(
-        to point: Output,
-        steps: Int,
-        maxIterations: Int,
-        tolerance: Output.Scalar
-    ) -> (t: Input, output: Output) {
-        
-        return bezier.projectApproximate(
-            to: point,
-            steps: steps,
-            maxIterations: maxIterations,
-            tolerance: tolerance
-        )
-    }
 }
 
 extension CachedBezier: Bounded2BezierType where Bezier: Bounded2BezierType {
