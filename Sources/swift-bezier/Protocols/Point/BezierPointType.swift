@@ -11,7 +11,7 @@ public protocol BezierPointType: Equatable, AdditiveArithmetic {
     /// from origin squared.
     var magnitudeSquared: Scalar { get }
 
-    /// Linearly interpolates between `self` and `factor`.
+    /// Linearly interpolates between `self` and `end` by a given factor.
     func lerp(to end: Self, factor: Double) -> Self
 
     /// Returns the distance squared from this point to another.
