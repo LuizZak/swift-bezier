@@ -1,5 +1,7 @@
 # SwiftBezier
 
+[![Swift](https://github.com/LuizZak/swift-bezier/actions/workflows/swift.yml/badge.svg?branch=main)](https://github.com/LuizZak/swift-bezier/actions/workflows/swift.yml)
+
 An implementation of [Bézier curves] in Swift.
 
 [Bézier curves]: https://en.wikipedia.org/wiki/Bézier_curve
