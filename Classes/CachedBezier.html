@@ -1,0 +1,525 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>CachedBezier Class Reference</title>
+    <link rel="stylesheet" type="text/css" href="../css/jazzy.css" />
+    <link rel="stylesheet" type="text/css" href="../css/highlight.css" />
+    <meta charset="utf-8">
+    <script src="../js/jquery.min.js" defer></script>
+    <script src="../js/jazzy.js" defer></script>
+    
+    <script src="../js/lunr.min.js" defer></script>
+    <script src="../js/typeahead.jquery.js" defer></script>
+    <script src="../js/jazzy.search.js" defer></script>
+  </head>
+  <body>
+
+    <a name="//apple_ref/swift/Class/CachedBezier" class="dashAnchor"></a>
+
+    <a title="CachedBezier Class Reference"></a>
+
+    <header class="header">
+      <p class="header-col header-col--primary">
+        <a class="header-link" href="../index.html">
+           Docs
+        </a>
+         (96% documented)
+      </p>
+    
+      <div class="header-col--secondary">
+        <form role="search" action="../search.json">
+          <input type="text" placeholder="Search documentation" data-typeahead>
+        </form>
+      </div>
+    
+    
+    </header>
+
+    <p class="breadcrumbs">
+      <a class="breadcrumb" href="../index.html"> Reference</a>
+      <img class="carat" src="../img/carat.png" alt=""/>
+      CachedBezier Class Reference
+    </p>
+
+    <div class="content-wrapper">
+      <nav class="navigation">
+        <ul class="nav-groups">
+          <li class="nav-group-name">
+            <a class="nav-group-name-link" href="../Guides.html">Guides</a>
+            <ul class="nav-group-tasks">
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../license.html">LICENSE</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../readme.html">README</a>
+              </li>
+            </ul>
+          </li>
+          <li class="nav-group-name">
+            <a class="nav-group-name-link" href="../Classes.html">Classes</a>
+            <ul class="nav-group-tasks">
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Classes/CachedBezier.html">CachedBezier</a>
+              </li>
+            </ul>
+          </li>
+          <li class="nav-group-name">
+            <a class="nav-group-name-link" href="../Extensions.html">Extensions</a>
+            <ul class="nav-group-tasks">
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Extensions/BezierLookUpTable.html">BezierLookUpTable</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Extensions/CubicBezier2.html">CubicBezier2</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Extensions/QuadBezier2.html">QuadBezier2</a>
+              </li>
+            </ul>
+          </li>
+          <li class="nav-group-name">
+            <a class="nav-group-name-link" href="../Functions.html">Functions</a>
+            <ul class="nav-group-tasks">
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Functions.html#/s:11SwiftBezier16solveDeCasteljau_6factorxSayxG_SdtAA0B9PointTypeRzlF">solveDeCasteljau(_:factor:)</a>
+              </li>
+            </ul>
+          </li>
+          <li class="nav-group-name">
+            <a class="nav-group-name-link" href="../Protocols.html">Protocols</a>
+            <ul class="nav-group-tasks">
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Protocols/Bezier2PointType.html">Bezier2PointType</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Protocols/BezierPointType.html">BezierPointType</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Protocols/BezierType.html">BezierType</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Protocols/Bounded2BezierType.html">Bounded2BezierType</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Protocols/DeCasteljauSolvableBezierType.html">DeCasteljauSolvableBezierType</a>
+              </li>
+            </ul>
+          </li>
+          <li class="nav-group-name">
+            <a class="nav-group-name-link" href="../Structs.html">Structures</a>
+            <ul class="nav-group-tasks">
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Structs/Bezier2DPoint.html">Bezier2DPoint</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Structs/Bezier2FPoint.html">Bezier2FPoint</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Structs/CubicBezier.html">CubicBezier</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Structs/LookUpTable.html">LookUpTable</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Structs/QuadBezier.html">QuadBezier</a>
+              </li>
+            </ul>
+          </li>
+          <li class="nav-group-name">
+            <a class="nav-group-name-link" href="../Typealiases.html">Type Aliases</a>
+            <ul class="nav-group-tasks">
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Typealiases.html#/s:11SwiftBezier0B11LookUpTablea">BezierLookUpTable</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Typealiases.html#/s:11SwiftBezier12CubicBezier2a">CubicBezier2</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Typealiases.html#/s:11SwiftBezier13CubicBezier2Da">CubicBezier2D</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Typealiases.html#/s:11SwiftBezier13CubicBezier2Fa">CubicBezier2F</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Typealiases.html#/s:11SwiftBezier11QuadBezier2a">QuadBezier2</a>
+              </li>
+            </ul>
+          </li>
+        </ul>
+      </nav>
+      <article class="main-content">
+
+        <section class="section">
+          <div class="section-content top-matter">
+            <h1>CachedBezier</h1>
+              <div class="declaration">
+                <div class="language">
+                  
+                  <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">class</span> <span class="kt">CachedBezier</span><span class="o">&lt;</span><span class="kt">Bezier</span><span class="o">&gt;</span> <span class="k">where</span> <span class="kt">Bezier</span> <span class="p">:</span> <span class="kt"><a href="../Protocols/BezierType.html">BezierType</a></span></code></pre>
+<pre class="highlight swift"><code><span class="kd">extension</span> <span class="kt">CachedBezier</span><span class="p">:</span> <span class="kt"><a href="../Protocols/BezierType.html">BezierType</a></span></code></pre>
+<pre class="highlight swift"><code><span class="kd">extension</span> <span class="kt">CachedBezier</span><span class="p">:</span> <span class="kt"><a href="../Protocols/Bounded2BezierType.html">Bounded2BezierType</a></span> <span class="k">where</span> <span class="kt">Bezier</span><span class="p">:</span> <span class="kt"><a href="../Protocols/Bounded2BezierType.html">Bounded2BezierType</a></span></code></pre>
+
+                </div>
+              </div>
+            <p>A wrapper object that caches information related to its underlying Bézier
+curve and queries made to it.</p>
+
+          </div>
+        </section>
+
+        <section class="section">
+          <div class="section-content">
+            <div class="task-group">
+              <ul class="item-container">
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:11SwiftBezier06CachedB0C6bezierACyxGx_tcfc"></a>
+                    <a name="//apple_ref/swift/Method/init(bezier:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:11SwiftBezier06CachedB0C6bezierACyxGx_tcfc">init(bezier:<wbr>)</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Undocumented</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="nf">init</span><span class="p">(</span><span class="nv">bezier</span><span class="p">:</span> <span class="kt">Bezier</span><span class="p">)</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:11SwiftBezier06CachedB0C05flushC6ValuesyyF"></a>
+                    <a name="//apple_ref/swift/Method/flushCachedValues()" class="dashAnchor"></a>
+                    <a class="token" href="#/s:11SwiftBezier06CachedB0C05flushC6ValuesyyF">flushCachedValues()</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Flushes all cached values, reducing memory usage but requiring recomputation
+on next invocations of cacheable accessors.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">func</span> <span class="nf">flushCachedValues</span><span class="p">()</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:11SwiftBezier0B4TypeP5InputQa"></a>
+                    <a name="//apple_ref/swift/Alias/Input" class="dashAnchor"></a>
+                    <a class="token" href="#/s:11SwiftBezier0B4TypeP5InputQa">Input</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">typealias</span> <span class="kt">Input</span> <span class="o">=</span> <span class="kt">Bezier</span><span class="o">.</span><span class="kt">Input</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:11SwiftBezier0B4TypeP6OutputQa"></a>
+                    <a name="//apple_ref/swift/Alias/Output" class="dashAnchor"></a>
+                    <a class="token" href="#/s:11SwiftBezier0B4TypeP6OutputQa">Output</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">typealias</span> <span class="kt">Output</span> <span class="o">=</span> <span class="kt">Bezier</span><span class="o">.</span><span class="kt">Output</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:11SwiftBezier0B4TypeP10startInput0E0Qzvp"></a>
+                    <a name="//apple_ref/swift/Property/startInput" class="dashAnchor"></a>
+                    <a class="token" href="#/s:11SwiftBezier0B4TypeP10startInput0E0Qzvp">startInput</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="k">var</span> <span class="nv">startInput</span><span class="p">:</span> <span class="kt">Bezier</span><span class="o">.</span><span class="kt"><a href="../Classes/CachedBezier.html#/s:11SwiftBezier0B4TypeP5InputQa">Input</a></span> <span class="p">{</span> <span class="k">get</span> <span class="p">}</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:11SwiftBezier0B4TypeP8endInput0E0Qzvp"></a>
+                    <a name="//apple_ref/swift/Property/endInput" class="dashAnchor"></a>
+                    <a class="token" href="#/s:11SwiftBezier0B4TypeP8endInput0E0Qzvp">endInput</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="k">var</span> <span class="nv">endInput</span><span class="p">:</span> <span class="kt">Bezier</span><span class="o">.</span><span class="kt"><a href="../Classes/CachedBezier.html#/s:11SwiftBezier0B4TypeP5InputQa">Input</a></span> <span class="p">{</span> <span class="k">get</span> <span class="p">}</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:11SwiftBezier0B4TypeP10pointCountSivp"></a>
+                    <a name="//apple_ref/swift/Property/pointCount" class="dashAnchor"></a>
+                    <a class="token" href="#/s:11SwiftBezier0B4TypeP10pointCountSivp">pointCount</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="k">var</span> <span class="nv">pointCount</span><span class="p">:</span> <span class="kt">Int</span> <span class="p">{</span> <span class="k">get</span> <span class="p">}</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:11SwiftBezier0B4TypePy6OutputQzSicip"></a>
+                    <a name="//apple_ref/swift/Method/subscript(_:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:11SwiftBezier0B4TypePy6OutputQzSicip">subscript(_:<wbr>)</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="nf">subscript</span><span class="p">(</span><span class="nv">pointIndex</span><span class="p">:</span> <span class="kt">Int</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt">Bezier</span><span class="o">.</span><span class="kt"><a href="../Classes/CachedBezier.html#/s:11SwiftBezier0B4TypeP6OutputQa">Output</a></span> <span class="p">{</span> <span class="k">get</span> <span class="p">}</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:11SwiftBezier0B4TypeP7compute2at6OutputQz5InputQz_tF"></a>
+                    <a name="//apple_ref/swift/Method/compute(at:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:11SwiftBezier0B4TypeP7compute2at6OutputQz5InputQz_tF">compute(at:<wbr>)</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">func</span> <span class="nf">compute</span><span class="p">(</span><span class="n">at</span> <span class="nv">input</span><span class="p">:</span> <span class="kt"><a href="../Classes/CachedBezier.html#/s:11SwiftBezier0B4TypeP5InputQa">Input</a></span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt"><a href="../Classes/CachedBezier.html#/s:11SwiftBezier0B4TypeP6OutputQa">Output</a></span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:11SwiftBezier0B4TypeP13computeSeries5stepsSay6OutputQzGSi_tF"></a>
+                    <a name="//apple_ref/swift/Method/computeSeries(steps:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:11SwiftBezier0B4TypeP13computeSeries5stepsSay6OutputQzGSi_tF">computeSeries(steps:<wbr>)</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">func</span> <span class="nf">computeSeries</span><span class="p">(</span><span class="nv">steps</span><span class="p">:</span> <span class="kt">Int</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="p">[</span><span class="kt">Bezier</span><span class="o">.</span><span class="kt"><a href="../Classes/CachedBezier.html#/s:11SwiftBezier0B4TypeP6OutputQa">Output</a></span><span class="p">]</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:11SwiftBezier06CachedB0C17createLookupTable5stepsAA06LookUpF0Vy5InputQz6OutputQzGSi_tF"></a>
+                    <a name="//apple_ref/swift/Method/createLookupTable(steps:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:11SwiftBezier06CachedB0C17createLookupTable5stepsAA06LookUpF0Vy5InputQz6OutputQzGSi_tF">createLookupTable(steps:<wbr>)</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <div class="aside aside-note">
+    <p class="aside-title">Note</p>
+    The result of this operation is cached and reused on next invocations
+with the same input <code>steps</code>.
+
+</div>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">func</span> <span class="nf">createLookupTable</span><span class="p">(</span><span class="nv">steps</span><span class="p">:</span> <span class="kt">Int</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt"><a href="../Typealiases.html#/s:11SwiftBezier0B11LookUpTablea">BezierLookUpTable</a></span><span class="o">&lt;</span><span class="kt">Bezier</span><span class="o">&gt;</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+              </ul>
+            </div>
+            <div class="task-group">
+              <div class="task-name-container">
+                <a name="/Available%20where%20%60Bezier%60%3A%20%60Bounded2BezierType%60"></a>
+                <a name="//apple_ref/swift/Section/Available where `Bezier`: `Bounded2BezierType`" class="dashAnchor"></a>
+                <div class="section-name-container">
+                  <a class="section-name-link" href="#/Available%20where%20%60Bezier%60%3A%20%60Bounded2BezierType%60"></a>
+                  <h3 class="section-name"><span>Available where <code>Bezier</code>: <code><a href="../Protocols/Bounded2BezierType.html">Bounded2BezierType</a></code></span>
+</h3>
+                </div>
+              </div>
+              <ul class="item-container">
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:11SwiftBezier06CachedB0CA2A08Bounded2B4TypeRzrlE14boundingRegion6OutputQz7minimum_AG7maximumtyF"></a>
+                    <a name="//apple_ref/swift/Method/boundingRegion()" class="dashAnchor"></a>
+                    <a class="token" href="#/s:11SwiftBezier06CachedB0CA2A08Bounded2B4TypeRzrlE14boundingRegion6OutputQz7minimum_AG7maximumtyF">boundingRegion()</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <div class="aside aside-note">
+    <p class="aside-title">Note</p>
+    The result of this operation is cached.
+
+</div>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">func</span> <span class="nf">boundingRegion</span><span class="p">()</span> <span class="o">-&gt;</span> <span class="p">(</span><span class="nv">minimum</span><span class="p">:</span> <span class="kt">Bezier</span><span class="o">.</span><span class="kt"><a href="../Classes/CachedBezier.html#/s:11SwiftBezier0B4TypeP6OutputQa">Output</a></span><span class="p">,</span> <span class="nv">maximum</span><span class="p">:</span> <span class="kt">Bezier</span><span class="o">.</span><span class="kt"><a href="../Classes/CachedBezier.html#/s:11SwiftBezier0B4TypeP6OutputQa">Output</a></span><span class="p">)</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </section>
+
+      </article>
+    </div>
+    <section class="footer">
+      <p>&copy; 2022 <a class="link" href="" target="_blank" rel="external noopener"></a>. All rights reserved. (Last updated: 2022-12-20)</p>
+      <p>Generated by <a class="link" href="https://github.com/realm/jazzy" target="_blank" rel="external noopener">jazzy ♪♫ v0.14.3</a>, a <a class="link" href="https://realm.io" target="_blank" rel="external noopener">Realm</a> project.</p>
+    </section>
+  </body>
+</html>

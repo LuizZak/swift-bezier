@@ -1,0 +1,526 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>BezierType Protocol Reference</title>
+    <link rel="stylesheet" type="text/css" href="../css/jazzy.css" />
+    <link rel="stylesheet" type="text/css" href="../css/highlight.css" />
+    <meta charset="utf-8">
+    <script src="../js/jquery.min.js" defer></script>
+    <script src="../js/jazzy.js" defer></script>
+    
+    <script src="../js/lunr.min.js" defer></script>
+    <script src="../js/typeahead.jquery.js" defer></script>
+    <script src="../js/jazzy.search.js" defer></script>
+  </head>
+  <body>
+
+    <a name="//apple_ref/swift/Protocol/BezierType" class="dashAnchor"></a>
+
+    <a title="BezierType Protocol Reference"></a>
+
+    <header class="header">
+      <p class="header-col header-col--primary">
+        <a class="header-link" href="../index.html">
+           Docs
+        </a>
+         (96% documented)
+      </p>
+    
+      <div class="header-col--secondary">
+        <form role="search" action="../search.json">
+          <input type="text" placeholder="Search documentation" data-typeahead>
+        </form>
+      </div>
+    
+    
+    </header>
+
+    <p class="breadcrumbs">
+      <a class="breadcrumb" href="../index.html"> Reference</a>
+      <img class="carat" src="../img/carat.png" alt=""/>
+      BezierType Protocol Reference
+    </p>
+
+    <div class="content-wrapper">
+      <nav class="navigation">
+        <ul class="nav-groups">
+          <li class="nav-group-name">
+            <a class="nav-group-name-link" href="../Guides.html">Guides</a>
+            <ul class="nav-group-tasks">
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../license.html">LICENSE</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../readme.html">README</a>
+              </li>
+            </ul>
+          </li>
+          <li class="nav-group-name">
+            <a class="nav-group-name-link" href="../Classes.html">Classes</a>
+            <ul class="nav-group-tasks">
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Classes/CachedBezier.html">CachedBezier</a>
+              </li>
+            </ul>
+          </li>
+          <li class="nav-group-name">
+            <a class="nav-group-name-link" href="../Extensions.html">Extensions</a>
+            <ul class="nav-group-tasks">
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Extensions/BezierLookUpTable.html">BezierLookUpTable</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Extensions/CubicBezier2.html">CubicBezier2</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Extensions/QuadBezier2.html">QuadBezier2</a>
+              </li>
+            </ul>
+          </li>
+          <li class="nav-group-name">
+            <a class="nav-group-name-link" href="../Functions.html">Functions</a>
+            <ul class="nav-group-tasks">
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Functions.html#/s:11SwiftBezier16solveDeCasteljau_6factorxSayxG_SdtAA0B9PointTypeRzlF">solveDeCasteljau(_:factor:)</a>
+              </li>
+            </ul>
+          </li>
+          <li class="nav-group-name">
+            <a class="nav-group-name-link" href="../Protocols.html">Protocols</a>
+            <ul class="nav-group-tasks">
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Protocols/Bezier2PointType.html">Bezier2PointType</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Protocols/BezierPointType.html">BezierPointType</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Protocols/BezierType.html">BezierType</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Protocols/Bounded2BezierType.html">Bounded2BezierType</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Protocols/DeCasteljauSolvableBezierType.html">DeCasteljauSolvableBezierType</a>
+              </li>
+            </ul>
+          </li>
+          <li class="nav-group-name">
+            <a class="nav-group-name-link" href="../Structs.html">Structures</a>
+            <ul class="nav-group-tasks">
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Structs/Bezier2DPoint.html">Bezier2DPoint</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Structs/Bezier2FPoint.html">Bezier2FPoint</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Structs/CubicBezier.html">CubicBezier</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Structs/LookUpTable.html">LookUpTable</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Structs/QuadBezier.html">QuadBezier</a>
+              </li>
+            </ul>
+          </li>
+          <li class="nav-group-name">
+            <a class="nav-group-name-link" href="../Typealiases.html">Type Aliases</a>
+            <ul class="nav-group-tasks">
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Typealiases.html#/s:11SwiftBezier0B11LookUpTablea">BezierLookUpTable</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Typealiases.html#/s:11SwiftBezier12CubicBezier2a">CubicBezier2</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Typealiases.html#/s:11SwiftBezier13CubicBezier2Da">CubicBezier2D</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Typealiases.html#/s:11SwiftBezier13CubicBezier2Fa">CubicBezier2F</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Typealiases.html#/s:11SwiftBezier11QuadBezier2a">QuadBezier2</a>
+              </li>
+            </ul>
+          </li>
+        </ul>
+      </nav>
+      <article class="main-content">
+
+        <section class="section">
+          <div class="section-content top-matter">
+            <h1>BezierType</h1>
+              <div class="declaration">
+                <div class="language">
+                  
+                  <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">protocol</span> <span class="kt">BezierType</span></code></pre>
+
+                </div>
+              </div>
+            <p>Protocol for Bézier curve types, with outputs that are geometric in nature.</p>
+
+          </div>
+        </section>
+
+        <section class="section">
+          <div class="section-content">
+            <div class="task-group">
+              <ul class="item-container">
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:11SwiftBezier0B4TypeP5InputQa"></a>
+                    <a name="//apple_ref/swift/Alias/Input" class="dashAnchor"></a>
+                    <a class="token" href="#/s:11SwiftBezier0B4TypeP5InputQa">Input</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>The type for the input of this Bézier curve type.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">associatedtype</span> <span class="kt">Input</span> <span class="p">:</span> <span class="kt">FloatingPoint</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:11SwiftBezier0B4TypeP6OutputQa"></a>
+                    <a name="//apple_ref/swift/Alias/Output" class="dashAnchor"></a>
+                    <a class="token" href="#/s:11SwiftBezier0B4TypeP6OutputQa">Output</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>The type for the output of this Bézier curve type.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">associatedtype</span> <span class="kt">Output</span> <span class="p">:</span> <span class="kt"><a href="../Protocols/BezierPointType.html">BezierPointType</a></span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:11SwiftBezier0B4TypeP10startInput0E0Qzvp"></a>
+                    <a name="//apple_ref/swift/Property/startInput" class="dashAnchor"></a>
+                    <a class="token" href="#/s:11SwiftBezier0B4TypeP10startInput0E0Qzvp">startInput</a>
+                    </code>
+                      <span class="declaration-note">
+                        Default implementation
+                      </span>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>The minimal input that can be computed in this Bézier curve.</p>
+
+                      </div>
+                      <h4>Default Implementation</h4>
+                      <div class="default_impl abstract">
+                        
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="k">var</span> <span class="nv">startInput</span><span class="p">:</span> <span class="kt"><a href="../Protocols/BezierType.html#/s:11SwiftBezier0B4TypeP5InputQa">Input</a></span> <span class="p">{</span> <span class="k">get</span> <span class="p">}</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:11SwiftBezier0B4TypeP8endInput0E0Qzvp"></a>
+                    <a name="//apple_ref/swift/Property/endInput" class="dashAnchor"></a>
+                    <a class="token" href="#/s:11SwiftBezier0B4TypeP8endInput0E0Qzvp">endInput</a>
+                    </code>
+                      <span class="declaration-note">
+                        Default implementation
+                      </span>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>The maximal input that can be computed in this Bézier curve.</p>
+
+                      </div>
+                      <h4>Default Implementation</h4>
+                      <div class="default_impl abstract">
+                        
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="k">var</span> <span class="nv">endInput</span><span class="p">:</span> <span class="kt"><a href="../Protocols/BezierType.html#/s:11SwiftBezier0B4TypeP5InputQa">Input</a></span> <span class="p">{</span> <span class="k">get</span> <span class="p">}</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:11SwiftBezier0B4TypeP10pointCountSivp"></a>
+                    <a name="//apple_ref/swift/Property/pointCount" class="dashAnchor"></a>
+                    <a class="token" href="#/s:11SwiftBezier0B4TypeP10pointCountSivp">pointCount</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>The number of points on this Bézier curve.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="k">var</span> <span class="nv">pointCount</span><span class="p">:</span> <span class="kt">Int</span> <span class="p">{</span> <span class="k">get</span> <span class="p">}</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:11SwiftBezier0B4TypePy6OutputQzSicip"></a>
+                    <a name="//apple_ref/swift/Method/subscript(_:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:11SwiftBezier0B4TypePy6OutputQzSicip">subscript(_:<wbr>)</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Returns the point at a specified point index.</p>
+<div class="aside aside-precondition">
+    <p class="aside-title">Precondition</p>
+    <code>pointIndex &gt;= 0 &amp;&amp; pointIndex &lt; pointCount</code>.
+
+</div>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="nf">subscript</span><span class="p">(</span><span class="nv">pointIndex</span><span class="p">:</span> <span class="kt">Int</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt"><a href="../Protocols/BezierType.html#/s:11SwiftBezier0B4TypeP6OutputQa">Output</a></span> <span class="p">{</span> <span class="k">get</span> <span class="p">}</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:11SwiftBezier0B4TypeP7compute2at6OutputQz5InputQz_tF"></a>
+                    <a name="//apple_ref/swift/Method/compute(at:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:11SwiftBezier0B4TypeP7compute2at6OutputQz5InputQz_tF">compute(at:<wbr>)</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Requests that a new output value be computed at a specified input using
+the fastest implementation mode available for this type.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">func</span> <span class="nf">compute</span><span class="p">(</span><span class="n">at</span> <span class="nv">input</span><span class="p">:</span> <span class="kt"><a href="../Protocols/BezierType.html#/s:11SwiftBezier0B4TypeP5InputQa">Input</a></span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt"><a href="../Protocols/BezierType.html#/s:11SwiftBezier0B4TypeP6OutputQa">Output</a></span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:11SwiftBezier0B4TypeP13computeSeries5stepsSay6OutputQzGSi_tF"></a>
+                    <a name="//apple_ref/swift/Method/computeSeries(steps:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:11SwiftBezier0B4TypeP13computeSeries5stepsSay6OutputQzGSi_tF">computeSeries(steps:<wbr>)</a>
+                    </code>
+                      <span class="declaration-note">
+                        Default implementation
+                      </span>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Requests that a series of output values be computed for this Bézier,
+with intervals that divide <code><a href="../Protocols/BezierType.html#/s:11SwiftBezier0B4TypeP10startInput0E0Qzvp">startInput</a></code> and <code><a href="../Protocols/BezierType.html#/s:11SwiftBezier0B4TypeP8endInput0E0Qzvp">endInput</a></code> into <code>steps</code> number
+of equally-spaced input values.</p>
+
+<p>Returned array always contains the result of <code><a href="../Protocols/BezierType.html#/s:11SwiftBezier0B4TypeP10startInput0E0Qzvp">startInput</a></code> and <code><a href="../Protocols/BezierType.html#/s:11SwiftBezier0B4TypeP8endInput0E0Qzvp">endInput</a></code>
+themselves, which are the first and last points on this Bézier curve, so
+those two points don&rsquo;t count towards the number of steps.</p>
+<div class="aside aside-precondition">
+    <p class="aside-title">Precondition</p>
+    <code>steps &gt;= 0</code>.
+
+</div>
+
+                      </div>
+                      <h4>Default Implementation</h4>
+                      <div class="default_impl abstract">
+                        
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">func</span> <span class="nf">computeSeries</span><span class="p">(</span><span class="nv">steps</span><span class="p">:</span> <span class="kt">Int</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="p">[</span><span class="kt"><a href="../Protocols/BezierType.html#/s:11SwiftBezier0B4TypeP6OutputQa">Output</a></span><span class="p">]</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:11SwiftBezier0B4TypeP17createLookupTable5stepsAA06LookUpF0Vy5InputQz6OutputQzGSi_tF"></a>
+                    <a name="//apple_ref/swift/Method/createLookupTable(steps:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:11SwiftBezier0B4TypeP17createLookupTable5stepsAA06LookUpF0Vy5InputQz6OutputQzGSi_tF">createLookupTable(steps:<wbr>)</a>
+                    </code>
+                      <span class="declaration-note">
+                        Default implementation
+                      </span>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Creates a lookup table for this Bézier curve with a given number of
+subdivision steps within it.</p>
+
+<p>Returned lookup table always contains the result of <code><a href="../Protocols/BezierType.html#/s:11SwiftBezier0B4TypeP10startInput0E0Qzvp">startInput</a></code> and
+<code><a href="../Protocols/BezierType.html#/s:11SwiftBezier0B4TypeP8endInput0E0Qzvp">endInput</a></code> themselves, which are the first and last points on this Bézier
+curve, so those two points don&rsquo;t count towards the number of steps.</p>
+<div class="aside aside-precondition">
+    <p class="aside-title">Precondition</p>
+    <code>steps &gt;= 0</code>.
+
+</div>
+
+                      </div>
+                      <h4>Default Implementation</h4>
+                      <div class="default_impl abstract">
+                        
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">func</span> <span class="nf">createLookupTable</span><span class="p">(</span><span class="nv">steps</span><span class="p">:</span> <span class="kt">Int</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt"><a href="../Typealiases.html#/s:11SwiftBezier0B11LookUpTablea">BezierLookUpTable</a></span><span class="o">&lt;</span><span class="k">Self</span><span class="o">&gt;</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:11SwiftBezier0B4TypeP18projectApproximate2to5steps13maxIterations9tolerance5InputQz1t_6OutputQz6outputtAM_S2iAL_6ScalarQZtF"></a>
+                    <a name="//apple_ref/swift/Method/projectApproximate(to:steps:maxIterations:tolerance:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:11SwiftBezier0B4TypeP18projectApproximate2to5steps13maxIterations9tolerance5InputQz1t_6OutputQz6outputtAM_S2iAL_6ScalarQZtF">projectApproximate(to:<wbr>steps:<wbr>maxIterations:<wbr>tolerance:<wbr>)</a>
+                    </code>
+                      <span class="declaration-note">
+                        Default implementation
+                      </span>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Performs an approximation of the closest point on this Bézier to a given
+point outside of it.</p>
+
+<p>The approximation is controlled by a number of steps to split the Bézier
+into before the closest interval is found and iterating over it until
+it either exceeds a number of maximum iterations or the point approaches
+a limit where changes to input are smaller than <code>tolerance</code>.</p>
+
+                      </div>
+                      <h4>Default Implementation</h4>
+                      <div class="default_impl abstract">
+                        
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">func</span> <span class="nf">projectApproximate</span><span class="p">(</span>
+    <span class="n">to</span> <span class="nv">point</span><span class="p">:</span> <span class="kt"><a href="../Protocols/BezierType.html#/s:11SwiftBezier0B4TypeP6OutputQa">Output</a></span><span class="p">,</span>
+    <span class="nv">steps</span><span class="p">:</span> <span class="kt">Int</span><span class="p">,</span>
+    <span class="nv">maxIterations</span><span class="p">:</span> <span class="kt">Int</span><span class="p">,</span>
+    <span class="nv">tolerance</span><span class="p">:</span> <span class="kt"><a href="../Protocols/BezierType.html#/s:11SwiftBezier0B4TypeP6OutputQa">Output</a></span><span class="o">.</span><span class="kt">Scalar</span>
+<span class="p">)</span> <span class="o">-&gt;</span> <span class="p">(</span><span class="nv">t</span><span class="p">:</span> <span class="kt"><a href="../Protocols/BezierType.html#/s:11SwiftBezier0B4TypeP5InputQa">Input</a></span><span class="p">,</span> <span class="nv">output</span><span class="p">:</span> <span class="kt"><a href="../Protocols/BezierType.html#/s:11SwiftBezier0B4TypeP6OutputQa">Output</a></span><span class="p">)</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </section>
+
+      </article>
+    </div>
+    <section class="footer">
+      <p>&copy; 2022 <a class="link" href="" target="_blank" rel="external noopener"></a>. All rights reserved. (Last updated: 2022-12-20)</p>
+      <p>Generated by <a class="link" href="https://github.com/realm/jazzy" target="_blank" rel="external noopener">jazzy ♪♫ v0.14.3</a>, a <a class="link" href="https://realm.io" target="_blank" rel="external noopener">Realm</a> project.</p>
+    </section>
+  </body>
+</html>

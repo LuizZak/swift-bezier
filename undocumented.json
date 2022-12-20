@@ -1,0 +1,40 @@
+{
+  "warnings": [
+    {
+      "file": "/Users/runner/work/swift-bezier/swift-bezier/Sources/swift-bezier/CachedBezier.swift",
+      "line": 9,
+      "symbol": "CachedBezier.init(bezier:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/runner/work/swift-bezier/swift-bezier/Sources/swift-bezier/Point/Bezier2DPoint.swift",
+      "line": 15,
+      "symbol": "Bezier2DPoint.init(x:y:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/runner/work/swift-bezier/swift-bezier/Sources/swift-bezier/Point/Bezier2DPoint.swift",
+      "line": 21,
+      "symbol": "Bezier2DPoint.init(repeating:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/runner/work/swift-bezier/swift-bezier/Sources/swift-bezier/Point/Bezier2FPoint.swift",
+      "line": 15,
+      "symbol": "Bezier2FPoint.init(x:y:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/runner/work/swift-bezier/swift-bezier/Sources/swift-bezier/Point/Bezier2FPoint.swift",
+      "line": 21,
+      "symbol": "Bezier2FPoint.init(repeating:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    }
+  ],
+  "source_directory": "/Users/runner/work/swift-bezier/swift-bezier"
+}
