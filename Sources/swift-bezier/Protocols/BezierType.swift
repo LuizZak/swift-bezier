@@ -12,7 +12,8 @@ public protocol BezierType {
     /// The maximal input that can be computed in this Bézier curve.
     var endInput: Input { get }
 
-    /// The number of points on this Bézier curve.
+    /// The number of points on this Bézier curve. Should always be `>= 1` for
+    /// any degree of Bézier curve object greater than -1.
     var pointCount: Int { get }
 
     /// Returns the point at a specified point index.
@@ -20,7 +21,17 @@ public protocol BezierType {
     subscript(pointIndex: Int) -> Output { get }
 
     /// Gets a list of all control points for this Bézier curve.
+    /// Always contains at least one point for any degree of Bézier curve object
+    /// greater than -1.
     var points: [Output] { get }
+
+    /// Gets the first control point of this Bézier curve object. It is
+    /// necessarily the same as the point obtained by `compute(at: startInput)`.
+    var firstPoint: Output { get }
+
+    /// Gets the last control point of this Bézier curve object. It is
+    /// necessarily the same as the point obtained by `compute(at: endInput)`.
+    var lastPoint: Output { get }
 
     /// Requests that a new output value be computed at a specified input using
     /// the fastest implementation mode available for this type.
@@ -72,6 +83,16 @@ extension BezierType {
     @inlinable
     public var points: [Output] {
         return (0..<pointCount).map { self[$0] }
+    }
+
+    @inlinable
+    public var firstPoint: Output {
+        self[0]
+    }
+
+    @inlinable
+    public var lastPoint: Output {
+        self[pointCount - 1]
     }
 
     @inlinable

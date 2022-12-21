@@ -1,7 +1,7 @@
 /// A linear Bézier curve of degree 1.
 ///
-/// It is convenient mostly as the result of the derivative of a degree 2 Bézier
-/// curve, of a quadratic Bézier.
+/// It is convenient mostly as the result of the derivative of a degree 2, or 
+/// quadratic- Bézier curve.
 public struct LinearBezier<Output: BezierPointType>: DeCasteljauSolvableBezierType, CustomStringConvertible {
     public typealias Input = Output.Scalar
 
