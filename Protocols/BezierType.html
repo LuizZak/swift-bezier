@@ -315,7 +315,8 @@
                     <section class="section">
                       <div class="pointer"></div>
                       <div class="abstract">
-                        <p>The number of points on this Bézier curve.</p>
+                        <p>The number of points on this Bézier curve. Should always be <code>&gt;= 1</code> for
+any degree of Bézier curve object greater than -1.</p>
 
                       </div>
                       <div class="declaration">
@@ -377,7 +378,9 @@
                     <section class="section">
                       <div class="pointer"></div>
                       <div class="abstract">
-                        <p>Gets a list of all control points for this Bézier curve.</p>
+                        <p>Gets a list of all control points for this Bézier curve.
+Always contains at least one point for any degree of Bézier curve object
+greater than -1.</p>
 
                       </div>
                       <h4>Default Implementation</h4>
@@ -389,6 +392,76 @@
                         <div class="language">
                           <p class="aside-title">Swift</p>
                           <pre class="highlight swift"><code><span class="k">var</span> <span class="nv">points</span><span class="p">:</span> <span class="p">[</span><span class="kt"><a href="../Protocols/BezierType.html#/s:11SwiftBezier0B4TypeP6OutputQa">Output</a></span><span class="p">]</span> <span class="p">{</span> <span class="k">get</span> <span class="p">}</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:11SwiftBezier0B4TypeP10firstPoint6OutputQzvp"></a>
+                    <a name="//apple_ref/swift/Property/firstPoint" class="dashAnchor"></a>
+                    <a class="token" href="#/s:11SwiftBezier0B4TypeP10firstPoint6OutputQzvp">firstPoint</a>
+                    </code>
+                      <span class="declaration-note">
+                        Default implementation
+                      </span>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Gets the first control point of this Bézier curve object. It is
+necessarily the same as the point obtained by <code>compute(at: startInput)</code>.</p>
+
+                      </div>
+                      <h4>Default Implementation</h4>
+                      <div class="default_impl abstract">
+                        
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="k">var</span> <span class="nv">firstPoint</span><span class="p">:</span> <span class="kt"><a href="../Protocols/BezierType.html#/s:11SwiftBezier0B4TypeP6OutputQa">Output</a></span> <span class="p">{</span> <span class="k">get</span> <span class="p">}</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:11SwiftBezier0B4TypeP9lastPoint6OutputQzvp"></a>
+                    <a name="//apple_ref/swift/Property/lastPoint" class="dashAnchor"></a>
+                    <a class="token" href="#/s:11SwiftBezier0B4TypeP9lastPoint6OutputQzvp">lastPoint</a>
+                    </code>
+                      <span class="declaration-note">
+                        Default implementation
+                      </span>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Gets the last control point of this Bézier curve object. It is
+necessarily the same as the point obtained by <code>compute(at: endInput)</code>.</p>
+
+                      </div>
+                      <h4>Default Implementation</h4>
+                      <div class="default_impl abstract">
+                        
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="k">var</span> <span class="nv">lastPoint</span><span class="p">:</span> <span class="kt"><a href="../Protocols/BezierType.html#/s:11SwiftBezier0B4TypeP6OutputQa">Output</a></span> <span class="p">{</span> <span class="k">get</span> <span class="p">}</span></code></pre>
 
                         </div>
                       </div>
