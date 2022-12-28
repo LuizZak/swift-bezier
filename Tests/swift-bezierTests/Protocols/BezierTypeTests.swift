@@ -50,4 +50,34 @@ class BezierTypeTests: XCTestCase {
         XCTAssertEqual(result.t, 1.0, accuracy: 1e-10)
         XCTAssertEqual(result.output, sut.p3)
     }
+
+    func testProjectApproximate_horizontalLineBezier() {
+        let sut = TestBezier.makeHorizontalLineBezier()
+        let point = sut.p1.lerp(to: sut.p2, factor: 0.5) + .init(x: 0.0, y: 10.0)
+
+        let result = sut.projectApproximate(
+            to: point,
+            steps: 50,
+            maxIterations: 10,
+            tolerance: 0.001
+        )
+
+        assertEquals(result.t, 0.5, accuracy: 1e-2)
+        assertEquals(result.output, sut.p1.lerp(to: sut.p2, factor: 0.5), accuracy: 1e-1)
+    }
+
+    func testProjectApproximate_horizontalLineBezier_priorToP0() {
+        let sut = TestBezier.makeHorizontalLineBezier()
+        let point = sut.p0 - .init(x: 10.0, y: 0.0)
+
+        let result = sut.projectApproximate(
+            to: point,
+            steps: 50,
+            maxIterations: 10,
+            tolerance: 0.01
+        )
+
+        assertEquals(result.t, 0.0, accuracy: 1e-10)
+        assertEquals(result.output, sut.p0, accuracy: 1e-10)
+    }
 }

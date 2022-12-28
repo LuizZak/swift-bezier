@@ -27,4 +27,15 @@ class CubicBezier2DTests: XCTestCase {
         XCTAssertEqual(maximum.x, 15.0, accuracy: 1e-10)
         XCTAssertEqual(maximum.y, 15.020725942163693, accuracy: 1e-10)
     }
+
+    func testBoundingRegion_horizontalLineBezier() {
+        let sut = Sut.makeHorizontalLineBezier()
+
+        let (minimum, maximum) = sut.boundingRegion()
+
+        XCTAssertEqual(minimum.x, 5.0, accuracy: 1e-10)
+        XCTAssertEqual(minimum.y, 6.0, accuracy: 1e-10)
+        XCTAssertEqual(maximum.x, 15.0, accuracy: 1e-10)
+        XCTAssertEqual(maximum.y, 6.0, accuracy: 1e-10)
+    }
 }

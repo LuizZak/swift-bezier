@@ -80,4 +80,24 @@ extension CubicBezier2 where Output == Bezier2DPoint {
 
         return .init(p0: p0 + origin, p1: p1 + origin, p2: p2 + origin, p3: p3 + origin)
     }
+
+    /// Returns a Bézier curve object that is composed of four control points
+    /// in a straight line horizontally:
+    ///
+    /// ```
+    /// (1) -> (2) -> (3) -> (4)
+    /// ```
+    ///
+    /// Coordinates are in screen coordinates space.
+    static func makeHorizontalLineBezier(length: Double = 10.0) -> Self {
+        let sep = Bezier2DPoint(x: length / 3.0, y: 0.0)
+
+        let origin = Bezier2DPoint(x: 5.0, y: 6.0)
+        let p0 = Bezier2DPoint.zero
+        let p1 = sep
+        let p2 = sep * 2
+        let p3 = sep * 3
+
+        return .init(p0: p0 + origin, p1: p1 + origin, p2: p2 + origin, p3: p3 + origin)
+    }
 }
