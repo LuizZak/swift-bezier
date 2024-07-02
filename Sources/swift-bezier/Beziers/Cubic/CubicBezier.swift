@@ -124,7 +124,7 @@ public struct CubicBezier<Output: BezierPointType>: DeCasteljauSolvableBezierTyp
         /// `a` coefficient, or `-P₀ + 3P₁ - 3P₂ + P₃`.
         @usableFromInline
         var a: Output
-        
+
         /// `b` coefficient, or `3P₀ - 6P₁ + 3P₂`.
         @usableFromInline
         var b: Output
@@ -139,6 +139,20 @@ public struct CubicBezier<Output: BezierPointType>: DeCasteljauSolvableBezierTyp
             b = (3 * p0) as Output - (6 * p1) as Output + (3 * p2) as Output
             c = (-3 * p0) as Output + (3 * p1) as Output
         }
+    }
+}
+
+extension CubicBezier: Equatable where Output: Equatable {
+    public static func == (lhs: Self, rhs: Self) -> Bool {
+        lhs.p0 == rhs.p0 && lhs.p1 == rhs.p1 && lhs.p2 == rhs.p2 && lhs.p3 == rhs.p3
+    }
+}
+extension CubicBezier: Hashable where Output: Hashable {
+    public func hash(into hasher: inout Hasher) {
+        hasher.combine(p0)
+        hasher.combine(p1)
+        hasher.combine(p2)
+        hasher.combine(p3)
     }
 }
 

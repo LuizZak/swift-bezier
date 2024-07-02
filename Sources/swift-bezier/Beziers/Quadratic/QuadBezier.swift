@@ -96,6 +96,9 @@ public struct QuadBezier<Output: BezierPointType>: DeCasteljauSolvableBezierType
     }
 }
 
+extension QuadBezier: Equatable where Output: Equatable { }
+extension QuadBezier: Hashable where Output: Hashable { }
+
 extension QuadBezier: DerivableBezierType {
     public typealias DerivativeBezier = LinearBezier<Output>
 

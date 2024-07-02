@@ -1,5 +1,5 @@
-/// An implementation of `Bezier2PointType` with `Double` scalars.
-public struct Bezier2DPoint: Bezier2PointType, Hashable, CustomStringConvertible {
+/// An implementation of `ConstructibleBezier2PointType` with `Double` scalars.
+public struct Bezier2DPoint: ConstructibleBezier2PointType, Hashable, CustomStringConvertible {
     public typealias Scalar = Double
 
     /// Returns the zero point, or `(0.0, 0.0)`.

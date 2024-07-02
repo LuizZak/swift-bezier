@@ -5,7 +5,7 @@ import Numerics
 // MARK: Bézier assertions
 
 @discardableResult
-func assertEquals<Bezier: BezierType>(
+func assertBezierEquals<Bezier: BezierType>(
     _ v1: Bezier,
     _ v2: Bezier,
     message: @autoclosure () -> String = "",
@@ -37,7 +37,7 @@ func assertEquals<Bezier: BezierType>(
 }
 
 @discardableResult
-func assertEquals<Bezier: BezierType>(
+func assertBezierEquals<Bezier: BezierType>(
     _ v1: Bezier,
     _ v2: Bezier,
     accuracy: Bezier.Output.Scalar,

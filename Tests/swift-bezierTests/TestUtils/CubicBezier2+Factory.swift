@@ -1,14 +1,38 @@
 import SwiftBezier
 
 extension CubicBezier2 where Output == Bezier2DPoint {
+    /// Returns a Bézier quadratic object that is composed of three control points
+    /// that form a crescent shape, like the underside of a wave cusp:
+    ///
+    /// ```
+    ///           ,> (4)
+    ///         (3)
+    ///      ↗
+    /// (2)
+    ///
+    ///    ↖
+    ///
+    ///     (1)
+    /// ```
+    ///
+    /// Coordinates are in screen coordinates space.
+    static func makeWaveCusp() -> Self {
+        let p0 = Bezier2DPoint(x: 80.0, y: 250.0)
+        let p1 = Bezier2DPoint(x: 20.0, y: 110.0)
+        let p2 = Bezier2DPoint(x: 220.0, y: 60.0)
+        let p3 = Bezier2DPoint(x: 250.0, y: 40.0)
+
+        return .init(p0: p0, p1: p1, p2: p2, p3: p3)
+    }
+
     /// Returns a Bézier curve object that is composed of four control points
     /// that alternate in a zig-zag pattern on top of a square set of points:
     ///
     /// ```
     /// (1)  ->  (2)
-    /// 
+    ///
     ///      ↙
-    /// 
+    ///
     /// (3)  ->  (4)
     /// ```
     ///
@@ -53,8 +77,8 @@ extension CubicBezier2 where Output == Bezier2DPoint {
     /// Returns a cubic Bézier curve object with a wavy pattern of points:
     ///
     /// ```
-    ///   (2)     
-    ///   ↗          
+    ///   (2)
+    ///   ↗
     /// (1)   ↘    (4)
     ///           ↗
     ///         (3)

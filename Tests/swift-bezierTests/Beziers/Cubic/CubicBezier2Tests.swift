@@ -38,4 +38,35 @@ class CubicBezier2DTests: XCTestCase {
         XCTAssertEqual(maximum.x, 15.0, accuracy: 1e-10)
         XCTAssertEqual(maximum.y, 6.0, accuracy: 1e-10)
     }
+
+    func testExtremas() {
+        let sut = Sut.makeWavyBezier()
+
+        let (x, y) = sut.extremas()
+
+        assertBezierEquals(x, .init(p0: .init(x: 0.0, y: 5.0), p1: .init(x: 0.3333333333333333, y: 6.5), p2: .init(x: 0.6666666666666666, y: 13.5), p3: .init(x: 1.0, y: 15.0)))
+        assertBezierEquals(y, .init(p0: .init(x: 0.0, y: 13.0), p1: .init(x: 0.3333333333333333, y: 6.0), p2: .init(x: 0.6666666666666666, y: 20.0), p3: .init(x: 1.0, y: 13.0)))
+    }
+
+    func testRoots_wavyBezier() {
+        let sut = Sut.makeWavyBezier()
+
+        let (x0, x1, y0, y1) = sut.roots()
+
+        assertEquals(x0, nil)
+        assertEquals(x1, nil)
+        assertEquals(y0, 0.2113248654051871)
+        assertEquals(y1, 0.7886751345948129)
+    }
+
+    func testRoots_waveCuspBezier() {
+        let sut = Sut.makeWaveCusp()
+
+        let (x0, x1, y0, y1) = sut.roots()
+
+        assertEquals(x0, 0.12918492324974712)
+        assertEquals(x1, nil)
+        assertEquals(y0, nil)
+        assertEquals(y1, nil)
+    }
 }

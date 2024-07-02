@@ -83,8 +83,8 @@ class LinearBezierTests: XCTestCase {
 
         let (left, right) = sut.split(at: 0.3)
 
-        assertEquals(left, expectedLeft, accuracy: 1e-15)
-        assertEquals(right, expectedRight, accuracy: 1e-15)
+        assertBezierEquals(left, expectedLeft, accuracy: 1e-15)
+        assertBezierEquals(right, expectedRight, accuracy: 1e-15)
     }
 
     func testSplit_t0() {
@@ -92,8 +92,8 @@ class LinearBezierTests: XCTestCase {
 
         let (left, right) = sut.split(at: 0.0)
 
-        assertEquals(left, .init(p0: sut.p0, p1: sut.p0))
-        assertEquals(right, sut)
+        assertBezierEquals(left, .init(p0: sut.p0, p1: sut.p0))
+        assertBezierEquals(right, sut)
     }
 
     func testSplit_t1() {
@@ -101,7 +101,7 @@ class LinearBezierTests: XCTestCase {
 
         let (left, right) = sut.split(at: 1.0)
 
-        assertEquals(left, sut)
-        assertEquals(right, .init(p0: sut.p1, p1: sut.p1))
+        assertBezierEquals(left, sut)
+        assertBezierEquals(right, .init(p0: sut.p1, p1: sut.p1))
     }
 }
