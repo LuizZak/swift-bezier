@@ -26,6 +26,9 @@ public protocol BezierPointType: Equatable, AdditiveArithmetic {
     /// Negates the value of this point.
     static prefix func - (value: Self) -> Self
 
+    /// Standard point-wise addition operation.
+    static func + (lhs: Self, rhs: Self) -> Self
+
     /// Standard point-wise multiplication operation.
     static func * (lhs: Self, rhs: Self) -> Self
 

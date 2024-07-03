@@ -5,6 +5,7 @@ import SwiftBezier
 class ProxyTestBezier<Bezier: BezierType>: BezierType {
     typealias Input = Bezier.Input
     typealias Output = Bezier.Output
+    typealias Scalar = Bezier.Output.Scalar
 
     var bezier: Bezier
 
@@ -81,20 +82,28 @@ class ProxyTestBezier<Bezier: BezierType>: BezierType {
     }
 }
 
-// For testing calls to a `Bounded2BezierType` type.
-class BoundedProxyTestBezier<Bezier: Bounded2BezierType>: ProxyTestBezier<Bezier>, Bounded2BezierType {
+// For testing calls to a `BoundedBezier2Type` type.
+class BoundedProxyTestBezier<Bezier: BoundedBezier2Type>: ProxyTestBezier<Bezier>, BoundedBezier2Type {
     var boundingRegion_calls: [(Void)] = []
-    func boundingRegion() -> (minimum: Bezier.Output, maximum: Bezier.Output) {
+    func boundingRegion() -> (minimum: Output, maximum: Output) {
         boundingRegion_calls.append(())
 
         return bezier.boundingRegion()
     }
 
-    var rotated_calls: [(Bezier.Output.Scalar)] = []
-    func rotated(by angleInRadians: Bezier.Output.Scalar) -> Self {
+    var rotated_calls: [(Scalar)] = []
+    func rotated(by angleInRadians: Scalar) -> Self {
         rotated_calls.append(angleInRadians)
 
         bezier = bezier.rotated(by: angleInRadians)
+        return self
+    }
+
+    var aligned_calls: [(LinearBezier2<Output>)] = []
+    public func aligned(along line: LinearBezier2<Output>) -> Self {
+        aligned_calls.append(line)
+
+        bezier = bezier.aligned(along: line)
         return self
     }
 }

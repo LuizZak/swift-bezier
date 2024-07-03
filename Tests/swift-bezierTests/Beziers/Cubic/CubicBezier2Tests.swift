@@ -85,4 +85,25 @@ class CubicBezier2DTests: XCTestCase {
             )
         )
     }
+
+    func testAligned_wavyBezier() {
+        let sut = Sut.makeWavyBezier()
+        let line = LinearBezier2D(p0: .init(x: 2, y: 4), p1: .init(x: 3, y: 3))
+        TestFixture.beginFixture(lineScale: 20, renderScale: 20) { fixture in
+            fixture.add(bezier: sut)
+            fixture.add(bezier: line)
+
+            fixture.asserter(
+                sut.aligned(along: line)
+            )
+            .assertBezierEquals(
+                .init(
+                    p0: .init(x: -4.242640687119286, y: 8.485281374238571),
+                    p1: .init(x: 1.7677669529663687, y: 4.596194077712559),
+                    p2: .init(x: -3.1819805153394647, y: 19.445436482630058),
+                    p3: .init(x: 2.828427124746189, y: 15.556349186104047)
+                )
+            )
+        }
+    }
 }

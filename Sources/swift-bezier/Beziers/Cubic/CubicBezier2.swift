@@ -1,7 +1,7 @@
 /// A 2-dimensional cubic Bézier curve type.
 public typealias CubicBezier2<Point: Bezier2PointType> = CubicBezier<Point>
 
-extension CubicBezier2: Bounded2BezierType {
+extension CubicBezier2: Bezier2Type, BoundedBezier2Type {
     /// Returns the minimal bounding region for this cubic Bézier curve.
     @inlinable
     public func boundingRegion() -> (minimum: Output, maximum: Output) {
@@ -71,6 +71,15 @@ extension CubicBezier2: Bounded2BezierType {
             p1: p1.rotated(by: angleInRadians),
             p2: p2.rotated(by: angleInRadians),
             p3: p3.rotated(by: angleInRadians)
+        )
+    }
+
+    public func aligned(along line: LinearBezier2<Output>) -> Self {
+        return .init(
+            p0: p0.transposed(along: line),
+            p1: p1.transposed(along: line),
+            p2: p2.transposed(along: line),
+            p3: p3.transposed(along: line)
         )
     }
 }

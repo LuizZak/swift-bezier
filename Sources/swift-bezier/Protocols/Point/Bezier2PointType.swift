@@ -6,6 +6,14 @@ public protocol Bezier2PointType: BezierPointType {
     /// The Y component of this point.
     var y: Scalar { get }
 
+    /// Gets the angle, in radians, of this point, as the angle between the origin
+    /// and `self`.
+    func angle() -> Scalar
+
     /// Returns the result of rotating this point around the origin by `angleInRadians`.
     func rotated(by angleInRadians: Scalar) -> Self
+
+    /// Transposes this point such that the resulting point rests on a transformed
+    /// origin line, represented by `line`.
+    func transposed(along line: LinearBezier2<Self>) -> Self
 }

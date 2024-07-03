@@ -56,4 +56,24 @@ class QuadBezier2Tests: XCTestCase {
             )
         )
     }
+
+    func testAligned_waveCusp() {
+        let sut = Sut.makeWaveCusp()
+        let line = LinearBezier2D(p0: .init(x: 20, y: 40), p1: .init(x: 30, y: 30))
+        TestFixture.beginFixture(lineScale: 2, renderScale: 1) { fixture in
+            fixture.add(bezier: sut)
+            fixture.add(bezier: line)
+
+            fixture.asserter(
+                sut.aligned(along: line)
+            )
+            .assertBezierEquals(
+                .init(
+                    p0: .init(x: -106.06601717798213, y: 190.9188309203678),
+                    p1: .init(x: -49.49747468305833, y: 49.49747468305832),
+                    p2: .init(x: 127.27922061357853, y: 155.56349186104046)
+                )
+            )
+        }
+    }
 }

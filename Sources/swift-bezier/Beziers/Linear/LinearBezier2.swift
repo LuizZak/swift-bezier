@@ -1,7 +1,9 @@
+import Foundation
+
 /// A 2-dimensional linear Bézier curve type.
 public typealias LinearBezier2<Point: Bezier2PointType> = LinearBezier<Point>
 
-extension LinearBezier2: Bounded2BezierType {
+extension LinearBezier2: Bezier2Type, BoundedBezier2Type {
     /// Returns the minimal bounding region for this linear Bézier curve.
     /// It is simply the minimal axis-aligned bounding region for the two control
     /// points.
@@ -19,6 +21,13 @@ extension LinearBezier2: Bounded2BezierType {
         .init(
             p0: p0.rotated(by: angleInRadians),
             p1: p1.rotated(by: angleInRadians)
+        )
+    }
+
+    public func aligned(along line: LinearBezier2<Output>) -> Self {
+        return .init(
+            p0: p0.transposed(along: line),
+            p1: p1.transposed(along: line)
         )
     }
 }

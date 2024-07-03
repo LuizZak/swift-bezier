@@ -32,12 +32,12 @@ public struct Bezier2FPoint: ConstructibleBezier2PointType, Hashable, CustomStri
 
 extension Bezier2FPoint {
     @inlinable
-    public func lerp(to end: Bezier2FPoint, factor: Double) -> Bezier2FPoint {
+    public func lerp(to end: Self, factor: Double) -> Self {
         self * Scalar(1 - factor) + end * Scalar(factor)
     }
 
     @inlinable
-    public func dot(_ other: Bezier2FPoint) -> Scalar {
+    public func dot(_ other: Self) -> Scalar {
         x * other.x + y * other.y
     }
 
@@ -50,52 +50,61 @@ extension Bezier2FPoint {
     }
 
     @inlinable
-    public static prefix func - (value: Bezier2FPoint) -> Bezier2FPoint {
+    public func angle() -> Scalar {
+        atan2(y, x)
+    }
+
+    public func transposed(along line: LinearBezier2<Self>) -> Self {
+        (line.p0 - self).rotated(by: -(line.p0 - line.p1).angle())
+    }
+
+    @inlinable
+    public static prefix func - (value: Self) -> Self {
         .init(x: -value.x, y: -value.y)
     }
 
     @inlinable
-    public static func * (lhs: Bezier2FPoint, rhs: Bezier2FPoint) -> Bezier2FPoint {
+    public static func * (lhs: Self, rhs: Self) -> Self {
         .init(x: lhs.x * rhs.x, y: lhs.y * rhs.y)
     }
 
     @inlinable
-    public static func / (lhs: Bezier2FPoint, rhs: Bezier2FPoint) -> Bezier2FPoint {
+    public static func / (lhs: Self, rhs: Self) -> Self {
         .init(x: lhs.x / rhs.x, y: lhs.y / rhs.y)
     }
 
     @inlinable
-    public static func * (lhs: Bezier2FPoint, rhs: Scalar) -> Bezier2FPoint {
+    public static func * (lhs: Self, rhs: Scalar) -> Self {
         lhs * .init(repeating: rhs)
     }
 
     @inlinable
-    public static func * (lhs: Scalar, rhs: Bezier2FPoint) -> Bezier2FPoint {
+    public static func * (lhs: Scalar, rhs: Self) -> Self {
         .init(repeating: lhs) * rhs
     }
 
     @inlinable
-    public static func / (lhs: Bezier2FPoint, rhs: Scalar) -> Bezier2FPoint {
+    public static func / (lhs: Self, rhs: Scalar) -> Self {
         lhs / .init(repeating: rhs)
     }
 
     @inlinable
-    public static func + (lhs: Bezier2FPoint, rhs: Bezier2FPoint) -> Bezier2FPoint {
+    public static func + (lhs: Self, rhs: Self) -> Self {
         .init(x: lhs.x + rhs.x, y: lhs.y + rhs.y)
     }
 
     @inlinable
-    public static func - (lhs: Bezier2FPoint, rhs: Bezier2FPoint) -> Bezier2FPoint {
+    public static func - (lhs: Self, rhs: Self) -> Self {
         .init(x: lhs.x - rhs.x, y: lhs.y - rhs.y)
     }
 
     @inlinable
-    public static func pointwiseMin(_ v1: Bezier2FPoint, _ v2: Bezier2FPoint) -> Bezier2FPoint {
+    public static func pointwiseMin(_ v1: Self, _ v2: Self) -> Self {
         .init(x: min(v1.x, v2.x), y: min(v1.y, v2.y))
     }
 
     @inlinable
-    public static func pointwiseMax(_ v1: Bezier2FPoint, _ v2: Bezier2FPoint) -> Bezier2FPoint {
+    public static func pointwiseMax(_ v1: Self, _ v2: Self) -> Self {
         .init(x: max(v1.x, v2.x), y: max(v1.y, v2.y))
     }
 }

@@ -73,3 +73,8 @@ class P5Printer: BaseP5Printer {
         "\(point.x), \(point.y)"
     }
 }
+
+extension P5Printer.Styles {
+    var actual: P5Printer.Style { .init(strokeColor: .red) }
+    var expected: P5Printer.Style { .init(strokeColor: .green) }
+}

@@ -153,7 +153,17 @@ extension CachedBezier: BezierType {
     }
 }
 
-extension CachedBezier: Bounded2BezierType where Bezier: Bounded2BezierType {
+extension CachedBezier: Bezier2Type where Bezier: Bezier2Type {
+    public func rotated(by angleInRadians: Output.Scalar) -> Self {
+        return Self(bezier: bezier.rotated(by: angleInRadians))
+    }
+
+    public func aligned(along line: LinearBezier2<Output>) -> Self {
+        return Self(bezier: bezier.aligned(along: line))
+    }
+}
+
+extension CachedBezier: BoundedBezier2Type where Bezier: BoundedBezier2Type {
     static var _boundingRegionCacheKey: Cache.CacheKey {
         @inlinable
         get { 0b0000_0001 }
@@ -164,10 +174,6 @@ extension CachedBezier: Bounded2BezierType where Bezier: Bounded2BezierType {
         cache.cacheOrCompute(key: Self._boundingRegionCacheKey) {
             bezier.boundingRegion()
         }
-    }
-
-    public func rotated(by angleInRadians: Output.Scalar) -> Self {
-        return Self(bezier: bezier.rotated(by: angleInRadians))
     }
 }
 
