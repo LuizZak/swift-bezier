@@ -124,4 +124,28 @@ class QuadBezierTests: XCTestCase {
 
         assertBezierEquals(result, expected)
     }
+
+    func testLength_linear() {
+        let sut = Sut.makeHorizontalLineBezier()
+
+        let result = sut.length()
+
+        assertEquals(result, 10.0)
+    }
+
+    func testLength_uShape() {
+        let sut = Sut.makeU()
+
+        let result = sut.length()
+
+        assertEquals(result, 242.53021779146)
+    }
+
+    func testLength_waveCusp() {
+        let sut = Sut.makeWaveCusp()
+
+        let result = sut.length()
+
+        assertEquals(result, 279.69723074313794)
+    }
 }

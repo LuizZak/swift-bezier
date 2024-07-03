@@ -123,4 +123,28 @@ class CubicBezierTests: XCTestCase {
 
         assertBezierEquals(result, expected)
     }
+
+    func testLength_linear() {
+        let sut = Sut.makeHorizontalLineBezier()
+
+        let result = sut.length()
+
+        assertEquals(result, 10.0, accuracy: 1e-14)
+    }
+
+    func testLength_wavyBezier() {
+        let sut = Sut.makeWavyBezier()
+
+        let result = sut.length()
+
+        assertEquals(result, 13.639478612762339, accuracy: 1e-14)
+    }
+
+    func testLength_waveCusp() {
+        let sut = Sut.makeWaveCusp()
+
+        let result = sut.length()
+
+        assertEquals(result, 307.67326535085067, accuracy: 1e-14)
+    }
 }

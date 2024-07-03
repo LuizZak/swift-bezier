@@ -104,4 +104,12 @@ class LinearBezierTests: XCTestCase {
         assertBezierEquals(left, sut)
         assertBezierEquals(right, .init(p0: sut.p1, p1: sut.p1))
     }
+
+    func testLength_ascendingLineBezier() {
+        let sut = Sut.makeAscendingLineBezier()
+
+        let result = sut.length()
+
+        assertEquals(result, 18.027756377319946)
+    }
 }

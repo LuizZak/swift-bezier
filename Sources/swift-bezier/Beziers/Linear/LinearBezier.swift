@@ -75,3 +75,10 @@ public struct LinearBezier<Output: BezierPointType>: DeCasteljauSolvableBezierTy
         p0 * (1 - input) + p1 * input
     }
 }
+
+extension LinearBezier where Input == Double {
+    /// Returns the length of this linear Bézier.
+    public func length() -> Input {
+        p0.distance(to: p1)
+    }
+}

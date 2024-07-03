@@ -23,10 +23,10 @@ public class CachedBezier<Bezier: BezierType> {
 
         @usableFromInline
         var series: [Int: [Output]] = [:]
-        
+
         @usableFromInline
         var lookupTables: [Int: BezierLookUpTable<Bezier>] = [:]
-        
+
         @usableFromInline
         var other: [CacheKey: Any] = [:]
 
@@ -97,7 +97,7 @@ public class CachedBezier<Bezier: BezierType> {
             _ cacheSetter: (T) -> Void,
             _ cacheComputer: () -> T
         ) -> T {
-            
+
             if let cached = cacheGetter() {
                 return cached
             }
@@ -159,6 +159,31 @@ extension CachedBezier: Bounded2BezierType where Bezier: Bounded2BezierType {
     public func boundingRegion() -> (minimum: Bezier.Output, maximum: Bezier.Output) {
         cache.cacheOrCompute(key: Self._boundingRegionCacheKey) {
             bezier.boundingRegion()
+        }
+    }
+}
+
+extension CachedBezier {
+    static var _lengthCacheKey: Cache.CacheKey {
+        @inlinable
+        get { 0b0000_0010 }
+    }
+
+    /// Returns the approximate length of this quadratic Bézier.
+    ///
+    /// - note: The result of this operation is cached.
+    public func length<Output>() -> Input where Input == Double, Bezier == QuadBezier<Output> {
+        cache.cacheOrCompute(key: Self._lengthCacheKey) {
+            bezier.length()
+        }
+    }
+
+    /// Returns the approximate length of this cubic Bézier.
+    ///
+    /// - note: The result of this operation is cached.
+    public func length<Output>() -> Input where Input == Double, Bezier == CubicBezier<Output> {
+        cache.cacheOrCompute(key: Self._lengthCacheKey) {
+            bezier.length()
         }
     }
 }

@@ -168,3 +168,21 @@ extension CubicBezier: DerivableBezierType {
         return .init(p0: points[0], p1: points[1], p2: points[2])
     }
 }
+
+extension CubicBezier where Input == Double {
+    /// Returns the approximate length of this cubic Bézier.
+    public func length() -> Input {
+        let derivative = self.derivate()
+
+        let z: Input = 0.5
+        var sum: Input = 0.0
+        var t: Input = 0
+        for (abscissa, weight) in zip(LegendreGauss.abscissae, LegendreGauss.weights) {
+            t = z * abscissa + z
+            let pt = derivative.compute(at: t)
+            sum += weight * pt.dot(pt).squareRoot()
+        }
+
+        return z * sum
+    }
+}

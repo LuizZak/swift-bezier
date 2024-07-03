@@ -36,3 +36,12 @@ func deriveAllBezierPoints<Point: BezierPointType>(_ points: [Point]) -> [[Point
 
     return result
 }
+
+/*
+@inlinable
+func arcFn<P: BezierPointType>(
+    _ d: P
+) -> P.Scalar {
+    return d.dot(d).squareRoot()
+}
+*/

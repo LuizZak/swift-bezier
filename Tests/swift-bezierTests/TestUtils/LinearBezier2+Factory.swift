@@ -5,9 +5,9 @@ extension LinearBezier2 where Output == Bezier2DPoint {
     /// higher one:
     ///
     /// ```
-    /// (1)
-    ///      ↘
     ///         (2)
+    ///      ↗
+    /// (1)
     /// ```
     ///
     /// Coordinates are in screen coordinates space.
@@ -22,9 +22,9 @@ extension LinearBezier2 where Output == Bezier2DPoint {
     /// lower one:
     ///
     /// ```
-    ///         (2)
-    ///      ↗
     /// (1)
+    ///      ↘
+    ///         (2)
     /// ```
     ///
     /// Coordinates are in screen coordinates space.
