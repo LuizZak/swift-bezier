@@ -147,4 +147,20 @@ class CubicBezierTests: XCTestCase {
 
         assertEquals(result, 307.67326535085067, accuracy: 1e-14)
     }
+
+    func testTranslated() {
+        let sut = Sut.makeWavyBezier()
+
+        let result = sut.translated(by: .init(x: 5.0, y: -3.0))
+
+        assertBezierEquals(
+            result,
+            .init(
+                p0: .init(x: 10.0, y: 10.0),
+                p1: .init(x: 11.5, y: 3.0),
+                p2: .init(x: 18.5, y: 17.0),
+                p3: .init(x: 20.0, y: 10.0)
+            )
+        )
+    }
 }

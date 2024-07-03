@@ -28,7 +28,7 @@ public protocol BezierPointType: Equatable, AdditiveArithmetic {
 
     /// Standard point-wise multiplication operation.
     static func * (lhs: Self, rhs: Self) -> Self
-    
+
     /// Standard point-wise division operation.
     static func / (lhs: Self, rhs: Self) -> Self
 
@@ -37,7 +37,7 @@ public protocol BezierPointType: Equatable, AdditiveArithmetic {
 
     /// Multiplies this Bézier point type by a given scalar value.
     static func * (lhs: Scalar, rhs: Self) -> Self
-    
+
     /// Divides this Bézier point type by a given scalar value.
     static func / (lhs: Self, rhs: Scalar) -> Self
 

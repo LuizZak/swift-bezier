@@ -71,12 +71,16 @@ public protocol BezierType {
         maxIterations: Int,
         tolerance: Output.Scalar
     ) -> (t: Input, output: Output)
+
+    /// Returns the result of translating the points of this Bézier curve by
+    /// `offset`.
+    func translated(by offset: Output) -> Self
 }
 
 extension BezierType {
     @inlinable
     public var startInput: Input { 0 }
-    
+
     @inlinable
     public var endInput: Input { 1 }
 

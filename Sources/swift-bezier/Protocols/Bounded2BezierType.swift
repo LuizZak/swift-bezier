@@ -6,4 +6,8 @@ public protocol Bounded2BezierType: BezierType where Output: Bezier2PointType {
     /// as a pair of minimum and maximum outputs that this Bézier curve can
     /// produce within its `startInput` and `endInput`.
     func boundingRegion() -> (minimum: Output, maximum: Output)
+
+    /// Returns the result of rotating the points of this Bézier curve by
+    /// `angleInRadians` around the origin.
+    func rotated(by angleInRadians: Output.Scalar) -> Self
 }

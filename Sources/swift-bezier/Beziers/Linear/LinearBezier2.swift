@@ -12,4 +12,13 @@ extension LinearBezier2: Bounded2BezierType {
 
         return (minimal, maximal)
     }
+
+    /// Returns the result of rotating the points of this Bézier curve by
+    /// `angleInRadians` around the origin.
+    public func rotated(by angleInRadians: Output.Scalar) -> Self {
+        .init(
+            p0: p0.rotated(by: angleInRadians),
+            p1: p1.rotated(by: angleInRadians)
+        )
+    }
 }

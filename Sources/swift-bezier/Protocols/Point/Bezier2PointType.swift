@@ -5,4 +5,7 @@ public protocol Bezier2PointType: BezierPointType {
 
     /// The Y component of this point.
     var y: Scalar { get }
+
+    /// Returns the result of rotating this point around the origin by `angleInRadians`.
+    func rotated(by angleInRadians: Scalar) -> Self
 }

@@ -112,4 +112,18 @@ class LinearBezierTests: XCTestCase {
 
         assertEquals(result, 18.027756377319946)
     }
+
+    func testTranslated() {
+        let sut = Sut.makeAscendingLineBezier()
+
+        let result = sut.translated(by: .init(x: 5.0, y: -3.0))
+
+        assertBezierEquals(
+            result,
+            .init(
+                p0: .init(x: 10.0, y: 7.0),
+                p1: .init(x: 25.0, y: 17.0)
+            )
+        )
+    }
 }

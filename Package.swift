@@ -10,7 +10,8 @@ let package = Package(
         ),
     ],
     dependencies: [
-        .package(url: "https://github.com/apple/swift-numerics", from: "1.0.0"),
+        .package(url: "https://github.com/apple/swift-numerics.git", from: "1.0.0"),
+        .package(url: "https://github.com/LuizZak/MiniP5Printer.git", branch: "main"),
     ],
     targets: [
         .target(
@@ -22,6 +23,7 @@ let package = Package(
             name: "SwiftBezierTests",
             dependencies: [
                 .product(name: "Numerics", package: "swift-numerics"),
+                .product(name: "MiniP5Printer", package: "MiniP5Printer"),
                 "SwiftBezier",
             ],
             path: "Tests/swift-bezierTests"

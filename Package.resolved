@@ -2,6 +2,15 @@
   "object": {
     "pins": [
       {
+        "package": "MiniP5Printer",
+        "repositoryURL": "https://github.com/LuizZak/MiniP5Printer.git",
+        "state": {
+          "branch": "main",
+          "revision": "039d7ae7a20acccb5c736a2ceeb2b2a1eecbc362",
+          "version": null
+        }
+      },
+      {
         "package": "swift-numerics",
         "repositoryURL": "https://github.com/apple/swift-numerics",
         "state": {

@@ -74,6 +74,15 @@ public struct LinearBezier<Output: BezierPointType>: DeCasteljauSolvableBezierTy
     public func compute(at input: Input) -> Output {
         p0 * (1 - input) + p1 * input
     }
+
+    /// Returns the result of translating the points of this Bézier curve by
+    /// `offset`.
+    public func translated(by offset: Output) -> Self {
+        .init(
+            p0: p0 + offset,
+            p1: p1 + offset
+        )
+    }
 }
 
 extension LinearBezier where Input == Double {

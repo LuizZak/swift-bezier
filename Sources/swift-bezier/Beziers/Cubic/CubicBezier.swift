@@ -118,6 +118,17 @@ public struct CubicBezier<Output: BezierPointType>: DeCasteljauSolvableBezierTyp
         return result
     }
 
+    /// Returns the result of translating the points of this Bézier curve by
+    /// `offset`.
+    public func translated(by offset: Output) -> Self {
+        .init(
+            p0: p0 + offset,
+            p1: p1 + offset,
+            p2: p2 + offset,
+            p3: p3 + offset
+        )
+    }
+
     /// Describes the polynomial coefficients for this Bézier curve.
     @usableFromInline
     struct PolynomialCoefficients {

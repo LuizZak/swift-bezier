@@ -41,4 +41,19 @@ class QuadBezier2Tests: XCTestCase {
         assertEquals(x, nil)
         assertEquals(y, 0.5)
     }
+
+    func testRotated() {
+        let sut = Sut.makeWaveCusp()
+
+        let result = sut.rotated(by: .pi / 2)
+
+        assertBezierEquals(
+            result,
+            .init(
+                p0: .init(x: -250.0, y: 80.00000000000001),
+                p1: .init(x: -110.0, y: 20.000000000000007),
+                p2: .init(x: -59.999999999999986, y: 220.0)
+            )
+        )
+    }
 }

@@ -1,3 +1,5 @@
+import Foundation
+
 /// An implementation of `ConstructibleBezier2PointType` with `Float` scalars.
 public struct Bezier2FPoint: ConstructibleBezier2PointType, Hashable, CustomStringConvertible {
     public typealias Scalar = Float
@@ -34,8 +36,17 @@ extension Bezier2FPoint {
         self * Scalar(1 - factor) + end * Scalar(factor)
     }
 
+    @inlinable
     public func dot(_ other: Bezier2FPoint) -> Scalar {
         x * other.x + y * other.y
+    }
+
+    @inlinable
+    public func rotated(by angleInRadians: Scalar) -> Self {
+        let c = cos(angleInRadians)
+        let s = sin(angleInRadians)
+
+        return Self(x: (c * x) - (s * y), y: (s * x) + (c * y))
     }
 
     @inlinable

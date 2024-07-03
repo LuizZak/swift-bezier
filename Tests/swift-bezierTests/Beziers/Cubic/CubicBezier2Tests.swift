@@ -69,4 +69,20 @@ class CubicBezier2DTests: XCTestCase {
         assertEquals(y0, nil)
         assertEquals(y1, nil)
     }
+
+    func testRotated() {
+        let sut = Sut.makeWavyBezier()
+
+        let result = sut.rotated(by: .pi / 2)
+
+        assertBezierEquals(
+            result,
+            .init(
+                p0: .init(x: -13.0, y: 5.000000000000001),
+                p1: .init(x: -6.0, y: 6.5),
+                p2: .init(x: -20.0, y: 13.500000000000002),
+                p3: .init(x: -12.999999999999998, y: 15.0)
+            )
+        )
+    }
 }

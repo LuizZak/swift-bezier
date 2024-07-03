@@ -94,6 +94,16 @@ public struct QuadBezier<Output: BezierPointType>: DeCasteljauSolvableBezierType
 
         return a + b + c
     }
+
+    /// Returns the result of translating the points of this Bézier curve by
+    /// `offset`.
+    public func translated(by offset: Output) -> Self {
+        .init(
+            p0: p0 + offset,
+            p1: p1 + offset,
+            p2: p2 + offset
+        )
+    }
 }
 
 extension QuadBezier: Equatable where Output: Equatable { }

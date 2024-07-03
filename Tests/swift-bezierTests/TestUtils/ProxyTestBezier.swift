@@ -38,7 +38,7 @@ class ProxyTestBezier<Bezier: BezierType>: BezierType {
     var computeSeriesSteps_calls: [(Int)] = []
     func computeSeries(steps: Int) -> [Bezier.Output] {
         computeSeriesSteps_calls.append((steps))
-        
+
         return bezier.computeSeries(steps: steps)
     }
 
@@ -63,13 +63,21 @@ class ProxyTestBezier<Bezier: BezierType>: BezierType {
             maxIterations: maxIterations,
             tolerance: tolerance
         ))
-        
+
         return bezier.projectApproximate(
             to: point,
             steps: steps,
             maxIterations: maxIterations,
             tolerance: tolerance
         )
+    }
+
+    var translated_calls: [Bezier.Output] = []
+    func translated(by offset: Bezier.Output) -> Self {
+        translated_calls.append(offset)
+
+        bezier = bezier.translated(by: offset)
+        return self
     }
 }
 
@@ -80,5 +88,13 @@ class BoundedProxyTestBezier<Bezier: Bounded2BezierType>: ProxyTestBezier<Bezier
         boundingRegion_calls.append(())
 
         return bezier.boundingRegion()
+    }
+
+    var rotated_calls: [(Bezier.Output.Scalar)] = []
+    func rotated(by angleInRadians: Bezier.Output.Scalar) -> Self {
+        rotated_calls.append(angleInRadians)
+
+        bezier = bezier.rotated(by: angleInRadians)
+        return self
     }
 }

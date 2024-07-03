@@ -1,6 +1,6 @@
 /// A wrapper object that caches information related to its underlying Bézier
 /// curve and queries made to it.
-public class CachedBezier<Bezier: BezierType> {
+public final class CachedBezier<Bezier: BezierType> {
     var cache: Cache = Cache()
 
     @usableFromInline
@@ -147,6 +147,10 @@ extension CachedBezier: BezierType {
             bezier.createLookupTable(steps: steps)
         }
     }
+
+    public func translated(by offset: Output) -> Self {
+        return Self(bezier: bezier.translated(by: offset))
+    }
 }
 
 extension CachedBezier: Bounded2BezierType where Bezier: Bounded2BezierType {
@@ -160,6 +164,10 @@ extension CachedBezier: Bounded2BezierType where Bezier: Bounded2BezierType {
         cache.cacheOrCompute(key: Self._boundingRegionCacheKey) {
             bezier.boundingRegion()
         }
+    }
+
+    public func rotated(by angleInRadians: Output.Scalar) -> Self {
+        return Self(bezier: bezier.rotated(by: angleInRadians))
     }
 }
 

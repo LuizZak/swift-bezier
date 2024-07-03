@@ -148,4 +148,19 @@ class QuadBezierTests: XCTestCase {
 
         assertEquals(result, 279.69723074313794)
     }
+
+    func testTranslated() {
+        let sut = Sut.makeWaveCusp()
+
+        let result = sut.translated(by: .init(x: 5.0, y: -3.0))
+
+        assertBezierEquals(
+            result,
+            .init(
+                p0: .init(x: 85.0, y: 247.0),
+                p1: .init(x: 25.0, y: 107.0),
+                p2: .init(x: 225.0, y: 57.0)
+            )
+        )
+    }
 }
