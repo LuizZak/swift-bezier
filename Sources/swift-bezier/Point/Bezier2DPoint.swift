@@ -42,16 +42,26 @@ extension Bezier2DPoint {
     }
 
     @inlinable
-    public func rotated(by angleInRadians: Scalar) -> Self {
-        let c = cos(angleInRadians)
-        let s = sin(angleInRadians)
+    public func leftRotated() -> Self {
+        Self(x: -y, y: x)
+    }
 
-        return Self(x: (c * x) - (s * y), y: (s * x) + (c * y))
+    @inlinable
+    public func rightRotated() -> Self {
+        Self(x: y, y: -x)
     }
 
     @inlinable
     public func angle() -> Scalar {
         atan2(y, x)
+    }
+
+    @inlinable
+    public func rotated(by angleInRadians: Scalar) -> Self {
+        let c = cos(angleInRadians)
+        let s = sin(angleInRadians)
+
+        return Self(x: (c * x) - (s * y), y: (s * x) + (c * y))
     }
 
     public func transposed(along line: LinearBezier2<Self>) -> Self {

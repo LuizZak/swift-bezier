@@ -6,6 +6,13 @@ public protocol Bezier2PointType: BezierPointType {
     /// The Y component of this point.
     var y: Scalar { get }
 
+    /// Returns the result of rotating this vector by 90º counter-clockwise along
+    /// the origin.
+    func leftRotated() -> Self
+
+    /// Returns the result of rotating this vector by 90º clockwise along the origin.
+    func rightRotated() -> Self
+
     /// Gets the angle, in radians, of this point, as the angle between the origin
     /// and `self`.
     func angle() -> Scalar

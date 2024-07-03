@@ -77,6 +77,13 @@ extension QuadBezier2: Bezier2Type, BoundedBezier2Type {
 
         return result
     }
+
+    /// Gets a normal vector for this Bézier curve at a given point.
+    public func normal(at input: Output.Scalar) -> Output {
+        let derivative = self.derivate()
+
+        return derivative.compute(at: input).rightRotated()
+    }
 }
 
 extension QuadBezier2 {
