@@ -275,4 +275,13 @@ extension CubicBezier2 where Output: ConstructibleBezier2PointType {
 
         return (x0, x1, y0, y1)
     }
+
+    /// Returns the result of the intersection of this Bézier curve against a given
+    /// input line.
+    public func intersection(with line: LinearBezier<Output>) -> (t0: Input?, t1: Input?, t2: Input?, t3: Input?) {
+        let aligned = self.aligned(along: line)
+        let result = aligned.roots()
+
+        return (result.x0, result.x1, result.y0, result.y1)
+    }
 }

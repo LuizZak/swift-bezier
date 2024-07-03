@@ -216,4 +216,12 @@ extension QuadBezier2 where Output: ConstructibleBezier2PointType {
 
         return (x, y)
     }
+
+    /// Returns the result of the intersection of this Bézier curve against a given
+    /// input line.
+    public func intersection(with line: LinearBezier<Output>) -> (t0: Input?, t2: Input?) {
+        let aligned = self.aligned(along: line)
+        let result = aligned.roots()
+        return (result.x, result.y)
+    }
 }
