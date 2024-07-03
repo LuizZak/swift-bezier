@@ -29,6 +29,9 @@ public protocol BezierPointType: Equatable, AdditiveArithmetic {
     /// Standard point-wise addition operation.
     static func + (lhs: Self, rhs: Self) -> Self
 
+    /// Standard point-wise subtraction operation.
+    static func - (lhs: Self, rhs: Self) -> Self
+
     /// Standard point-wise multiplication operation.
     static func * (lhs: Self, rhs: Self) -> Self
 
@@ -43,6 +46,18 @@ public protocol BezierPointType: Equatable, AdditiveArithmetic {
 
     /// Divides this Bézier point type by a given scalar value.
     static func / (lhs: Self, rhs: Scalar) -> Self
+
+    /// Returns `true` iff all components of `lhs` compare `>=` to `rhs`.
+    static func >= (lhs: Self, rhs: Self) -> Bool
+
+    /// Returns `true` iff all components of `lhs` compare `>` to `rhs`.
+    static func > (lhs: Self, rhs: Self) -> Bool
+
+    /// Returns `true` iff all components of `lhs` compare `<` to `rhs`.
+    static func < (lhs: Self, rhs: Self) -> Bool
+
+    /// Returns `true` iff all components of `lhs` compare `<=` to `rhs`.
+    static func <= (lhs: Self, rhs: Self) -> Bool
 
     /// Returns a new point type where each component is the minimal component
     /// between `v1` and `v2`.

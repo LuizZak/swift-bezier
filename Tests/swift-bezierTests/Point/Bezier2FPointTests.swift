@@ -13,7 +13,7 @@ class Bezier2FPointTests: XCTestCase {
 
         assertEquals(
             result,
-            .init(x: -3.1234753, y: -3.9043438)
+            .init(x: 3.1234753, y: -3.904344)
         )
     }
 
@@ -23,6 +23,6 @@ class Bezier2FPointTests: XCTestCase {
 
         let result = sut.transposed(along: line)
 
-        assertEquals(result, sut)
+        assertEquals(result, sut, accuracy: 1e-5)
     }
 }

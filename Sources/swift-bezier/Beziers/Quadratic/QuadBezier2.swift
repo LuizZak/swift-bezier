@@ -63,6 +63,89 @@ extension QuadBezier2: Bezier2Type, BoundedBezier2Type {
             p2: p2.transposed(along: line)
         )
     }
+
+    public func approximateIntersection(
+        with other: Self,
+        threshold: Output.Scalar
+    ) -> [(Input, Input)] {
+        let result = recurseIntersection(
+            (startInput, endInput),
+            with: other,
+            (other.startInput, other.endInput),
+            threshold: threshold
+        )
+
+        return result
+    }
+}
+
+extension QuadBezier2 {
+    @inlinable
+    func recurseIntersection(
+        _ selfRange: (Input, Input),
+        with other: Self,
+        _ otherRange: (Input, Input),
+        threshold: Output.Scalar
+    ) -> [(Input, Input)] {
+        func isAboveThreshold(
+            _ box: (minimum: Output, maximum: Output)
+        ) -> Bool {
+            let area = box.maximum - box.minimum
+
+            return area.x > threshold || area.y > threshold
+        }
+        func left(of period: (Input, Input)) -> (Input, Input) {
+            let range = period.1 - period.0
+            return (period.0, period.0 + range / 2)
+        }
+        func right(of period: (Input, Input)) -> (Input, Input) {
+            let range = period.1 - period.0
+            return (period.0 + range / 2, period.1)
+        }
+        func intersect(
+            _ box1: (minimum: Output, maximum: Output),
+            _ box2: (minimum: Output, maximum: Output)
+        ) -> Bool {
+            box1.minimum <= box2.maximum && box1.maximum >= box2.minimum
+        }
+        func recurse(
+            _ lhs: Self, _ selfRange: (Input, Input),
+            _ rhs: Self, _ otherRange: (Input, Input),
+            result: inout [(Input, Input)]
+        ) {
+            let inputs = lhs.recurseIntersection(
+                selfRange,
+                with: rhs,
+                otherRange,
+                threshold: threshold
+            )
+
+            result.append(contentsOf: inputs)
+        }
+
+        let selfBox = self.boundingRegion()
+        let otherBox = other.boundingRegion()
+
+        if !intersect(selfBox, otherBox) {
+            return []
+        }
+        if !isAboveThreshold(selfBox) || !isAboveThreshold(otherBox) {
+            return [(selfRange.0, otherRange.0)]
+        }
+
+        // Split and recurse
+        let (selfLeft, selfRight) = self.split(at: 0.5)
+        let (otherLeft, otherRight) = other.split(at: 0.5)
+
+        var result: [(Input, Input)] = []
+
+        recurse(selfLeft, left(of: selfRange), otherLeft, left(of: otherRange), result: &result)
+        recurse(selfLeft, left(of: selfRange), otherRight, right(of: otherRange), result: &result)
+        recurse(selfRight, right(of: selfRange), otherLeft, left(of: otherRange), result: &result)
+        recurse(selfRight, right(of: selfRange), otherRight, right(of: otherRange), result: &result)
+
+        return result
+    }
 }
 
 extension QuadBezier2 where Output: ConstructibleBezier2PointType {

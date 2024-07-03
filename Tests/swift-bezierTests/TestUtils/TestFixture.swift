@@ -118,6 +118,19 @@ extension TestFixture.Asserter {
         SwiftBezierTests.assertEquals(value, expected, file: file, line: line)
     }
 
+    func assertEquals(
+        _ expected: T,
+        by comparer: (T, T) -> Bool,
+        file: StaticString = #file,
+        line: UInt = #line
+    ) {
+
+        guard !comparer(value, expected) else { return }
+        fixture.hasFailures = true
+
+        XCTFail("\(value) != \(expected)", file: file, line: line)
+    }
+
     func assertBezierEquals(
         _ expected: T,
         file: StaticString = #file,

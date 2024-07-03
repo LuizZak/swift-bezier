@@ -69,6 +69,11 @@ extension Bezier2DPoint {
     }
 
     @inlinable
+    public static func - (lhs: Self, rhs: Self) -> Self {
+        .init(x: lhs.x - rhs.x, y: lhs.y - rhs.y)
+    }
+
+    @inlinable
     public static func * (lhs: Self, rhs: Self) -> Self {
         .init(x: lhs.x * rhs.x, y: lhs.y * rhs.y)
     }
@@ -94,8 +99,23 @@ extension Bezier2DPoint {
     }
 
     @inlinable
-    public static func - (lhs: Self, rhs: Self) -> Self {
-        .init(x: lhs.x - rhs.x, y: lhs.y - rhs.y)
+    public static func >= (lhs: Self, rhs: Self) -> Bool {
+        lhs.x >= rhs.x && lhs.y >= rhs.y
+    }
+
+    @inlinable
+    public static func > (lhs: Self, rhs: Self) -> Bool {
+        lhs.x > rhs.x && lhs.y > rhs.y
+    }
+
+    @inlinable
+    public static func < (lhs: Self, rhs: Self) -> Bool {
+        lhs.x < rhs.x && lhs.y < rhs.y
+    }
+
+    @inlinable
+    public static func <= (lhs: Self, rhs: Self) -> Bool {
+        lhs.x <= rhs.x && lhs.y <= rhs.y
     }
 
     @inlinable

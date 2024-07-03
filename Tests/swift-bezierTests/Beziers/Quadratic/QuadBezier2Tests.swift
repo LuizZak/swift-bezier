@@ -76,4 +76,21 @@ class QuadBezier2Tests: XCTestCase {
             )
         }
     }
+
+    func testApproximateIntersection() {
+        let c1 = Sut(p0: .init(x: 71, y: 38), p1: .init(x: -89, y: 58), p2: .init(x: -12, y: -60))
+        let c2 = Sut(p0: .init(x: -47, y: -42), p1: .init(x: 84, y: -13), p2: .init(x: -191, y: 12))
+        TestFixture.beginFixture { fixture in
+            fixture.add(bezier: c1)
+            fixture.add(bezier: c2)
+
+            let intersections = c1.approximateIntersection(with: c2, threshold: 0.1)
+
+            fixture.asserter(intersections)
+                .assertEquals(
+                    [(0.8935546875, 0.09521484375), (0.74365234375, 0.599609375), (0.744140625, 0.59912109375), (0.744140625, 0.599609375)],
+                    by: { $0.elementsEqual($1, by: ==) }
+                )
+        }
+    }
 }

@@ -106,4 +106,21 @@ class CubicBezier2DTests: XCTestCase {
             )
         }
     }
+
+    func testApproximateIntersection() {
+        let c1 = Sut(p0: .init(x: -93.84523543737022, y: 54.584285962187664), p1: .init(x: 36, y: 18), p2: .init(x: 106, y: 109), p3: .init(x: 94, y: -33))
+        let c2 = Sut(p0: .init(x: 106.3978860946466, y: -98.52483470629815), p1: .init(x: 149, y: 65), p2: .init(x: -65, y: 127), p3: .init(x: -65, y: -5))
+        TestFixture.beginFixture { fixture in
+            fixture.add(bezier: c1)
+            fixture.add(bezier: c2)
+
+            let intersections = c1.approximateIntersection(with: c2, threshold: 1.0)
+
+            fixture.asserter(intersections)
+                .assertEquals(
+                    [(0.12109375, 0.828125), (0.5, 0.4375), (0.50390625, 0.4375), (0.880859375, 0.263671875), (0.876953125, 0.265625), (0.87890625, 0.265625)],
+                    by: { $0.elementsEqual($1, by: ==) }
+                )
+        }
+    }
 }
