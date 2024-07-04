@@ -3,8 +3,7 @@
 public final class CachedBezier<Bezier: BezierType> {
     var cache: Cache = Cache()
 
-    @usableFromInline
-    var bezier: Bezier
+    private(set) public var bezier: Bezier
 
     public init(bezier: Bezier) {
         self.bezier = bezier
