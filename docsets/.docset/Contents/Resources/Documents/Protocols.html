@@ -23,7 +23,7 @@
         <a class="header-link" href="index.html">
            Docs
         </a>
-         (99% documented)
+         (100% documented)
       </p>
     
       <div class="header-col--secondary">
@@ -36,7 +36,7 @@
     </header>
 
     <p class="breadcrumbs">
-      <a class="breadcrumb" href="index.html"> Reference</a>
+      <a class="breadcrumb" href="index.html">Index</a>
       <img class="carat" src="img/carat.png" alt=""/>
       Protocols  Reference
     </p>
@@ -95,13 +95,19 @@
                 <a class="nav-group-task-link" href="Protocols/Bezier2PointType.html">Bezier2PointType</a>
               </li>
               <li class="nav-group-task">
+                <a class="nav-group-task-link" href="Protocols/Bezier2Type.html">Bezier2Type</a>
+              </li>
+              <li class="nav-group-task">
                 <a class="nav-group-task-link" href="Protocols/BezierPointType.html">BezierPointType</a>
               </li>
               <li class="nav-group-task">
                 <a class="nav-group-task-link" href="Protocols/BezierType.html">BezierType</a>
               </li>
               <li class="nav-group-task">
-                <a class="nav-group-task-link" href="Protocols/Bounded2BezierType.html">Bounded2BezierType</a>
+                <a class="nav-group-task-link" href="Protocols/BoundedBezier2Type.html">BoundedBezier2Type</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="Protocols/ConstructibleBezier2PointType.html">ConstructibleBezier2PointType</a>
               </li>
               <li class="nav-group-task">
                 <a class="nav-group-task-link" href="Protocols/DeCasteljauSolvableBezierType.html">DeCasteljauSolvableBezierType</a>
@@ -153,7 +159,19 @@
                 <a class="nav-group-task-link" href="Typealiases.html#/s:11SwiftBezier13LinearBezier2a">LinearBezier2</a>
               </li>
               <li class="nav-group-task">
+                <a class="nav-group-task-link" href="Typealiases.html#/s:11SwiftBezier14LinearBezier2Da">LinearBezier2D</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="Typealiases.html#/s:11SwiftBezier14LinearBezier2Fa">LinearBezier2F</a>
+              </li>
+              <li class="nav-group-task">
                 <a class="nav-group-task-link" href="Typealiases.html#/s:11SwiftBezier11QuadBezier2a">QuadBezier2</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="Typealiases.html#/s:11SwiftBezier12QuadBezier2Da">QuadBezier2D</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="Typealiases.html#/s:11SwiftBezier12QuadBezier2Fa">QuadBezier2F</a>
               </li>
             </ul>
           </li>
@@ -173,6 +191,34 @@
           <div class="section-content">
             <div class="task-group">
               <ul class="item-container">
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:11SwiftBezier11Bezier2TypeP"></a>
+                    <a name="//apple_ref/swift/Protocol/Bezier2Type" class="dashAnchor"></a>
+                    <a class="token" href="#/s:11SwiftBezier11Bezier2TypeP">Bezier2Type</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>A 2-dimensional Bézier curve type.</p>
+
+                        <a href="Protocols/Bezier2Type.html" class="slightly-smaller">See more</a>
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">protocol</span> <span class="kt">Bezier2Type</span> <span class="p">:</span> <span class="kt"><a href="Protocols/BezierType.html">BezierType</a></span> <span class="k">where</span> <span class="k">Self</span><span class="o">.</span><span class="kt">Output</span> <span class="p">:</span> <span class="kt"><a href="Protocols/Bezier2PointType.html">Bezier2PointType</a></span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
                 <li class="item">
                   <div>
                     <code>
@@ -204,9 +250,9 @@
                 <li class="item">
                   <div>
                     <code>
-                    <a name="/s:11SwiftBezier08Bounded2B4TypeP"></a>
-                    <a name="//apple_ref/swift/Protocol/Bounded2BezierType" class="dashAnchor"></a>
-                    <a class="token" href="#/s:11SwiftBezier08Bounded2B4TypeP">Bounded2BezierType</a>
+                    <a name="/s:11SwiftBezier18BoundedBezier2TypeP"></a>
+                    <a name="//apple_ref/swift/Protocol/BoundedBezier2Type" class="dashAnchor"></a>
+                    <a class="token" href="#/s:11SwiftBezier18BoundedBezier2TypeP">BoundedBezier2Type</a>
                     </code>
                   </div>
                   <div class="height-container">
@@ -218,13 +264,13 @@
 axis-aligned bounding box, i.e. the smallest bounding box capable of fitting
 all points of this Bézier.</p>
 
-                        <a href="Protocols/Bounded2BezierType.html" class="slightly-smaller">See more</a>
+                        <a href="Protocols/BoundedBezier2Type.html" class="slightly-smaller">See more</a>
                       </div>
                       <div class="declaration">
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">protocol</span> <span class="kt">Bounded2BezierType</span> <span class="p">:</span> <span class="kt"><a href="Protocols/BezierType.html">BezierType</a></span> <span class="k">where</span> <span class="k">Self</span><span class="o">.</span><span class="kt">Output</span> <span class="p">:</span> <span class="kt"><a href="Protocols/Bezier2PointType.html">Bezier2PointType</a></span></code></pre>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">protocol</span> <span class="kt">BoundedBezier2Type</span> <span class="p">:</span> <span class="kt"><a href="Protocols/Bezier2Type.html">Bezier2Type</a></span></code></pre>
 
                         </div>
                       </div>
@@ -345,6 +391,34 @@ all points of this Bézier.</p>
                     </section>
                   </div>
                 </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:11SwiftBezier29ConstructibleBezier2PointTypeP"></a>
+                    <a name="//apple_ref/swift/Protocol/ConstructibleBezier2PointType" class="dashAnchor"></a>
+                    <a class="token" href="#/s:11SwiftBezier29ConstructibleBezier2PointTypeP">ConstructibleBezier2PointType</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>A 2-dimensional Bézier point type that can be constructed from two axis.</p>
+
+                        <a href="Protocols/ConstructibleBezier2PointType.html" class="slightly-smaller">See more</a>
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">protocol</span> <span class="kt">ConstructibleBezier2PointType</span> <span class="p">:</span> <span class="kt"><a href="Protocols/Bezier2PointType.html">Bezier2PointType</a></span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
               </ul>
             </div>
           </div>
@@ -353,8 +427,8 @@ all points of this Bézier.</p>
       </article>
     </div>
     <section class="footer">
-      <p>&copy; 2022 <a class="link" href="" target="_blank" rel="external noopener"></a>. All rights reserved. (Last updated: 2022-12-28)</p>
-      <p>Generated by <a class="link" href="https://github.com/realm/jazzy" target="_blank" rel="external noopener">jazzy ♪♫ v0.14.3</a>, a <a class="link" href="https://realm.io" target="_blank" rel="external noopener">Realm</a> project.</p>
+      <p>&copy; 2024 <a class="link" href="" target="_blank" rel="external noopener"></a>. All rights reserved. (Last updated: 2024-07-06)</p>
+      <p>Generated by <a class="link" href="https://github.com/realm/jazzy" target="_blank" rel="external noopener">jazzy ♪♫ v0.15.1</a>, a <a class="link" href="https://realm.io" target="_blank" rel="external noopener">Realm</a> project.</p>
     </section>
   </body>
 </html>

@@ -23,7 +23,7 @@
         <a class="header-link" href="index.html">
            Docs
         </a>
-         (99% documented)
+         (100% documented)
       </p>
     
       <div class="header-col--secondary">
@@ -36,7 +36,7 @@
     </header>
 
     <p class="breadcrumbs">
-      <a class="breadcrumb" href="index.html"> Reference</a>
+      <a class="breadcrumb" href="index.html">Index</a>
       <img class="carat" src="img/carat.png" alt=""/>
       Structures  Reference
     </p>
@@ -95,13 +95,19 @@
                 <a class="nav-group-task-link" href="Protocols/Bezier2PointType.html">Bezier2PointType</a>
               </li>
               <li class="nav-group-task">
+                <a class="nav-group-task-link" href="Protocols/Bezier2Type.html">Bezier2Type</a>
+              </li>
+              <li class="nav-group-task">
                 <a class="nav-group-task-link" href="Protocols/BezierPointType.html">BezierPointType</a>
               </li>
               <li class="nav-group-task">
                 <a class="nav-group-task-link" href="Protocols/BezierType.html">BezierType</a>
               </li>
               <li class="nav-group-task">
-                <a class="nav-group-task-link" href="Protocols/Bounded2BezierType.html">Bounded2BezierType</a>
+                <a class="nav-group-task-link" href="Protocols/BoundedBezier2Type.html">BoundedBezier2Type</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="Protocols/ConstructibleBezier2PointType.html">ConstructibleBezier2PointType</a>
               </li>
               <li class="nav-group-task">
                 <a class="nav-group-task-link" href="Protocols/DeCasteljauSolvableBezierType.html">DeCasteljauSolvableBezierType</a>
@@ -153,7 +159,19 @@
                 <a class="nav-group-task-link" href="Typealiases.html#/s:11SwiftBezier13LinearBezier2a">LinearBezier2</a>
               </li>
               <li class="nav-group-task">
+                <a class="nav-group-task-link" href="Typealiases.html#/s:11SwiftBezier14LinearBezier2Da">LinearBezier2D</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="Typealiases.html#/s:11SwiftBezier14LinearBezier2Fa">LinearBezier2F</a>
+              </li>
+              <li class="nav-group-task">
                 <a class="nav-group-task-link" href="Typealiases.html#/s:11SwiftBezier11QuadBezier2a">QuadBezier2</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="Typealiases.html#/s:11SwiftBezier12QuadBezier2Da">QuadBezier2D</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="Typealiases.html#/s:11SwiftBezier12QuadBezier2Fa">QuadBezier2F</a>
               </li>
             </ul>
           </li>
@@ -196,6 +214,8 @@
                           <p class="aside-title">Swift</p>
                           <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">struct</span> <span class="kt">CubicBezier</span><span class="o">&lt;</span><span class="kt">Output</span><span class="o">&gt;</span> <span class="p">:</span> <span class="kt"><a href="Protocols/DeCasteljauSolvableBezierType.html">DeCasteljauSolvableBezierType</a></span><span class="p">,</span> <span class="kt">CustomStringConvertible</span> <span class="k">where</span> <span class="kt">Output</span> <span class="p">:</span> <span class="kt"><a href="Protocols/BezierPointType.html">BezierPointType</a></span></code></pre>
 <pre class="highlight swift"><code><span class="kd">extension</span> <span class="kt">CubicBezier</span><span class="p">:</span> <span class="kt"><a href="Protocols/DerivableBezierType.html">DerivableBezierType</a></span></code></pre>
+<pre class="highlight swift"><code><span class="kd">extension</span> <span class="kt">CubicBezier</span><span class="p">:</span> <span class="kt">Equatable</span> <span class="k">where</span> <span class="kt">Output</span><span class="p">:</span> <span class="kt">Equatable</span></code></pre>
+<pre class="highlight swift"><code><span class="kd">extension</span> <span class="kt">CubicBezier</span><span class="p">:</span> <span class="kt">Hashable</span> <span class="k">where</span> <span class="kt">Output</span><span class="p">:</span> <span class="kt">Hashable</span></code></pre>
 
                         </div>
                       </div>
@@ -215,9 +235,9 @@
                     <section class="section">
                       <div class="pointer"></div>
                       <div class="abstract">
-                        <p>A linear Bézier curve of degree 1.</p>
+                        <p>A linear Bézier curve of degree 1, or simply a line.</p>
 
-<p>It is convenient mostly as the result of the derivative of a degree 2, or 
+<p>It is convenient mostly as the result of the derivative of a degree 2, or
 quadratic- Bézier curve.</p>
 
                         <a href="Structs/LinearBezier.html" class="slightly-smaller">See more</a>
@@ -256,6 +276,8 @@ quadratic- Bézier curve.</p>
                           <p class="aside-title">Swift</p>
                           <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">struct</span> <span class="kt">QuadBezier</span><span class="o">&lt;</span><span class="kt">Output</span><span class="o">&gt;</span> <span class="p">:</span> <span class="kt"><a href="Protocols/DeCasteljauSolvableBezierType.html">DeCasteljauSolvableBezierType</a></span><span class="p">,</span> <span class="kt">CustomStringConvertible</span> <span class="k">where</span> <span class="kt">Output</span> <span class="p">:</span> <span class="kt"><a href="Protocols/BezierPointType.html">BezierPointType</a></span></code></pre>
 <pre class="highlight swift"><code><span class="kd">extension</span> <span class="kt">QuadBezier</span><span class="p">:</span> <span class="kt"><a href="Protocols/DerivableBezierType.html">DerivableBezierType</a></span></code></pre>
+<pre class="highlight swift"><code><span class="kd">extension</span> <span class="kt">QuadBezier</span><span class="p">:</span> <span class="kt">Equatable</span> <span class="k">where</span> <span class="kt">Output</span><span class="p">:</span> <span class="kt">Equatable</span></code></pre>
+<pre class="highlight swift"><code><span class="kd">extension</span> <span class="kt">QuadBezier</span><span class="p">:</span> <span class="kt">Hashable</span> <span class="k">where</span> <span class="kt">Output</span><span class="p">:</span> <span class="kt">Hashable</span></code></pre>
 
                         </div>
                       </div>
@@ -303,7 +325,7 @@ quadratic- Bézier curve.</p>
                     <section class="section">
                       <div class="pointer"></div>
                       <div class="abstract">
-                        <p>An implementation of <code><a href="Protocols/Bezier2PointType.html">Bezier2PointType</a></code> with <code>Double</code> scalars.</p>
+                        <p>An implementation of <code><a href="Protocols/ConstructibleBezier2PointType.html">ConstructibleBezier2PointType</a></code> with <code>Double</code> scalars.</p>
 
                         <a href="Structs/Bezier2DPoint.html" class="slightly-smaller">See more</a>
                       </div>
@@ -311,7 +333,7 @@ quadratic- Bézier curve.</p>
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">struct</span> <span class="kt">Bezier2DPoint</span> <span class="p">:</span> <span class="kt"><a href="Protocols/Bezier2PointType.html">Bezier2PointType</a></span><span class="p">,</span> <span class="kt">Hashable</span><span class="p">,</span> <span class="kt">CustomStringConvertible</span></code></pre>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">struct</span> <span class="kt">Bezier2DPoint</span> <span class="p">:</span> <span class="kt"><a href="Protocols/ConstructibleBezier2PointType.html">ConstructibleBezier2PointType</a></span><span class="p">,</span> <span class="kt">Hashable</span><span class="p">,</span> <span class="kt">CustomStringConvertible</span></code></pre>
 
                         </div>
                       </div>
@@ -331,7 +353,7 @@ quadratic- Bézier curve.</p>
                     <section class="section">
                       <div class="pointer"></div>
                       <div class="abstract">
-                        <p>An implementation of <code><a href="Protocols/Bezier2PointType.html">Bezier2PointType</a></code> with <code>Float</code> scalars.</p>
+                        <p>An implementation of <code><a href="Protocols/ConstructibleBezier2PointType.html">ConstructibleBezier2PointType</a></code> with <code>Float</code> scalars.</p>
 
                         <a href="Structs/Bezier2FPoint.html" class="slightly-smaller">See more</a>
                       </div>
@@ -339,7 +361,7 @@ quadratic- Bézier curve.</p>
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">struct</span> <span class="kt">Bezier2FPoint</span> <span class="p">:</span> <span class="kt"><a href="Protocols/Bezier2PointType.html">Bezier2PointType</a></span><span class="p">,</span> <span class="kt">Hashable</span><span class="p">,</span> <span class="kt">CustomStringConvertible</span></code></pre>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">struct</span> <span class="kt">Bezier2FPoint</span> <span class="p">:</span> <span class="kt"><a href="Protocols/ConstructibleBezier2PointType.html">ConstructibleBezier2PointType</a></span><span class="p">,</span> <span class="kt">Hashable</span><span class="p">,</span> <span class="kt">CustomStringConvertible</span></code></pre>
 
                         </div>
                       </div>
@@ -354,8 +376,8 @@ quadratic- Bézier curve.</p>
       </article>
     </div>
     <section class="footer">
-      <p>&copy; 2022 <a class="link" href="" target="_blank" rel="external noopener"></a>. All rights reserved. (Last updated: 2022-12-28)</p>
-      <p>Generated by <a class="link" href="https://github.com/realm/jazzy" target="_blank" rel="external noopener">jazzy ♪♫ v0.14.3</a>, a <a class="link" href="https://realm.io" target="_blank" rel="external noopener">Realm</a> project.</p>
+      <p>&copy; 2024 <a class="link" href="" target="_blank" rel="external noopener"></a>. All rights reserved. (Last updated: 2024-07-06)</p>
+      <p>Generated by <a class="link" href="https://github.com/realm/jazzy" target="_blank" rel="external noopener">jazzy ♪♫ v0.15.1</a>, a <a class="link" href="https://realm.io" target="_blank" rel="external noopener">Realm</a> project.</p>
     </section>
   </body>
 </html>

@@ -1,12 +1,6 @@
 {
   "warnings": [
-    {
-      "file": "/Users/runner/work/swift-bezier/swift-bezier/Sources/swift-bezier/CachedBezier.swift",
-      "line": 9,
-      "symbol": "CachedBezier.init(bezier:)",
-      "symbol_kind": "source.lang.swift.decl.function.method.instance",
-      "warning": "undocumented"
-    }
+
   ],
   "source_directory": "/Users/runner/work/swift-bezier/swift-bezier"
 }

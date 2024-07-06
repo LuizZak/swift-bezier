@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <title>LinearBezier2 Extension Reference</title>
+    <title>Bezier2Type Protocol Reference</title>
     <link rel="stylesheet" type="text/css" href="../css/jazzy.css" />
     <link rel="stylesheet" type="text/css" href="../css/highlight.css" />
     <meta charset="utf-8">
@@ -14,9 +14,9 @@
   </head>
   <body>
 
-    <a name="//apple_ref/swift/Extension/LinearBezier2" class="dashAnchor"></a>
+    <a name="//apple_ref/swift/Protocol/Bezier2Type" class="dashAnchor"></a>
 
-    <a title="LinearBezier2 Extension Reference"></a>
+    <a title="Bezier2Type Protocol Reference"></a>
 
     <header class="header">
       <p class="header-col header-col--primary">
@@ -38,9 +38,9 @@
     <p class="breadcrumbs">
       <a class="breadcrumb" href="../index.html">Index</a>
       <img class="carat" src="../img/carat.png" alt=""/>
-      <a class="breadcrumb" href="../Extensions.html">Extensions</a>
+      <a class="breadcrumb" href="../Protocols.html">Protocols</a>
       <img class="carat" src="../img/carat.png" alt=""/>
-      SwiftBezier.LinearBezier2 Extension Reference
+      SwiftBezier.Bezier2Type Protocol Reference
     </p>
 
     <div class="content-wrapper">
@@ -183,15 +183,16 @@
 
         <section class="section">
           <div class="section-content top-matter">
-            <h1>LinearBezier2</h1>
+            <h1>Bezier2Type</h1>
               <div class="declaration">
                 <div class="language">
                   
-                  <pre class="highlight swift"><code><span class="kd">extension</span> <span class="kt"><a href="../Typealiases.html#/s:11SwiftBezier13LinearBezier2a">LinearBezier2</a></span><span class="p">:</span> <span class="kt"><a href="../Protocols/Bezier2Type.html">Bezier2Type</a></span><span class="p">,</span> <span class="kt"><a href="../Protocols/BoundedBezier2Type.html">BoundedBezier2Type</a></span></code></pre>
+                  <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">protocol</span> <span class="kt">Bezier2Type</span> <span class="p">:</span> <span class="kt"><a href="../Protocols/BezierType.html">BezierType</a></span> <span class="k">where</span> <span class="k">Self</span><span class="o">.</span><span class="kt">Output</span> <span class="p">:</span> <span class="kt"><a href="../Protocols/Bezier2PointType.html">Bezier2PointType</a></span></code></pre>
 
                 </div>
               </div>
-            
+            <p>A 2-dimensional Bézier curve type.</p>
+
           </div>
         </section>
 
@@ -202,39 +203,9 @@
                 <li class="item">
                   <div>
                     <code>
-                    <a name="/s:11SwiftBezier06LinearB0VA2A16Bezier2PointTypeRzrlE14boundingRegionx7minimum_x7maximumtyF"></a>
-                    <a name="//apple_ref/swift/Method/boundingRegion()" class="dashAnchor"></a>
-                    <a class="token" href="#/s:11SwiftBezier06LinearB0VA2A16Bezier2PointTypeRzrlE14boundingRegionx7minimum_x7maximumtyF">boundingRegion()</a>
-                    </code>
-                  </div>
-                  <div class="height-container">
-                    <div class="pointer-container"></div>
-                    <section class="section">
-                      <div class="pointer"></div>
-                      <div class="abstract">
-                        <p>Returns the minimal bounding region for this linear Bézier curve.
-It is simply the minimal axis-aligned bounding region for the two control
-points.</p>
-
-                      </div>
-                      <div class="declaration">
-                        <h4>Declaration</h4>
-                        <div class="language">
-                          <p class="aside-title">Swift</p>
-                          <pre class="highlight swift"><code><span class="kd">@inlinable</span>
-<span class="kd">public</span> <span class="kd">func</span> <span class="nf">boundingRegion</span><span class="p">()</span> <span class="o">-&gt;</span> <span class="p">(</span><span class="nv">minimum</span><span class="p">:</span> <span class="kt">Output</span><span class="p">,</span> <span class="nv">maximum</span><span class="p">:</span> <span class="kt">Output</span><span class="p">)</span></code></pre>
-
-                        </div>
-                      </div>
-                    </section>
-                  </div>
-                </li>
-                <li class="item">
-                  <div>
-                    <code>
-                    <a name="/s:11SwiftBezier06LinearB0VA2A16Bezier2PointTypeRzrlE7rotated2byACyxG6ScalarQz_tF"></a>
+                    <a name="/s:11SwiftBezier11Bezier2TypeP7rotated2byx6Output_6ScalarQZ_tF"></a>
                     <a name="//apple_ref/swift/Method/rotated(by:)" class="dashAnchor"></a>
-                    <a class="token" href="#/s:11SwiftBezier06LinearB0VA2A16Bezier2PointTypeRzrlE7rotated2byACyxG6ScalarQz_tF">rotated(by:<wbr>)</a>
+                    <a class="token" href="#/s:11SwiftBezier11Bezier2TypeP7rotated2byx6Output_6ScalarQZ_tF">rotated(by:<wbr>)</a>
                     </code>
                   </div>
                   <div class="height-container">
@@ -250,7 +221,7 @@ points.</p>
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">func</span> <span class="nf">rotated</span><span class="p">(</span><span class="n">by</span> <span class="nv">angleInRadians</span><span class="p">:</span> <span class="kt">Output</span><span class="o">.</span><span class="kt">Scalar</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt"><a href="../Structs/LinearBezier.html">LinearBezier</a></span><span class="o">&lt;</span><span class="kt">Output</span><span class="o">&gt;</span></code></pre>
+                          <pre class="highlight swift"><code><span class="kd">func</span> <span class="nf">rotated</span><span class="p">(</span><span class="n">by</span> <span class="nv">angleInRadians</span><span class="p">:</span> <span class="kt">Output</span><span class="o">.</span><span class="kt">Scalar</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="k">Self</span></code></pre>
 
                         </div>
                       </div>
@@ -270,13 +241,16 @@ points.</p>
                     <section class="section">
                       <div class="pointer"></div>
                       <div class="abstract">
-                        
+                        <p>Returns the result of alining this Bézier curve by translating and
+rotating its control points such that they are resting on the origin
+line, transformed along the given <code>line</code>.</p>
+
                       </div>
                       <div class="declaration">
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">func</span> <span class="nf">aligned</span><span class="p">(</span><span class="n">along</span> <span class="nv">line</span><span class="p">:</span> <span class="kt"><a href="../Typealiases.html#/s:11SwiftBezier13LinearBezier2a">LinearBezier2</a></span><span class="o">&lt;</span><span class="kt">Output</span><span class="o">&gt;</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt"><a href="../Structs/LinearBezier.html">LinearBezier</a></span><span class="o">&lt;</span><span class="kt">Output</span><span class="o">&gt;</span></code></pre>
+                          <pre class="highlight swift"><code><span class="kd">func</span> <span class="nf">aligned</span><span class="p">(</span><span class="n">along</span> <span class="nv">line</span><span class="p">:</span> <span class="kt"><a href="../Typealiases.html#/s:11SwiftBezier13LinearBezier2a">LinearBezier2</a></span><span class="o">&lt;</span><span class="kt">Output</span><span class="o">&gt;</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="k">Self</span></code></pre>
 
                         </div>
                       </div>

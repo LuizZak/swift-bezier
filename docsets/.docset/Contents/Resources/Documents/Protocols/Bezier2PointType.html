@@ -23,7 +23,7 @@
         <a class="header-link" href="../index.html">
            Docs
         </a>
-         (99% documented)
+         (100% documented)
       </p>
     
       <div class="header-col--secondary">
@@ -36,9 +36,11 @@
     </header>
 
     <p class="breadcrumbs">
-      <a class="breadcrumb" href="../index.html"> Reference</a>
+      <a class="breadcrumb" href="../index.html">Index</a>
       <img class="carat" src="../img/carat.png" alt=""/>
-      Bezier2PointType Protocol Reference
+      <a class="breadcrumb" href="../Protocols.html">Protocols</a>
+      <img class="carat" src="../img/carat.png" alt=""/>
+      SwiftBezier.Bezier2PointType Protocol Reference
     </p>
 
     <div class="content-wrapper">
@@ -95,13 +97,19 @@
                 <a class="nav-group-task-link" href="../Protocols/Bezier2PointType.html">Bezier2PointType</a>
               </li>
               <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Protocols/Bezier2Type.html">Bezier2Type</a>
+              </li>
+              <li class="nav-group-task">
                 <a class="nav-group-task-link" href="../Protocols/BezierPointType.html">BezierPointType</a>
               </li>
               <li class="nav-group-task">
                 <a class="nav-group-task-link" href="../Protocols/BezierType.html">BezierType</a>
               </li>
               <li class="nav-group-task">
-                <a class="nav-group-task-link" href="../Protocols/Bounded2BezierType.html">Bounded2BezierType</a>
+                <a class="nav-group-task-link" href="../Protocols/BoundedBezier2Type.html">BoundedBezier2Type</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Protocols/ConstructibleBezier2PointType.html">ConstructibleBezier2PointType</a>
               </li>
               <li class="nav-group-task">
                 <a class="nav-group-task-link" href="../Protocols/DeCasteljauSolvableBezierType.html">DeCasteljauSolvableBezierType</a>
@@ -153,7 +161,19 @@
                 <a class="nav-group-task-link" href="../Typealiases.html#/s:11SwiftBezier13LinearBezier2a">LinearBezier2</a>
               </li>
               <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Typealiases.html#/s:11SwiftBezier14LinearBezier2Da">LinearBezier2D</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Typealiases.html#/s:11SwiftBezier14LinearBezier2Fa">LinearBezier2F</a>
+              </li>
+              <li class="nav-group-task">
                 <a class="nav-group-task-link" href="../Typealiases.html#/s:11SwiftBezier11QuadBezier2a">QuadBezier2</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Typealiases.html#/s:11SwiftBezier12QuadBezier2Da">QuadBezier2D</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Typealiases.html#/s:11SwiftBezier12QuadBezier2Fa">QuadBezier2F</a>
               </li>
             </ul>
           </li>
@@ -234,6 +254,144 @@
                     </section>
                   </div>
                 </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:11SwiftBezier16Bezier2PointTypeP11leftRotatedxyF"></a>
+                    <a name="//apple_ref/swift/Method/leftRotated()" class="dashAnchor"></a>
+                    <a class="token" href="#/s:11SwiftBezier16Bezier2PointTypeP11leftRotatedxyF">leftRotated()</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Returns the result of rotating this vector by 90º counter-clockwise along
+the origin.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">func</span> <span class="nf">leftRotated</span><span class="p">()</span> <span class="o">-&gt;</span> <span class="k">Self</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:11SwiftBezier16Bezier2PointTypeP12rightRotatedxyF"></a>
+                    <a name="//apple_ref/swift/Method/rightRotated()" class="dashAnchor"></a>
+                    <a class="token" href="#/s:11SwiftBezier16Bezier2PointTypeP12rightRotatedxyF">rightRotated()</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Returns the result of rotating this vector by 90º clockwise along the origin.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">func</span> <span class="nf">rightRotated</span><span class="p">()</span> <span class="o">-&gt;</span> <span class="k">Self</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:11SwiftBezier16Bezier2PointTypeP5angle6ScalarQzyF"></a>
+                    <a name="//apple_ref/swift/Method/angle()" class="dashAnchor"></a>
+                    <a class="token" href="#/s:11SwiftBezier16Bezier2PointTypeP5angle6ScalarQzyF">angle()</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Gets the angle, in radians, of this point, as the angle between the origin
+and <code>self</code>.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">func</span> <span class="nf">angle</span><span class="p">()</span> <span class="o">-&gt;</span> <span class="kt">Scalar</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:11SwiftBezier16Bezier2PointTypeP7rotated2byx6ScalarQz_tF"></a>
+                    <a name="//apple_ref/swift/Method/rotated(by:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:11SwiftBezier16Bezier2PointTypeP7rotated2byx6ScalarQz_tF">rotated(by:<wbr>)</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Returns the result of rotating this point around the origin by <code>angleInRadians</code>.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">func</span> <span class="nf">rotated</span><span class="p">(</span><span class="n">by</span> <span class="nv">angleInRadians</span><span class="p">:</span> <span class="kt">Scalar</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="k">Self</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:11SwiftBezier16Bezier2PointTypeP10transposed5alongxAA06LinearB0VyxG_tF"></a>
+                    <a name="//apple_ref/swift/Method/transposed(along:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:11SwiftBezier16Bezier2PointTypeP10transposed5alongxAA06LinearB0VyxG_tF">transposed(along:<wbr>)</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Transposes this point such that the resulting point rests on a transformed
+origin line, represented by <code>line</code>.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">func</span> <span class="nf">transposed</span><span class="p">(</span><span class="n">along</span> <span class="nv">line</span><span class="p">:</span> <span class="kt"><a href="../Typealiases.html#/s:11SwiftBezier13LinearBezier2a">LinearBezier2</a></span><span class="o">&lt;</span><span class="k">Self</span><span class="o">&gt;</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="k">Self</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
               </ul>
             </div>
           </div>
@@ -242,8 +400,8 @@
       </article>
     </div>
     <section class="footer">
-      <p>&copy; 2022 <a class="link" href="" target="_blank" rel="external noopener"></a>. All rights reserved. (Last updated: 2022-12-28)</p>
-      <p>Generated by <a class="link" href="https://github.com/realm/jazzy" target="_blank" rel="external noopener">jazzy ♪♫ v0.14.3</a>, a <a class="link" href="https://realm.io" target="_blank" rel="external noopener">Realm</a> project.</p>
+      <p>&copy; 2024 <a class="link" href="" target="_blank" rel="external noopener"></a>. All rights reserved. (Last updated: 2024-07-06)</p>
+      <p>Generated by <a class="link" href="https://github.com/realm/jazzy" target="_blank" rel="external noopener">jazzy ♪♫ v0.15.1</a>, a <a class="link" href="https://realm.io" target="_blank" rel="external noopener">Realm</a> project.</p>
     </section>
   </body>
 </html>

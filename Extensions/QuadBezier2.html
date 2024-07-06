@@ -23,7 +23,7 @@
         <a class="header-link" href="../index.html">
            Docs
         </a>
-         (99% documented)
+         (100% documented)
       </p>
     
       <div class="header-col--secondary">
@@ -36,9 +36,11 @@
     </header>
 
     <p class="breadcrumbs">
-      <a class="breadcrumb" href="../index.html"> Reference</a>
+      <a class="breadcrumb" href="../index.html">Index</a>
       <img class="carat" src="../img/carat.png" alt=""/>
-      QuadBezier2 Extension Reference
+      <a class="breadcrumb" href="../Extensions.html">Extensions</a>
+      <img class="carat" src="../img/carat.png" alt=""/>
+      SwiftBezier.QuadBezier2 Extension Reference
     </p>
 
     <div class="content-wrapper">
@@ -95,13 +97,19 @@
                 <a class="nav-group-task-link" href="../Protocols/Bezier2PointType.html">Bezier2PointType</a>
               </li>
               <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Protocols/Bezier2Type.html">Bezier2Type</a>
+              </li>
+              <li class="nav-group-task">
                 <a class="nav-group-task-link" href="../Protocols/BezierPointType.html">BezierPointType</a>
               </li>
               <li class="nav-group-task">
                 <a class="nav-group-task-link" href="../Protocols/BezierType.html">BezierType</a>
               </li>
               <li class="nav-group-task">
-                <a class="nav-group-task-link" href="../Protocols/Bounded2BezierType.html">Bounded2BezierType</a>
+                <a class="nav-group-task-link" href="../Protocols/BoundedBezier2Type.html">BoundedBezier2Type</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Protocols/ConstructibleBezier2PointType.html">ConstructibleBezier2PointType</a>
               </li>
               <li class="nav-group-task">
                 <a class="nav-group-task-link" href="../Protocols/DeCasteljauSolvableBezierType.html">DeCasteljauSolvableBezierType</a>
@@ -153,7 +161,19 @@
                 <a class="nav-group-task-link" href="../Typealiases.html#/s:11SwiftBezier13LinearBezier2a">LinearBezier2</a>
               </li>
               <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Typealiases.html#/s:11SwiftBezier14LinearBezier2Da">LinearBezier2D</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Typealiases.html#/s:11SwiftBezier14LinearBezier2Fa">LinearBezier2F</a>
+              </li>
+              <li class="nav-group-task">
                 <a class="nav-group-task-link" href="../Typealiases.html#/s:11SwiftBezier11QuadBezier2a">QuadBezier2</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Typealiases.html#/s:11SwiftBezier12QuadBezier2Da">QuadBezier2D</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Typealiases.html#/s:11SwiftBezier12QuadBezier2Fa">QuadBezier2F</a>
               </li>
             </ul>
           </li>
@@ -167,7 +187,8 @@
               <div class="declaration">
                 <div class="language">
                   
-                  <pre class="highlight swift"><code><span class="kd">extension</span> <span class="kt"><a href="../Typealiases.html#/s:11SwiftBezier11QuadBezier2a">QuadBezier2</a></span><span class="p">:</span> <span class="kt"><a href="../Protocols/Bounded2BezierType.html">Bounded2BezierType</a></span></code></pre>
+                  <pre class="highlight swift"><code><span class="kd">extension</span> <span class="kt"><a href="../Typealiases.html#/s:11SwiftBezier11QuadBezier2a">QuadBezier2</a></span><span class="p">:</span> <span class="kt"><a href="../Protocols/Bezier2Type.html">Bezier2Type</a></span><span class="p">,</span> <span class="kt"><a href="../Protocols/BoundedBezier2Type.html">BoundedBezier2Type</a></span></code></pre>
+<pre class="highlight swift"><code><span class="kd">extension</span> <span class="kt"><a href="../Typealiases.html#/s:11SwiftBezier11QuadBezier2a">QuadBezier2</a></span> <span class="k">where</span> <span class="kt">Output</span><span class="p">:</span> <span class="kt"><a href="../Protocols/ConstructibleBezier2PointType.html">ConstructibleBezier2PointType</a></span></code></pre>
 
                 </div>
               </div>
@@ -207,6 +228,216 @@
                     </section>
                   </div>
                 </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:11SwiftBezier04QuadB0VA2A16Bezier2PointTypeRzrlE7rotated2byACyxG6ScalarQz_tF"></a>
+                    <a name="//apple_ref/swift/Method/rotated(by:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:11SwiftBezier04QuadB0VA2A16Bezier2PointTypeRzrlE7rotated2byACyxG6ScalarQz_tF">rotated(by:<wbr>)</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Returns the result of rotating the points of this Bézier curve by
+<code>angleInRadians</code> around the origin.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">func</span> <span class="nf">rotated</span><span class="p">(</span><span class="n">by</span> <span class="nv">angleInRadians</span><span class="p">:</span> <span class="kt">Output</span><span class="o">.</span><span class="kt">Scalar</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt"><a href="../Structs/QuadBezier.html">QuadBezier</a></span><span class="o">&lt;</span><span class="kt">Output</span><span class="o">&gt;</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:11SwiftBezier11Bezier2TypeP7aligned5alongxAA06LinearB0Vy6OutputQzG_tF"></a>
+                    <a name="//apple_ref/swift/Method/aligned(along:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:11SwiftBezier11Bezier2TypeP7aligned5alongxAA06LinearB0Vy6OutputQzG_tF">aligned(along:<wbr>)</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">func</span> <span class="nf">aligned</span><span class="p">(</span><span class="n">along</span> <span class="nv">line</span><span class="p">:</span> <span class="kt"><a href="../Typealiases.html#/s:11SwiftBezier13LinearBezier2a">LinearBezier2</a></span><span class="o">&lt;</span><span class="kt">Output</span><span class="o">&gt;</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt"><a href="../Structs/QuadBezier.html">QuadBezier</a></span><span class="o">&lt;</span><span class="kt">Output</span><span class="o">&gt;</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:11SwiftBezier04QuadB0VA2A16Bezier2PointTypeRzrlE23approximateIntersection4with9thresholdSay6ScalarQz_AItGACyxG_AItF"></a>
+                    <a name="//apple_ref/swift/Method/approximateIntersection(with:threshold:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:11SwiftBezier04QuadB0VA2A16Bezier2PointTypeRzrlE23approximateIntersection4with9thresholdSay6ScalarQz_AItGACyxG_AItF">approximateIntersection(with:<wbr>threshold:<wbr>)</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">func</span> <span class="nf">approximateIntersection</span><span class="p">(</span>
+    <span class="n">with</span> <span class="nv">other</span><span class="p">:</span> <span class="k">Self</span><span class="p">,</span>
+    <span class="nv">threshold</span><span class="p">:</span> <span class="kt">Output</span><span class="o">.</span><span class="kt">Scalar</span>
+<span class="p">)</span> <span class="o">-&gt;</span> <span class="p">[(</span><span class="kt">Input</span><span class="p">,</span> <span class="kt">Input</span><span class="p">)]</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:11SwiftBezier04QuadB0VA2A16Bezier2PointTypeRzrlE6normal2atx6ScalarQz_tF"></a>
+                    <a name="//apple_ref/swift/Method/normal(at:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:11SwiftBezier04QuadB0VA2A16Bezier2PointTypeRzrlE6normal2atx6ScalarQz_tF">normal(at:<wbr>)</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Gets a normal vector for this Bézier curve at a given point.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">func</span> <span class="nf">normal</span><span class="p">(</span><span class="n">at</span> <span class="nv">input</span><span class="p">:</span> <span class="kt">Output</span><span class="o">.</span><span class="kt">Scalar</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt">Output</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+              </ul>
+            </div>
+            <div class="task-group">
+              <div class="task-name-container">
+                <a name="/Available%20where%20%60Output%60%3A%20%60ConstructibleBezier2PointType%60"></a>
+                <a name="//apple_ref/swift/Section/Available where `Output`: `ConstructibleBezier2PointType`" class="dashAnchor"></a>
+                <div class="section-name-container">
+                  <a class="section-name-link" href="#/Available%20where%20%60Output%60%3A%20%60ConstructibleBezier2PointType%60"></a>
+                  <h3 class="section-name"><span>Available where <code>Output</code>: <code><a href="../Protocols/ConstructibleBezier2PointType.html">ConstructibleBezier2PointType</a></code></span>
+</h3>
+                </div>
+              </div>
+              <ul class="item-container">
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:11SwiftBezier04QuadB0VA2A29ConstructibleBezier2PointTypeRzrlE8extremasACyxG1x_AF1ytyF"></a>
+                    <a name="//apple_ref/swift/Method/extremas()" class="dashAnchor"></a>
+                    <a class="token" href="#/s:11SwiftBezier04QuadB0VA2A29ConstructibleBezier2PointTypeRzrlE8extremasACyxG1x_AF1ytyF">extremas()</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Returns the extremas for the x and y axis of this cubic Bézier curve, as
+two Bézier curves that represent the axis on the Y axis, and &lsquo;t&rsquo; as the
+X axis, ranging from 0 to 1.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">func</span> <span class="nf">extremas</span><span class="p">()</span> <span class="o">-&gt;</span> <span class="p">(</span><span class="nv">x</span><span class="p">:</span> <span class="p">`</span><span class="nv">Self</span><span class="p">`,</span> <span class="nv">y</span><span class="p">:</span> <span class="p">`</span><span class="nv">Self</span><span class="p">`)</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:11SwiftBezier04QuadB0VA2A29ConstructibleBezier2PointTypeRzrlE5roots6ScalarQzSg1x_AH1ytyF"></a>
+                    <a name="//apple_ref/swift/Method/roots()" class="dashAnchor"></a>
+                    <a class="token" href="#/s:11SwiftBezier04QuadB0VA2A29ConstructibleBezier2PointTypeRzrlE5roots6ScalarQzSg1x_AH1ytyF">roots()</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Returns the roots of this quadratic Bézier.</p>
+
+<p>If one or more of the roots fall outside the range of 0-1, or are not
+computable, <code>nil</code> is returned in their place, instead.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">func</span> <span class="nf">roots</span><span class="p">()</span> <span class="o">-&gt;</span> <span class="p">(</span><span class="nv">x</span><span class="p">:</span> <span class="kt">Input</span><span class="p">?,</span> <span class="nv">y</span><span class="p">:</span> <span class="kt">Input</span><span class="p">?)</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:11SwiftBezier04QuadB0VA2A29ConstructibleBezier2PointTypeRzrlE12intersection4with6ScalarQzSg2t0_AI2t2tAA06LinearB0VyxG_tF"></a>
+                    <a name="//apple_ref/swift/Method/intersection(with:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:11SwiftBezier04QuadB0VA2A29ConstructibleBezier2PointTypeRzrlE12intersection4with6ScalarQzSg2t0_AI2t2tAA06LinearB0VyxG_tF">intersection(with:<wbr>)</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Returns the result of the intersection of this Bézier curve against a given
+input line.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">func</span> <span class="nf">intersection</span><span class="p">(</span><span class="n">with</span> <span class="nv">line</span><span class="p">:</span> <span class="kt"><a href="../Structs/LinearBezier.html">LinearBezier</a></span><span class="o">&lt;</span><span class="kt">Output</span><span class="o">&gt;</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="p">(</span><span class="nv">t0</span><span class="p">:</span> <span class="kt">Input</span><span class="p">?,</span> <span class="nv">t2</span><span class="p">:</span> <span class="kt">Input</span><span class="p">?)</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
               </ul>
             </div>
           </div>
@@ -215,8 +446,8 @@
       </article>
     </div>
     <section class="footer">
-      <p>&copy; 2022 <a class="link" href="" target="_blank" rel="external noopener"></a>. All rights reserved. (Last updated: 2022-12-28)</p>
-      <p>Generated by <a class="link" href="https://github.com/realm/jazzy" target="_blank" rel="external noopener">jazzy ♪♫ v0.14.3</a>, a <a class="link" href="https://realm.io" target="_blank" rel="external noopener">Realm</a> project.</p>
+      <p>&copy; 2024 <a class="link" href="" target="_blank" rel="external noopener"></a>. All rights reserved. (Last updated: 2024-07-06)</p>
+      <p>Generated by <a class="link" href="https://github.com/realm/jazzy" target="_blank" rel="external noopener">jazzy ♪♫ v0.15.1</a>, a <a class="link" href="https://realm.io" target="_blank" rel="external noopener">Realm</a> project.</p>
     </section>
   </body>
 </html>

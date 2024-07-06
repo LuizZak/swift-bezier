@@ -23,7 +23,7 @@
         <a class="header-link" href="../index.html">
            Docs
         </a>
-         (99% documented)
+         (100% documented)
       </p>
     
       <div class="header-col--secondary">
@@ -36,9 +36,11 @@
     </header>
 
     <p class="breadcrumbs">
-      <a class="breadcrumb" href="../index.html"> Reference</a>
+      <a class="breadcrumb" href="../index.html">Index</a>
       <img class="carat" src="../img/carat.png" alt=""/>
-      BezierPointType Protocol Reference
+      <a class="breadcrumb" href="../Protocols.html">Protocols</a>
+      <img class="carat" src="../img/carat.png" alt=""/>
+      SwiftBezier.BezierPointType Protocol Reference
     </p>
 
     <div class="content-wrapper">
@@ -95,13 +97,19 @@
                 <a class="nav-group-task-link" href="../Protocols/Bezier2PointType.html">Bezier2PointType</a>
               </li>
               <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Protocols/Bezier2Type.html">Bezier2Type</a>
+              </li>
+              <li class="nav-group-task">
                 <a class="nav-group-task-link" href="../Protocols/BezierPointType.html">BezierPointType</a>
               </li>
               <li class="nav-group-task">
                 <a class="nav-group-task-link" href="../Protocols/BezierType.html">BezierType</a>
               </li>
               <li class="nav-group-task">
-                <a class="nav-group-task-link" href="../Protocols/Bounded2BezierType.html">Bounded2BezierType</a>
+                <a class="nav-group-task-link" href="../Protocols/BoundedBezier2Type.html">BoundedBezier2Type</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Protocols/ConstructibleBezier2PointType.html">ConstructibleBezier2PointType</a>
               </li>
               <li class="nav-group-task">
                 <a class="nav-group-task-link" href="../Protocols/DeCasteljauSolvableBezierType.html">DeCasteljauSolvableBezierType</a>
@@ -153,7 +161,19 @@
                 <a class="nav-group-task-link" href="../Typealiases.html#/s:11SwiftBezier13LinearBezier2a">LinearBezier2</a>
               </li>
               <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Typealiases.html#/s:11SwiftBezier14LinearBezier2Da">LinearBezier2D</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Typealiases.html#/s:11SwiftBezier14LinearBezier2Fa">LinearBezier2F</a>
+              </li>
+              <li class="nav-group-task">
                 <a class="nav-group-task-link" href="../Typealiases.html#/s:11SwiftBezier11QuadBezier2a">QuadBezier2</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Typealiases.html#/s:11SwiftBezier12QuadBezier2Da">QuadBezier2D</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Typealiases.html#/s:11SwiftBezier12QuadBezier2Fa">QuadBezier2F</a>
               </li>
             </ul>
           </li>
@@ -429,6 +449,60 @@ from origin squared.</p>
                 <li class="item">
                   <div>
                     <code>
+                    <a name="/s:11SwiftBezier0B9PointTypeP1poiyxx_xtFZ"></a>
+                    <a name="//apple_ref/swift/Method/+(_:_:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:11SwiftBezier0B9PointTypeP1poiyxx_xtFZ">+(_:<wbr>_:<wbr>)</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Standard point-wise addition operation.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">static</span> <span class="kd">func</span> <span class="o">+</span> <span class="p">(</span><span class="nv">lhs</span><span class="p">:</span> <span class="k">Self</span><span class="p">,</span> <span class="nv">rhs</span><span class="p">:</span> <span class="k">Self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="k">Self</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:11SwiftBezier0B9PointTypeP1soiyxx_xtFZ"></a>
+                    <a name="//apple_ref/swift/Method/-(_:_:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:11SwiftBezier0B9PointTypeP1soiyxx_xtFZ">-(_:<wbr>_:<wbr>)</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Standard point-wise subtraction operation.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">static</span> <span class="kd">func</span> <span class="o">-</span> <span class="p">(</span><span class="nv">lhs</span><span class="p">:</span> <span class="k">Self</span><span class="p">,</span> <span class="nv">rhs</span><span class="p">:</span> <span class="k">Self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="k">Self</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
                     <a name="/s:11SwiftBezier0B9PointTypeP1moiyxx_xtFZ"></a>
                     <a name="//apple_ref/swift/Method/*(_:_:)" class="dashAnchor"></a>
                     <a class="token" href="#/s:11SwiftBezier0B9PointTypeP1moiyxx_xtFZ">*(_:<wbr>_:<wbr>)</a>
@@ -564,6 +638,114 @@ from origin squared.</p>
                 <li class="item">
                   <div>
                     <code>
+                    <a name="/s:11SwiftBezier0B9PointTypeP2geoiySbx_xtFZ"></a>
+                    <a name="//apple_ref/swift/Method/&gt;=(_:_:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:11SwiftBezier0B9PointTypeP2geoiySbx_xtFZ">>=(_:<wbr>_:<wbr>)</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Returns <code>true</code> iff all components of <code>lhs</code> compare <code>&gt;=</code> to <code>rhs</code>.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">static</span> <span class="kd">func</span> <span class="o">&gt;=</span> <span class="p">(</span><span class="nv">lhs</span><span class="p">:</span> <span class="k">Self</span><span class="p">,</span> <span class="nv">rhs</span><span class="p">:</span> <span class="k">Self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt">Bool</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:11SwiftBezier0B9PointTypeP1goiySbx_xtFZ"></a>
+                    <a name="//apple_ref/swift/Method/&gt;(_:_:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:11SwiftBezier0B9PointTypeP1goiySbx_xtFZ">>(_:<wbr>_:<wbr>)</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Returns <code>true</code> iff all components of <code>lhs</code> compare <code>&gt;</code> to <code>rhs</code>.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">static</span> <span class="kd">func</span> <span class="o">&gt;</span> <span class="p">(</span><span class="nv">lhs</span><span class="p">:</span> <span class="k">Self</span><span class="p">,</span> <span class="nv">rhs</span><span class="p">:</span> <span class="k">Self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt">Bool</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:11SwiftBezier0B9PointTypeP1loiySbx_xtFZ"></a>
+                    <a name="//apple_ref/swift/Method/&lt;(_:_:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:11SwiftBezier0B9PointTypeP1loiySbx_xtFZ"><(_:<wbr>_:<wbr>)</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Returns <code>true</code> iff all components of <code>lhs</code> compare <code>&lt;</code> to <code>rhs</code>.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">static</span> <span class="kd">func</span> <span class="o">&lt;</span> <span class="p">(</span><span class="nv">lhs</span><span class="p">:</span> <span class="k">Self</span><span class="p">,</span> <span class="nv">rhs</span><span class="p">:</span> <span class="k">Self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt">Bool</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:11SwiftBezier0B9PointTypeP2leoiySbx_xtFZ"></a>
+                    <a name="//apple_ref/swift/Method/&lt;=(_:_:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:11SwiftBezier0B9PointTypeP2leoiySbx_xtFZ"><=(_:<wbr>_:<wbr>)</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Returns <code>true</code> iff all components of <code>lhs</code> compare <code>&lt;=</code> to <code>rhs</code>.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">static</span> <span class="kd">func</span> <span class="o">&lt;=</span> <span class="p">(</span><span class="nv">lhs</span><span class="p">:</span> <span class="k">Self</span><span class="p">,</span> <span class="nv">rhs</span><span class="p">:</span> <span class="k">Self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt">Bool</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
                     <a name="/s:11SwiftBezier0B9PointTypeP12pointwiseMinyxx_xtFZ"></a>
                     <a name="//apple_ref/swift/Method/pointwiseMin(_:_:)" class="dashAnchor"></a>
                     <a class="token" href="#/s:11SwiftBezier0B9PointTypeP12pointwiseMinyxx_xtFZ">pointwiseMin(_:<wbr>_:<wbr>)</a>
@@ -625,8 +807,8 @@ between <code>v1</code> and <code>v2</code>.</p>
       </article>
     </div>
     <section class="footer">
-      <p>&copy; 2022 <a class="link" href="" target="_blank" rel="external noopener"></a>. All rights reserved. (Last updated: 2022-12-28)</p>
-      <p>Generated by <a class="link" href="https://github.com/realm/jazzy" target="_blank" rel="external noopener">jazzy ♪♫ v0.14.3</a>, a <a class="link" href="https://realm.io" target="_blank" rel="external noopener">Realm</a> project.</p>
+      <p>&copy; 2024 <a class="link" href="" target="_blank" rel="external noopener"></a>. All rights reserved. (Last updated: 2024-07-06)</p>
+      <p>Generated by <a class="link" href="https://github.com/realm/jazzy" target="_blank" rel="external noopener">jazzy ♪♫ v0.15.1</a>, a <a class="link" href="https://realm.io" target="_blank" rel="external noopener">Realm</a> project.</p>
     </section>
   </body>
 </html>

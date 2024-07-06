@@ -23,7 +23,7 @@
         <a class="header-link" href="../index.html">
            Docs
         </a>
-         (99% documented)
+         (100% documented)
       </p>
     
       <div class="header-col--secondary">
@@ -36,9 +36,11 @@
     </header>
 
     <p class="breadcrumbs">
-      <a class="breadcrumb" href="../index.html"> Reference</a>
+      <a class="breadcrumb" href="../index.html">Index</a>
       <img class="carat" src="../img/carat.png" alt=""/>
-      Bezier2DPoint Structure Reference
+      <a class="breadcrumb" href="../Structs.html">Structures</a>
+      <img class="carat" src="../img/carat.png" alt=""/>
+      SwiftBezier.Bezier2DPoint Structure Reference
     </p>
 
     <div class="content-wrapper">
@@ -95,13 +97,19 @@
                 <a class="nav-group-task-link" href="../Protocols/Bezier2PointType.html">Bezier2PointType</a>
               </li>
               <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Protocols/Bezier2Type.html">Bezier2Type</a>
+              </li>
+              <li class="nav-group-task">
                 <a class="nav-group-task-link" href="../Protocols/BezierPointType.html">BezierPointType</a>
               </li>
               <li class="nav-group-task">
                 <a class="nav-group-task-link" href="../Protocols/BezierType.html">BezierType</a>
               </li>
               <li class="nav-group-task">
-                <a class="nav-group-task-link" href="../Protocols/Bounded2BezierType.html">Bounded2BezierType</a>
+                <a class="nav-group-task-link" href="../Protocols/BoundedBezier2Type.html">BoundedBezier2Type</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Protocols/ConstructibleBezier2PointType.html">ConstructibleBezier2PointType</a>
               </li>
               <li class="nav-group-task">
                 <a class="nav-group-task-link" href="../Protocols/DeCasteljauSolvableBezierType.html">DeCasteljauSolvableBezierType</a>
@@ -153,7 +161,19 @@
                 <a class="nav-group-task-link" href="../Typealiases.html#/s:11SwiftBezier13LinearBezier2a">LinearBezier2</a>
               </li>
               <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Typealiases.html#/s:11SwiftBezier14LinearBezier2Da">LinearBezier2D</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Typealiases.html#/s:11SwiftBezier14LinearBezier2Fa">LinearBezier2F</a>
+              </li>
+              <li class="nav-group-task">
                 <a class="nav-group-task-link" href="../Typealiases.html#/s:11SwiftBezier11QuadBezier2a">QuadBezier2</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Typealiases.html#/s:11SwiftBezier12QuadBezier2Da">QuadBezier2D</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Typealiases.html#/s:11SwiftBezier12QuadBezier2Fa">QuadBezier2F</a>
               </li>
             </ul>
           </li>
@@ -167,11 +187,11 @@
               <div class="declaration">
                 <div class="language">
                   
-                  <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">struct</span> <span class="kt">Bezier2DPoint</span> <span class="p">:</span> <span class="kt"><a href="../Protocols/Bezier2PointType.html">Bezier2PointType</a></span><span class="p">,</span> <span class="kt">Hashable</span><span class="p">,</span> <span class="kt">CustomStringConvertible</span></code></pre>
+                  <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">struct</span> <span class="kt">Bezier2DPoint</span> <span class="p">:</span> <span class="kt"><a href="../Protocols/ConstructibleBezier2PointType.html">ConstructibleBezier2PointType</a></span><span class="p">,</span> <span class="kt">Hashable</span><span class="p">,</span> <span class="kt">CustomStringConvertible</span></code></pre>
 
                 </div>
               </div>
-            <p>An implementation of <code><a href="../Protocols/Bezier2PointType.html">Bezier2PointType</a></code> with <code>Double</code> scalars.</p>
+            <p>An implementation of <code><a href="../Protocols/ConstructibleBezier2PointType.html">ConstructibleBezier2PointType</a></code> with <code>Double</code> scalars.</p>
 
           </div>
         </section>
@@ -388,7 +408,7 @@ both coordinates.</p>
                         <div class="language">
                           <p class="aside-title">Swift</p>
                           <pre class="highlight swift"><code><span class="kd">@inlinable</span>
-<span class="kd">public</span> <span class="kd">func</span> <span class="nf">lerp</span><span class="p">(</span><span class="n">to</span> <span class="nv">end</span><span class="p">:</span> <span class="kt">Bezier2DPoint</span><span class="p">,</span> <span class="nv">factor</span><span class="p">:</span> <span class="kt">Double</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt">Bezier2DPoint</span></code></pre>
+<span class="kd">public</span> <span class="kd">func</span> <span class="nf">lerp</span><span class="p">(</span><span class="n">to</span> <span class="nv">end</span><span class="p">:</span> <span class="p">`</span><span class="nv">Self</span><span class="p">`,</span> <span class="nv">factor</span><span class="p">:</span> <span class="kt">Double</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt">Bezier2DPoint</span></code></pre>
 
                         </div>
                       </div>
@@ -414,7 +434,142 @@ both coordinates.</p>
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">func</span> <span class="nf">dot</span><span class="p">(</span><span class="n">_</span> <span class="nv">other</span><span class="p">:</span> <span class="kt">Bezier2DPoint</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt"><a href="../Structs/Bezier2DPoint.html#/s:11SwiftBezier0B9PointTypeP6ScalarQa">Scalar</a></span></code></pre>
+                          <pre class="highlight swift"><code><span class="kd">@inlinable</span>
+<span class="kd">public</span> <span class="kd">func</span> <span class="nf">dot</span><span class="p">(</span><span class="n">_</span> <span class="nv">other</span><span class="p">:</span> <span class="p">`</span><span class="nv">Self</span><span class="p">`)</span> <span class="o">-&gt;</span> <span class="kt"><a href="../Structs/Bezier2DPoint.html#/s:11SwiftBezier0B9PointTypeP6ScalarQa">Scalar</a></span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:11SwiftBezier16Bezier2PointTypeP11leftRotatedxyF"></a>
+                    <a name="//apple_ref/swift/Method/leftRotated()" class="dashAnchor"></a>
+                    <a class="token" href="#/s:11SwiftBezier16Bezier2PointTypeP11leftRotatedxyF">leftRotated()</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">@inlinable</span>
+<span class="kd">public</span> <span class="kd">func</span> <span class="nf">leftRotated</span><span class="p">()</span> <span class="o">-&gt;</span> <span class="kt">Bezier2DPoint</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:11SwiftBezier16Bezier2PointTypeP12rightRotatedxyF"></a>
+                    <a name="//apple_ref/swift/Method/rightRotated()" class="dashAnchor"></a>
+                    <a class="token" href="#/s:11SwiftBezier16Bezier2PointTypeP12rightRotatedxyF">rightRotated()</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">@inlinable</span>
+<span class="kd">public</span> <span class="kd">func</span> <span class="nf">rightRotated</span><span class="p">()</span> <span class="o">-&gt;</span> <span class="kt">Bezier2DPoint</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:11SwiftBezier16Bezier2PointTypeP5angle6ScalarQzyF"></a>
+                    <a name="//apple_ref/swift/Method/angle()" class="dashAnchor"></a>
+                    <a class="token" href="#/s:11SwiftBezier16Bezier2PointTypeP5angle6ScalarQzyF">angle()</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">@inlinable</span>
+<span class="kd">public</span> <span class="kd">func</span> <span class="nf">angle</span><span class="p">()</span> <span class="o">-&gt;</span> <span class="kt"><a href="../Structs/Bezier2DPoint.html#/s:11SwiftBezier0B9PointTypeP6ScalarQa">Scalar</a></span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:11SwiftBezier16Bezier2PointTypeP7rotated2byx6ScalarQz_tF"></a>
+                    <a name="//apple_ref/swift/Method/rotated(by:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:11SwiftBezier16Bezier2PointTypeP7rotated2byx6ScalarQz_tF">rotated(by:<wbr>)</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">@inlinable</span>
+<span class="kd">public</span> <span class="kd">func</span> <span class="nf">rotated</span><span class="p">(</span><span class="n">by</span> <span class="nv">angleInRadians</span><span class="p">:</span> <span class="kt"><a href="../Structs/Bezier2DPoint.html#/s:11SwiftBezier0B9PointTypeP6ScalarQa">Scalar</a></span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt">Bezier2DPoint</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:11SwiftBezier16Bezier2PointTypeP10transposed5alongxAA06LinearB0VyxG_tF"></a>
+                    <a name="//apple_ref/swift/Method/transposed(along:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:11SwiftBezier16Bezier2PointTypeP10transposed5alongxAA06LinearB0VyxG_tF">transposed(along:<wbr>)</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">func</span> <span class="nf">transposed</span><span class="p">(</span><span class="n">along</span> <span class="nv">line</span><span class="p">:</span> <span class="kt"><a href="../Typealiases.html#/s:11SwiftBezier13LinearBezier2a">LinearBezier2</a></span><span class="o">&lt;</span><span class="p">`</span><span class="nv">Self</span><span class="p">`</span><span class="o">&gt;</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt">Bezier2DPoint</span></code></pre>
 
                         </div>
                       </div>
@@ -441,7 +596,61 @@ both coordinates.</p>
                         <div class="language">
                           <p class="aside-title">Swift</p>
                           <pre class="highlight swift"><code><span class="kd">@inlinable</span>
-<span class="kd">public</span> <span class="k">prefix</span> <span class="kd">static</span> <span class="kd">func</span> <span class="o">-</span> <span class="p">(</span><span class="nv">value</span><span class="p">:</span> <span class="kt">Bezier2DPoint</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt">Bezier2DPoint</span></code></pre>
+<span class="kd">public</span> <span class="k">prefix</span> <span class="kd">static</span> <span class="kd">func</span> <span class="o">-</span> <span class="p">(</span><span class="nv">value</span><span class="p">:</span> <span class="p">`</span><span class="nv">Self</span><span class="p">`)</span> <span class="o">-&gt;</span> <span class="kt">Bezier2DPoint</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:11SwiftBezier0B9PointTypeP1poiyxx_xtFZ"></a>
+                    <a name="//apple_ref/swift/Method/+(_:_:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:11SwiftBezier0B9PointTypeP1poiyxx_xtFZ">+(_:<wbr>_:<wbr>)</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">@inlinable</span>
+<span class="kd">public</span> <span class="kd">static</span> <span class="kd">func</span> <span class="o">+</span> <span class="p">(</span><span class="nv">lhs</span><span class="p">:</span> <span class="p">`</span><span class="nv">Self</span><span class="p">`,</span> <span class="nv">rhs</span><span class="p">:</span> <span class="p">`</span><span class="nv">Self</span><span class="p">`)</span> <span class="o">-&gt;</span> <span class="kt">Bezier2DPoint</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:11SwiftBezier0B9PointTypeP1soiyxx_xtFZ"></a>
+                    <a name="//apple_ref/swift/Method/-(_:_:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:11SwiftBezier0B9PointTypeP1soiyxx_xtFZ">-(_:<wbr>_:<wbr>)</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">@inlinable</span>
+<span class="kd">public</span> <span class="kd">static</span> <span class="kd">func</span> <span class="o">-</span> <span class="p">(</span><span class="nv">lhs</span><span class="p">:</span> <span class="p">`</span><span class="nv">Self</span><span class="p">`,</span> <span class="nv">rhs</span><span class="p">:</span> <span class="p">`</span><span class="nv">Self</span><span class="p">`)</span> <span class="o">-&gt;</span> <span class="kt">Bezier2DPoint</span></code></pre>
 
                         </div>
                       </div>
@@ -468,7 +677,7 @@ both coordinates.</p>
                         <div class="language">
                           <p class="aside-title">Swift</p>
                           <pre class="highlight swift"><code><span class="kd">@inlinable</span>
-<span class="kd">public</span> <span class="kd">static</span> <span class="kd">func</span> <span class="o">*</span> <span class="p">(</span><span class="nv">lhs</span><span class="p">:</span> <span class="kt">Bezier2DPoint</span><span class="p">,</span> <span class="nv">rhs</span><span class="p">:</span> <span class="kt">Bezier2DPoint</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt">Bezier2DPoint</span></code></pre>
+<span class="kd">public</span> <span class="kd">static</span> <span class="kd">func</span> <span class="o">*</span> <span class="p">(</span><span class="nv">lhs</span><span class="p">:</span> <span class="p">`</span><span class="nv">Self</span><span class="p">`,</span> <span class="nv">rhs</span><span class="p">:</span> <span class="p">`</span><span class="nv">Self</span><span class="p">`)</span> <span class="o">-&gt;</span> <span class="kt">Bezier2DPoint</span></code></pre>
 
                         </div>
                       </div>
@@ -495,7 +704,7 @@ both coordinates.</p>
                         <div class="language">
                           <p class="aside-title">Swift</p>
                           <pre class="highlight swift"><code><span class="kd">@inlinable</span>
-<span class="kd">public</span> <span class="kd">static</span> <span class="kd">func</span> <span class="o">/</span> <span class="p">(</span><span class="nv">lhs</span><span class="p">:</span> <span class="kt">Bezier2DPoint</span><span class="p">,</span> <span class="nv">rhs</span><span class="p">:</span> <span class="kt">Bezier2DPoint</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt">Bezier2DPoint</span></code></pre>
+<span class="kd">public</span> <span class="kd">static</span> <span class="kd">func</span> <span class="o">/</span> <span class="p">(</span><span class="nv">lhs</span><span class="p">:</span> <span class="p">`</span><span class="nv">Self</span><span class="p">`,</span> <span class="nv">rhs</span><span class="p">:</span> <span class="p">`</span><span class="nv">Self</span><span class="p">`)</span> <span class="o">-&gt;</span> <span class="kt">Bezier2DPoint</span></code></pre>
 
                         </div>
                       </div>
@@ -522,7 +731,7 @@ both coordinates.</p>
                         <div class="language">
                           <p class="aside-title">Swift</p>
                           <pre class="highlight swift"><code><span class="kd">@inlinable</span>
-<span class="kd">public</span> <span class="kd">static</span> <span class="kd">func</span> <span class="o">*</span> <span class="p">(</span><span class="nv">lhs</span><span class="p">:</span> <span class="kt">Bezier2DPoint</span><span class="p">,</span> <span class="nv">rhs</span><span class="p">:</span> <span class="kt"><a href="../Structs/Bezier2DPoint.html#/s:11SwiftBezier0B9PointTypeP6ScalarQa">Scalar</a></span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt">Bezier2DPoint</span></code></pre>
+<span class="kd">public</span> <span class="kd">static</span> <span class="kd">func</span> <span class="o">*</span> <span class="p">(</span><span class="nv">lhs</span><span class="p">:</span> <span class="p">`</span><span class="nv">Self</span><span class="p">`,</span> <span class="nv">rhs</span><span class="p">:</span> <span class="kt"><a href="../Structs/Bezier2DPoint.html#/s:11SwiftBezier0B9PointTypeP6ScalarQa">Scalar</a></span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt">Bezier2DPoint</span></code></pre>
 
                         </div>
                       </div>
@@ -549,7 +758,7 @@ both coordinates.</p>
                         <div class="language">
                           <p class="aside-title">Swift</p>
                           <pre class="highlight swift"><code><span class="kd">@inlinable</span>
-<span class="kd">public</span> <span class="kd">static</span> <span class="kd">func</span> <span class="o">*</span> <span class="p">(</span><span class="nv">lhs</span><span class="p">:</span> <span class="kt"><a href="../Structs/Bezier2DPoint.html#/s:11SwiftBezier0B9PointTypeP6ScalarQa">Scalar</a></span><span class="p">,</span> <span class="nv">rhs</span><span class="p">:</span> <span class="kt">Bezier2DPoint</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt">Bezier2DPoint</span></code></pre>
+<span class="kd">public</span> <span class="kd">static</span> <span class="kd">func</span> <span class="o">*</span> <span class="p">(</span><span class="nv">lhs</span><span class="p">:</span> <span class="kt"><a href="../Structs/Bezier2DPoint.html#/s:11SwiftBezier0B9PointTypeP6ScalarQa">Scalar</a></span><span class="p">,</span> <span class="nv">rhs</span><span class="p">:</span> <span class="p">`</span><span class="nv">Self</span><span class="p">`)</span> <span class="o">-&gt;</span> <span class="kt">Bezier2DPoint</span></code></pre>
 
                         </div>
                       </div>
@@ -576,7 +785,7 @@ both coordinates.</p>
                         <div class="language">
                           <p class="aside-title">Swift</p>
                           <pre class="highlight swift"><code><span class="kd">@inlinable</span>
-<span class="kd">public</span> <span class="kd">static</span> <span class="kd">func</span> <span class="o">/</span> <span class="p">(</span><span class="nv">lhs</span><span class="p">:</span> <span class="kt">Bezier2DPoint</span><span class="p">,</span> <span class="nv">rhs</span><span class="p">:</span> <span class="kt"><a href="../Structs/Bezier2DPoint.html#/s:11SwiftBezier0B9PointTypeP6ScalarQa">Scalar</a></span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt">Bezier2DPoint</span></code></pre>
+<span class="kd">public</span> <span class="kd">static</span> <span class="kd">func</span> <span class="o">/</span> <span class="p">(</span><span class="nv">lhs</span><span class="p">:</span> <span class="p">`</span><span class="nv">Self</span><span class="p">`,</span> <span class="nv">rhs</span><span class="p">:</span> <span class="kt"><a href="../Structs/Bezier2DPoint.html#/s:11SwiftBezier0B9PointTypeP6ScalarQa">Scalar</a></span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt">Bezier2DPoint</span></code></pre>
 
                         </div>
                       </div>
@@ -586,9 +795,9 @@ both coordinates.</p>
                 <li class="item">
                   <div>
                     <code>
-                    <a name="/s:s18AdditiveArithmeticP1poiyxx_xtFZ"></a>
-                    <a name="//apple_ref/swift/Method/+(_:_:)" class="dashAnchor"></a>
-                    <a class="token" href="#/s:s18AdditiveArithmeticP1poiyxx_xtFZ">+(_:<wbr>_:<wbr>)</a>
+                    <a name="/s:11SwiftBezier0B9PointTypeP2geoiySbx_xtFZ"></a>
+                    <a name="//apple_ref/swift/Method/&gt;=(_:_:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:11SwiftBezier0B9PointTypeP2geoiySbx_xtFZ">>=(_:<wbr>_:<wbr>)</a>
                     </code>
                   </div>
                   <div class="height-container">
@@ -603,7 +812,7 @@ both coordinates.</p>
                         <div class="language">
                           <p class="aside-title">Swift</p>
                           <pre class="highlight swift"><code><span class="kd">@inlinable</span>
-<span class="kd">public</span> <span class="kd">static</span> <span class="kd">func</span> <span class="o">+</span> <span class="p">(</span><span class="nv">lhs</span><span class="p">:</span> <span class="kt">Bezier2DPoint</span><span class="p">,</span> <span class="nv">rhs</span><span class="p">:</span> <span class="kt">Bezier2DPoint</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt">Bezier2DPoint</span></code></pre>
+<span class="kd">public</span> <span class="kd">static</span> <span class="kd">func</span> <span class="o">&gt;=</span> <span class="p">(</span><span class="nv">lhs</span><span class="p">:</span> <span class="p">`</span><span class="nv">Self</span><span class="p">`,</span> <span class="nv">rhs</span><span class="p">:</span> <span class="p">`</span><span class="nv">Self</span><span class="p">`)</span> <span class="o">-&gt;</span> <span class="kt">Bool</span></code></pre>
 
                         </div>
                       </div>
@@ -613,9 +822,9 @@ both coordinates.</p>
                 <li class="item">
                   <div>
                     <code>
-                    <a name="/s:s18AdditiveArithmeticP1soiyxx_xtFZ"></a>
-                    <a name="//apple_ref/swift/Method/-(_:_:)" class="dashAnchor"></a>
-                    <a class="token" href="#/s:s18AdditiveArithmeticP1soiyxx_xtFZ">-(_:<wbr>_:<wbr>)</a>
+                    <a name="/s:11SwiftBezier0B9PointTypeP1goiySbx_xtFZ"></a>
+                    <a name="//apple_ref/swift/Method/&gt;(_:_:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:11SwiftBezier0B9PointTypeP1goiySbx_xtFZ">>(_:<wbr>_:<wbr>)</a>
                     </code>
                   </div>
                   <div class="height-container">
@@ -630,7 +839,61 @@ both coordinates.</p>
                         <div class="language">
                           <p class="aside-title">Swift</p>
                           <pre class="highlight swift"><code><span class="kd">@inlinable</span>
-<span class="kd">public</span> <span class="kd">static</span> <span class="kd">func</span> <span class="o">-</span> <span class="p">(</span><span class="nv">lhs</span><span class="p">:</span> <span class="kt">Bezier2DPoint</span><span class="p">,</span> <span class="nv">rhs</span><span class="p">:</span> <span class="kt">Bezier2DPoint</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt">Bezier2DPoint</span></code></pre>
+<span class="kd">public</span> <span class="kd">static</span> <span class="kd">func</span> <span class="o">&gt;</span> <span class="p">(</span><span class="nv">lhs</span><span class="p">:</span> <span class="p">`</span><span class="nv">Self</span><span class="p">`,</span> <span class="nv">rhs</span><span class="p">:</span> <span class="p">`</span><span class="nv">Self</span><span class="p">`)</span> <span class="o">-&gt;</span> <span class="kt">Bool</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:11SwiftBezier0B9PointTypeP1loiySbx_xtFZ"></a>
+                    <a name="//apple_ref/swift/Method/&lt;(_:_:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:11SwiftBezier0B9PointTypeP1loiySbx_xtFZ"><(_:<wbr>_:<wbr>)</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">@inlinable</span>
+<span class="kd">public</span> <span class="kd">static</span> <span class="kd">func</span> <span class="o">&lt;</span> <span class="p">(</span><span class="nv">lhs</span><span class="p">:</span> <span class="p">`</span><span class="nv">Self</span><span class="p">`,</span> <span class="nv">rhs</span><span class="p">:</span> <span class="p">`</span><span class="nv">Self</span><span class="p">`)</span> <span class="o">-&gt;</span> <span class="kt">Bool</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:11SwiftBezier0B9PointTypeP2leoiySbx_xtFZ"></a>
+                    <a name="//apple_ref/swift/Method/&lt;=(_:_:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:11SwiftBezier0B9PointTypeP2leoiySbx_xtFZ"><=(_:<wbr>_:<wbr>)</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">@inlinable</span>
+<span class="kd">public</span> <span class="kd">static</span> <span class="kd">func</span> <span class="o">&lt;=</span> <span class="p">(</span><span class="nv">lhs</span><span class="p">:</span> <span class="p">`</span><span class="nv">Self</span><span class="p">`,</span> <span class="nv">rhs</span><span class="p">:</span> <span class="p">`</span><span class="nv">Self</span><span class="p">`)</span> <span class="o">-&gt;</span> <span class="kt">Bool</span></code></pre>
 
                         </div>
                       </div>
@@ -657,7 +920,7 @@ both coordinates.</p>
                         <div class="language">
                           <p class="aside-title">Swift</p>
                           <pre class="highlight swift"><code><span class="kd">@inlinable</span>
-<span class="kd">public</span> <span class="kd">static</span> <span class="kd">func</span> <span class="nf">pointwiseMin</span><span class="p">(</span><span class="n">_</span> <span class="nv">v1</span><span class="p">:</span> <span class="kt">Bezier2DPoint</span><span class="p">,</span> <span class="n">_</span> <span class="nv">v2</span><span class="p">:</span> <span class="kt">Bezier2DPoint</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt">Bezier2DPoint</span></code></pre>
+<span class="kd">public</span> <span class="kd">static</span> <span class="kd">func</span> <span class="nf">pointwiseMin</span><span class="p">(</span><span class="n">_</span> <span class="nv">v1</span><span class="p">:</span> <span class="p">`</span><span class="nv">Self</span><span class="p">`,</span> <span class="n">_</span> <span class="nv">v2</span><span class="p">:</span> <span class="p">`</span><span class="nv">Self</span><span class="p">`)</span> <span class="o">-&gt;</span> <span class="kt">Bezier2DPoint</span></code></pre>
 
                         </div>
                       </div>
@@ -684,7 +947,7 @@ both coordinates.</p>
                         <div class="language">
                           <p class="aside-title">Swift</p>
                           <pre class="highlight swift"><code><span class="kd">@inlinable</span>
-<span class="kd">public</span> <span class="kd">static</span> <span class="kd">func</span> <span class="nf">pointwiseMax</span><span class="p">(</span><span class="n">_</span> <span class="nv">v1</span><span class="p">:</span> <span class="kt">Bezier2DPoint</span><span class="p">,</span> <span class="n">_</span> <span class="nv">v2</span><span class="p">:</span> <span class="kt">Bezier2DPoint</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt">Bezier2DPoint</span></code></pre>
+<span class="kd">public</span> <span class="kd">static</span> <span class="kd">func</span> <span class="nf">pointwiseMax</span><span class="p">(</span><span class="n">_</span> <span class="nv">v1</span><span class="p">:</span> <span class="p">`</span><span class="nv">Self</span><span class="p">`,</span> <span class="n">_</span> <span class="nv">v2</span><span class="p">:</span> <span class="p">`</span><span class="nv">Self</span><span class="p">`)</span> <span class="o">-&gt;</span> <span class="kt">Bezier2DPoint</span></code></pre>
 
                         </div>
                       </div>
@@ -699,8 +962,8 @@ both coordinates.</p>
       </article>
     </div>
     <section class="footer">
-      <p>&copy; 2022 <a class="link" href="" target="_blank" rel="external noopener"></a>. All rights reserved. (Last updated: 2022-12-28)</p>
-      <p>Generated by <a class="link" href="https://github.com/realm/jazzy" target="_blank" rel="external noopener">jazzy ♪♫ v0.14.3</a>, a <a class="link" href="https://realm.io" target="_blank" rel="external noopener">Realm</a> project.</p>
+      <p>&copy; 2024 <a class="link" href="" target="_blank" rel="external noopener"></a>. All rights reserved. (Last updated: 2024-07-06)</p>
+      <p>Generated by <a class="link" href="https://github.com/realm/jazzy" target="_blank" rel="external noopener">jazzy ♪♫ v0.15.1</a>, a <a class="link" href="https://realm.io" target="_blank" rel="external noopener">Realm</a> project.</p>
     </section>
   </body>
 </html>
