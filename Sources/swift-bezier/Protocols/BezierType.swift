@@ -72,6 +72,25 @@ public protocol BezierType {
         tolerance: Output.Scalar
     ) -> (t: Input, output: Output)
 
+    /// Performs an approximation of a given function on this Bézier towards zero.
+    ///
+    /// The approximation is controlled by a number of steps to split the Bézier
+    /// into before the closest interval to zero is found and iterating over it
+    /// until it either exceeds a number of maximum iterations or the function
+    /// approaches a limit where changes to input are smaller than `tolerance`.
+    ///
+    /// Expects `producer` to be a contiguous function mapping `Input` into
+    /// `Output.Scalar`.
+    ///
+    /// May produce multiple approximations depending on the degree of this Bézier
+    /// curve.
+    func approximate(
+        _ producer: (Output) -> Output.Scalar,
+        steps: Int,
+        maxIterations: Int,
+        tolerance: Output.Scalar
+    ) -> [(t: Input, output: Output)]
+
     /// Returns the result of translating the points of this Bézier curve by
     /// `offset`.
     func translated(by offset: Output) -> Self
@@ -135,39 +154,72 @@ extension BezierType {
         tolerance: Output.Scalar
     ) -> (t: Input, output: Output) {
 
+        let results =
+            self.approximate({ $0.distanceSquared(to: point) },
+                steps: steps,
+                maxIterations: maxIterations,
+                tolerance: tolerance
+            )
+
+        if let min = results.min(by: { $0.output.distanceSquared(to: point) < $1.output.distanceSquared(to: point) }) {
+            return min
+        }
+
+        return (startInput, self[0])
+    }
+
+    @inlinable
+    public func approximate(
+        _ producer: (Output) -> Output.Scalar,
+        steps: Int,
+        maxIterations: Int,
+        tolerance: Output.Scalar
+    ) -> [(t: Input, output: Output)] {
+
         typealias State = (closest: (Input, Output), iterations: Int)
 
         let lookup = createLookupTable(steps: steps)
 
-        guard let closestIndex = lookup.closestEntryIndex(toOutput: point) else {
-            return (startInput, self[0])
-        }
+        let closestIndices = lookup.approximateToZero(producer)
 
-        let searchRangeIndex = (start: max(0, closestIndex - 1), end: min(lookup.count - 1, closestIndex + 1))
+        var results: [(t: Input, output: Output)] = []
 
-        if searchRangeIndex.start == searchRangeIndex.end {
-            return lookup[searchRangeIndex.start] as (Input, Output)
-        }
+        for closestIndex in closestIndices {
+            let searchRangeIndex = (start: max(0, closestIndex - 1), end: min(lookup.count - 1, closestIndex + 1))
 
-        let searchRange = (start: lookup[searchRangeIndex.start], end: lookup[searchRangeIndex.end])
-        let currentDistance = lookup[closestIndex].output.distanceSquared(to: point)
-
-        let t = binarySearchInput(
-            min: searchRange.start.input,
-            max: searchRange.end.input,
-            current: (lookup[closestIndex].input, currentDistance),
-            maxIterations: maxIterations
-        ) { (input, currentDistance) in
-
-            let error = currentDistance - compute(at: input).distanceSquared(to: point)
-
-            if error < tolerance {
-                return currentDistance
-            } else {
-                return error
+            if searchRangeIndex.start == searchRangeIndex.end {
+                let t = lookup[searchRangeIndex.start].input
+                let point = compute(at: t)
+                if producer(compute(at: t)) < tolerance {
+                    results.append((t, point))
+                }
+                continue
             }
+
+            let searchRange = (start: lookup[searchRangeIndex.start], end: lookup[searchRangeIndex.end])
+            let current = producer(lookup[closestIndex].output)
+
+            let t = binarySearchInput(
+                min: searchRange.start.input,
+                max: searchRange.end.input,
+                current: (lookup[closestIndex].input, current),
+                maxIterations: maxIterations
+            ) { (input, current) in
+
+                //producer(lookup[closestIndex].output)
+                let error = current - producer(lookup[closestIndex].output)
+
+                if error < tolerance {
+                    return current
+                } else {
+                    return error
+                }
+            }
+
+            let point = compute(at: t)
+            results.append((t, point))
         }
 
-        return (t, compute(at: t))
+        return results
     }
 }

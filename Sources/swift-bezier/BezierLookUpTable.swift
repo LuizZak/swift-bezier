@@ -36,4 +36,51 @@ extension BezierLookUpTable where Output: BezierPointType {
 
         return closest?.0
     }
+
+    /// Looks up the indices on `table` that approximate the given producer function
+    /// towards zero, and returns the indices of the inputs that maximally approached
+    /// zero.
+    ///
+    /// Returns an empty array if this lookup table is empty.
+    ///
+    /// Expects `producer` to be a contiguous function mapping `Input` into
+    /// `Output.Scalar`.
+    @inlinable
+    public func approximateToZero(
+        _ producer: (Output) -> Output.Scalar
+    ) -> [Int] {
+
+        var cache: [Int: Output.Scalar] = [:]
+
+        func computeDiff(index: Int) -> Output.Scalar {
+            if let cached = cache[index] {
+                return cached
+            }
+
+            let value = producer(table[index].output)
+
+            cache[index] = value
+
+            return value
+        }
+
+        var indices: [Int] = []
+
+        for i in 0..<table.count {
+            let current = computeDiff(index: i)
+            let prev = i > 0 ? computeDiff(index: i - 1) : current
+            let next = i < table.count - 1 ? computeDiff(index: i + 1) : current
+
+            // Find local minima
+            if i == 0 && current < next {
+                indices.append(i)
+            } else if i == table.count - 1 && current < prev {
+                indices.append(i)
+            } else if current <= next && current <= prev {
+                indices.append(i)
+            }
+        }
+
+        return indices
+    }
 }
